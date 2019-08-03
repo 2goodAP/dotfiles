@@ -8,6 +8,9 @@ set fileencoding=utf-8
 " Enabling true colors for terminal neovim
 set termguicolors
 
+" Remapping the leader to ,
+let mapleader = ','
+
 " Auto complete characters
 " Brace Completion
 inoremap    {      {
@@ -24,7 +27,6 @@ inoremap    [<CR>   [<CR>]<ESC>O
 " Parenthesis Completion
 inoremap    (       (
 inoremap    ((       ()<LEFT>
-
 
 " Show syntax groups
 nmap <F10> :call <SID>SynStack()<CR>

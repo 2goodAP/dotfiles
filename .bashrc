@@ -104,19 +104,9 @@ alias HTML5_The_Missing_Manual=' zathura ~/Documents/NAALEDGE/HTML_and_CSS/HTML5
 alias HTML_and_CSS='zathura ~/Documents/NAALEDGE/HTML_and_CSS/Jon_Duckett_HTML_and_CSS.pdf &'
 alias CSS3_The_Missing_Manual='zathura ~/Documents/NAALEDGE/HTML_and_CSS/CSS-The-Missing-Manual-4th.pdf &'
 alias Learning_Python='zathura ~/Documents/NAALEDGE/Python/LearningPython.pdf &'
-alias Rosen='zathura ~/Documents/NAALEDGE/Discrete_Math/Rosen_Discrete_Mathematics_and_Its_Applications-7th_Edition.pdf &'
-alias Atomic_Habits='zathura ~/Documents/Literature/Worldly_Wisdom/Atomic_Habits-James_Clear.epub &'
-alias Art_of_the_Start='zathura ~/Documents/NAALEDGE/StartUp/The_Art_of_the_Start-Guy_Kawasaki.epub &'
-alias The_7_Habits='zathura ~/Documents/Literature/Worldly_Wisdom/The_7_Habits_of_Highly_Effective_People-Stephen_R_Covey.pdf &'
-alias JavaScript_Ninja='zathura ~/Documents/NAALEDGE/JavaScript/Secrets_of_the_JavaScript_Ninja-2nd_Edition.pdf &'
-alias C++_Primer='zathura ~/Documents/NAALEDGE/C-C++/C++.Primer.5th.Edition.pdf &'
 alias C_Programming='zathura ~/Documents/NAALEDGE/C-C++/C_Programming_A_Modern_Approach_2nd_Ed.pdf &'
 alias Practical_Vim='zathura ~/Documents/NAALEDGE/Vim/Drew\ Neil\ -\ Practical\ Vim\ Edit\ Text\ at\ the\ Speed\ of\ Thought\,\ 2nd\ Edition\ -\ 2015.pdf &'
 alias Clean_Code='zathura ~/Documents/NAALEDGE/Clean_Code/Clean_Code.pdf &'
-alias Feller='zathura ~/Documents/NAALEDGE/Probability/AnIntroductionToProbabilityTheoryAndItsApplications-I.pdf &'
-alias Probability_Theory='zathura ~/Documents/NAALEDGE/Probability/JaynesProbabilityTheory.pdf &'
-alias Concrete_Math='zathura ~/Documents/NAALEDGE/Discrete_Math/Concrete_Mathematics-2e.pdf &'
-alias Bevlin='zathura ~/Documents/Literature/Seeking_Wisdom_From_Darwin_To_Munger/Seeking_Wisdom.pdf &'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

@@ -89,24 +89,36 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[globbing]='none'
 
 # Powerlevel10k configuration
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user host dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs root_indicator time)
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_first_and_last
 
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 
-POWERLEVEL9K_USER_DEFAULT_FOREGROUND='#282828'
-POWERLEVEL9K_USER_DEFAULT_BACKGROUND='#98C379'
-POWERLEVEL9K_USER_SUDO_FOREGROUND='#ABB2BF'
-POWERLEVEL9K_USER_SUDO_BACKGROUND='#E06C75'
+# POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='#282828'
+POWERLEVEL9K_CONTEXT_BACKGROUND='#4B5263'
+POWERLEVEL9K_CONTEXT_SUDO_FOREGROUND='282828'
+POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND='#E06C75'
+POWERLEVEL9K_CONTEXT_REMOTE_SUDO_FOREGROUND='282828'
+POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND='#E06C75'
 
-POWERLEVEL9K_HOST_BACKGROUND='#4B5263'
+POWERLEVEL9K_VI_MODE_FOREGROUND='#282828'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='#98C379'
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='#61AFEF'
+POWERLEVEL9K_VI_MODE_VISUAL_BACKGROUND='#6678DD'
 
-POWERLEVEL9K_DIR_BACKGROUND='#61AFEF'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='#E5C07B'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='#E5C07B'
+
+POWERLEVEL9K_STATUS_OK_FOREGROUND='040'
+POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Using neovim as the default shell editor
+export VISUAL='nvim'
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -129,11 +141,66 @@ fi
 # Example aliases
 alias zshconf="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias dotfiles='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'
 
+# Aliases
+#-----------------------------------------------#
+
+# Meta aliases
+alias dotfiles='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'
+alias c='clear'
+alias Syyu='sudo pacman -Syyu --color auto'
+
+# Vim
+alias vi='/usr/bin/vim'
+alias vim='nvim'
+
+# Anaconda
+alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
+alias spyder='exec /opt/anaconda/bin/spyder &'
+alias conda='sudo /opt/anaconda/condabin/conda'
+
+# DBeaver
+alias dbeaver='/home/superap/bin/dbeaver/dbeaver &'
+
+# Browsers
+alias chrome-dev='google-chrome-unstable'
+
+# Grep
+alias grep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
+# Books
+alias CLRS='zathura ~/Documents/NAALEDGE/Algorithms/Introduction_to_algorithm/Introduction-to-algorithms-3rd-edition.pdf &'
+alias Eloquent_JavaScript='zathura ~/Documents/NAALEDGE/JavaScript/Eloquent_JavaScript-3rd_Edition.pdf &'
+alias Fundamentals_Database='zathura ~/Documents/NAALEDGE/Database/Fundamentals_of_Database_Systems-7th_edition.pdf &'
+alias HTML5_The_Missing_Manual=' zathura ~/Documents/NAALEDGE/HTML_and_CSS/HTML5-The_Missing_Manual-2nd_Edition.pdf &'
+alias HTML_and_CSS='zathura ~/Documents/NAALEDGE/HTML_and_CSS/Jon_Duckett_HTML_and_CSS.pdf &'
+alias CSS3_The_Missing_Manual='zathura ~/Documents/NAALEDGE/HTML_and_CSS/CSS-The-Missing-Manual-4th.pdf &'
+alias Learning_Python='zathura ~/Documents/NAALEDGE/Python/LearningPython.pdf &'
+alias C_Programming='zathura ~/Documents/NAALEDGE/C-C++/C_Programming_A_Modern_Approach_2nd_Ed.pdf &'
+alias Practical_Vim='zathura ~/Documents/NAALEDGE/Vim/Drew\ Neil\ -\ Practical\ Vim\ Edit\ Text\ at\ the\ Speed\ of\ Thought\,\ 2nd\ Edition\ -\ 2015.pdf &'
+alias Clean_Code='zathura ~/Documents/NAALEDGE/Clean_Code/Clean_Code.pdf &'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/superap/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/superap/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/superap/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/superap/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source $ZSH/oh-my-zsh.sh
 
 # Custom plugins installed via pacman
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
