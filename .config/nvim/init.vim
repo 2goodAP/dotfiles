@@ -1,5 +1,9 @@
-" Pathogen
-" execute pathogen#infect()
+" Enabling basic vim features
+filetype plugin on
+syntax enable
+
+" Using Omni Completion
+set omnifunc=syntaxcomplete#Complete
 
 " Encoding details
 set encoding=utf-8
@@ -91,49 +95,14 @@ set list
 let g:indentLine_setColors = 1
 let g:indentLine_char = '┆'
 
-" Setting auto indentation
-filetype plugin indent on
 
-" Using Omni Completion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
-" Customizing nvim
+" Customizing vim/nvim
 "
-" Custom comors
-
-" Using vim's package feature to load onedark
-packadd! onedark.vim
-
-if (has("autocmd") && !has("gui_running"))
-    augroup colorset
-        autocmd!
-        let s:orange = { "gui": "#F78E49", "cterm": "202", "cterm16" : "13" }
-        autocmd ColorScheme * call onedark#set_highlight("cssProp", { "fg": onedark#GetColors().purple })
-        " `bg` will not be styled since there is no `bg` setting
-        autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", { "fg": onedark#GetColors().green })
-        autocmd ColorScheme * call onedark#set_highlight("cssValueLength", { "fg": onedark#GetColors().green })
-        autocmd ColorScheme * call onedark#set_highlight("cssUnitDecorators", { "fg": onedark#GetColors().green})
-
-        autocmd ColorScheme * call onedark#set_highlight("jsVariableDef", { "fg": onedark#GetColors().red})
-    augroup END
-endif
-
-let g:onedark_color_overrides = {
-\   "blue": {'gui': '#5DAEF2', 'cterm': '38', 'cterm16': '4'}
-\}
-
-
-let g:onedark_terminal_italics=1
-colorscheme onedark
 
 
 " Highlight search
 set hlsearch
 set incsearch
-
-" Syntax highlighting
-syntax enable
 
 " Show the line number
 set number
@@ -167,3 +136,30 @@ nnoremap <c-l> <c-w><c-l>
 " vim-javascript stuff
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
+
+" Custom colors
+
+" Using vim's package feature to load onedark
+packadd! onedark.vim
+
+if (has("autocmd") && !has("gui_running"))
+    augroup colorset
+        autocmd!
+        let s:orange = { "gui": "#F78E49", "cterm": "202", "cterm16" : "13" }
+        autocmd ColorScheme * call onedark#set_highlight("cssProp", { "fg": onedark#GetColors().purple })
+        " `bg` will not be styled since there is no `bg` setting
+        autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", { "fg": onedark#GetColors().green })
+        autocmd ColorScheme * call onedark#set_highlight("cssValueLength", { "fg": onedark#GetColors().green })
+        autocmd ColorScheme * call onedark#set_highlight("cssUnitDecorators", { "fg": onedark#GetColors().green})
+
+        autocmd ColorScheme * call onedark#set_highlight("jsVariableDef", { "fg": onedark#GetColors().red})
+    augroup END
+endif
+
+let g:onedark_color_overrides = {
+\   "blue": {'gui': '#5DAEF2', 'cterm': '38', 'cterm16': '4'}
+\}
+
+
+let g:onedark_terminal_italics=1
+colorscheme onedark

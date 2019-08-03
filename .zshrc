@@ -151,8 +151,9 @@ alias c='clear'
 alias Syyu='sudo pacman -Syyu --color auto'
 
 # Vim
-alias vi='/usr/bin/vim'
-alias vim='nvim'
+alias v='nvim'
+alias vi='nvim'
+alias vim='/usr/bin/vim'
 
 # Anaconda
 alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
