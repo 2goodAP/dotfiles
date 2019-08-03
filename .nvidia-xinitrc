@@ -1,0 +1,5 @@
+openbox-session
+
+xrandr --output Nvidia-xrun --set "Broadcast RGB" "Full"
+
+xset -dpms: xset s off
