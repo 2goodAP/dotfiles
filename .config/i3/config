@@ -199,6 +199,9 @@ bar {
 #                          My Custom Configurations                           #
 ###############################################################################
 
+#
+# Startup manager
+#
 # Desktop background with feh
 exec --no-startup-id feh --bg-scale /home/superap/Pictures/keep_on_keeping_on.jpg
 
@@ -225,6 +228,12 @@ exec --no-startup-id compton --dbus -f
 # Autostart redshift and geoclue-2.0
 exec_always --no-startup-id redshift-gtk
 
+# Start gpaste-dawmon
+exec_always --no-startup-id gpaste-client start
+
+# Start the greenclip daemon
+exec_always --no-startup-id greenclip daemon
+
 # Disable focus following mouse behavior
 focus_follows_mouse no
 
@@ -234,6 +243,9 @@ focus_follows_mouse no
 
 # i3lock
 bindsym $mod+Shift+x exec betterlockscreen --lock blur
+
+# Greenclip
+bindsym $mod+c  exec rofi -show greenclip -theme onedark
 
 # PulseAudio controls
 # Change volume or toggle mute
