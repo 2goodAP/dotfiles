@@ -117,6 +117,12 @@ POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Set TERM variable
+export TERM=xterm-256color
+
+# Set the DISPLAY variable
+export DISPLAY=:0.0
+
 # Using neovim as the default shell editor
 export VISUAL='nvim'
 
