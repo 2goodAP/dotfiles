@@ -166,9 +166,6 @@ alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
 alias spyder='exec /opt/anaconda/bin/spyder &'
 alias conda='sudo /opt/anaconda/condabin/conda'
 
-# DBeaver
-alias dbeaver='/home/superap/bin/dbeaver/dbeaver &'
-
 # Browsers
 alias chrome-dev='google-chrome-unstable'
 
