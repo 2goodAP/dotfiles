@@ -145,7 +145,6 @@ packadd! onedark.vim
 if (has("autocmd") && !has("gui_running"))
     augroup colorset
         autocmd!
-        let s:orange = { "gui": "#F78E49", "cterm": "202", "cterm16" : "13" }
         autocmd ColorScheme * call onedark#set_highlight("cssProp", { "fg": onedark#GetColors().purple })
         " `bg` will not be styled since there is no `bg` setting
         autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", { "fg": onedark#GetColors().green })
