@@ -175,6 +175,9 @@ alias chrome-dev='google-chrome-unstable'
 # Grep
 alias grep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
+# gpaste-client clip board manager
+alias gpaste='gpaste-client'
+
 # Books
 alias CLRS='zathura ~/Documents/NAALEDGE/Algorithms/Introduction_to_algorithm/Introduction-to-algorithms-3rd-edition.pdf &'
 alias Eloquent_JavaScript='zathura ~/Documents/NAALEDGE/JavaScript/Eloquent_JavaScript-3rd_Edition.pdf &'
