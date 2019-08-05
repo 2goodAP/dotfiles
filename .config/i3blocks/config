@@ -154,7 +154,7 @@ interval=30
 [date]
 label=
 separator=false
-command=date '+ %d %B, %Y'
+command=date '+ %d %b, %Y'
 interval=60
 # color=#000000
 

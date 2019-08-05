@@ -80,6 +80,8 @@ export GPG_TTY
 
 # Aliases
 #-----------------------------------------------#
+# Grep
+alias grep='grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # Vim
 export VISUAL='nvim'
@@ -89,9 +91,6 @@ alias vim='nvim'
 # Anaconda
 alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
 alias spyder='exec /opt/anaconda/bin/spyder &'
-
-# DBeaver
-alias dbeaver='/home/superap/bin/dbeaver/dbeaver &'
 
 # Browsers
 alias chrome-dev='google-chrome-unstable'

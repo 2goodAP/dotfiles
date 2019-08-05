@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.scripts:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/superap/.oh-my-zsh"
@@ -117,6 +117,9 @@ POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Set the XDG_CONFIG_HOME
+export XDG_CONFIG_HOME=$HOME/.config
+
 # Set TERM variable
 export TERM=xterm-256color
 
@@ -146,6 +149,7 @@ fi
 #
 # Example aliases
 alias zshconf="nvim ~/.zshrc"
+alias zshsource="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Aliases
@@ -155,6 +159,8 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias dotfiles='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'
 alias c='clear'
 alias Syyu='sudo pacman -Syyu --color auto'
+alias diff='diff --color'
+alias less='less -i'
 
 # Vim
 alias v='nvim'
@@ -170,7 +176,8 @@ alias conda='sudo /opt/anaconda/condabin/conda'
 alias chrome-dev='google-chrome-unstable'
 
 # Grep
-alias grep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # gpaste-client clip board manager
 alias gpaste='gpaste-client'
