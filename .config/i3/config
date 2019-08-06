@@ -80,8 +80,9 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -199,25 +200,31 @@ bar {
 #                          My Custom Configurations                           #
 ###############################################################################
 
+##############################################################
+# For window borders                                         #
+##############################################################
 #
-# Startup manager
+# Set float and unfloat variables
+set $FLOAT floating enable, border normal 1
+set $UNFLOAT floating disable, border none
+
+# Disable window title and borders for new tiling windows
+new_window none
+# new_window normal|pixel [<px>]
+
+# Enable window title and borders for new floating windows
+new_float normal 1
+# new_float none
+
+# Disabling window borders
+# for_window [class="^.*"] border normal 0
+ 
+####################################################################################
+# Startup manager                                                                  #
+####################################################################################
 #
 # Desktop background with feh
 exec --no-startup-id feh --bg-scale /home/superap/Pictures/keep_on_keeping_on.jpg
-
-# Colors
-set $bg-color 	         #222d32
-set $inactive-bg-color   #364046
-set $text-color          #cfd4b4
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 # Nm-applet
 exec --no-startup-id nm-applet
@@ -237,9 +244,36 @@ exec_always --no-startup-id exec $HOME/.scripts/greenklip-daemon.sh
 # Disable focus following mouse behavior
 focus_follows_mouse no
 
+####################################################################################
+# Colors                                                                           #
+####################################################################################
+#
+set $bg-color 	         #222d32
+set $inactive-bg-color   #364046
+set $text-color          #cfd4b4
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
 # i3blocks requirements for NUM and CAPS indicators
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+####################################################################################
+# Keybindings                                                                      #
+####################################################################################
+#
+# Put windows on floating layer and add borders
+bindsym $mod+Shift+f $FLOAT
+
+# Put windows on tiling layer and remove borders
+bindsym $mod+Shift+space $UNFLOAT
 
 # i3lock
 bindsym $mod+Shift+x exec betterlockscreen --lock blur
@@ -257,11 +291,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
-# Custom config for i3-gaps
-
-# Disabling window borders
-for_window [class="^.*"] border pixel 0
-
+####################################################################################
+# Custom config for i3-gaps                                                        #
+####################################################################################
+#
 # Gaps config
 gaps inner 7
 gaps outer 10
