@@ -79,6 +79,44 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # Declare the variable
 typeset -A ZSH_HIGHLIGHT_STYLES
 
+# Keywords, commands and builtins are magenta
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
+
+# Comments are grey
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#5c6370'
+
+# Command Separators are cyan
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
+# Functions are blue
+ZSH_HIGHLIGHT_STYLES[function]='fg=blue'
+
+# Options are red
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=red'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=red'
+
+# Command Substitutions are yellow
+ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=yellow'
+
+# Quoted text are green
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-delimiter]='fg=green'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=green'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-delimiter]='fg=green'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=green'
+
+# Assignments are red
+ZSH_HIGHLIGHT_STYLES[assign]='fg=red'
+
+# Line background color
+ZSH_HIGHLIGHT_STYLES[line]='bg=#2c323c'
+
 # To differentiate aliases from other command types
 ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
 
@@ -86,16 +124,26 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # To disable highlighting of globbing expressions
-ZSH_HIGHLIGHT_STYLES[globbing]='none'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+
 
 # Powerlevel10k configuration
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode context dir vcs)
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon vi_mode context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs root_indicator time)
+
+# Icons
+# POWERLEVEL9K_LINUX_ICON=$' \uF300'
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_first_and_last
 
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+
+# Segment Colors
+POWERLEVEL9K_OS_ICON_BACKGROUND='#eeeeee'
+POWERLEVEL9K_OS_ICON_FOREGROUND='#3465a4'
 
 # POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='#282828'
 POWERLEVEL9K_CONTEXT_BACKGROUND='#4B5263'

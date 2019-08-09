@@ -178,7 +178,7 @@ bar {
 	mode dock
 
 	# Fonts and colors
-    font pango: Fantasque Sans Mono 11
+    font pango: FantasqueSansMono Nerd Font 11
     colors {
         background #cab19235
         separator #330066
