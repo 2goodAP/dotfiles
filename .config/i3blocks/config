@@ -105,7 +105,7 @@ separator=false
 # interval=10
 
 [bandwidth]
-label=
+label=
 instance=enp3s0
 interval=10
 
