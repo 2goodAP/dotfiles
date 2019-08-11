@@ -126,7 +126,7 @@ separator=false
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 #label=MEM
-label=
+label=龍
 interval=5
 
 #[memory]
