@@ -36,35 +36,11 @@ set fileencoding=utf-8
 " Enabling true colors for terminal neovim
 set termguicolors
 
-" Custom colors
-
-" Using vim's package feature to load onedark
-packadd! onedark.vim
-
-if (has("autocmd") && !has("gui_running"))
-    augroup colorset
-        autocmd!
-        let s:orange = { "gui": "#F78E49", "cterm": "202", "cterm16" : "13" }
-        autocmd ColorScheme * call onedark#set_highlight("cssProp", { "fg": onedark#GetColors().purple })
-        " `bg` will not be styled since there is no `bg` setting
-        autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", { "fg": onedark#GetColors().green })
-        autocmd ColorScheme * call onedark#set_highlight("cssValueLength", { "fg": onedark#GetColors().green })
-        autocmd ColorScheme * call onedark#set_highlight("cssUnitDecorators", { "fg": onedark#GetColors().green})
-
-        autocmd ColorScheme * call onedark#set_highlight("jsVariableDef", { "fg": onedark#GetColors().red})
-    augroup END
-endif
-
-let g:onedark_color_overrides = {
-\   "blue": {'gui': '#5DAEF2', 'cterm': '38', 'cterm16': '4'}
-\}
-
-
-let g:onedark_terminal_italics=1
-colorscheme onedark
-
 " Remapping the leader to ,
 let mapleader = ','
+
+" Sourcing the plugin manager file
+source ~/.vim/plugins.vim
 
 " Auto complete characters
 " Brace Completion
@@ -108,7 +84,7 @@ let g:lightline = {
 \ }
 
 " Git Branch and symbol
-function LightlineGitBranch()
+function! LightlineGitBranch()
     return exists('*fugitive#head') ? ("\uE0A0 " . fugitive#head()) : ''
 endfunction
 
@@ -145,11 +121,6 @@ set listchars=tab:\¦\
 set list
 let g:indentLine_setColors = 1
 let g:indentLine_char = '┆'
-
-
-" Customizing vim/nvim
-"
-
 
 " Highlight search
 set hlsearch
@@ -188,3 +159,28 @@ nnoremap <c-l> <c-w><c-l>
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
+" Custom colors
+
+" Using vim's package feature to load onedark
+packadd! onedark.vim
+
+if (has("autocmd") && !has("gui_running"))
+    augroup colorset
+        autocmd!
+        let s:orange = { "gui": "#F78E49", "cterm": "202", "cterm16" : "13" }
+        autocmd ColorScheme * call onedark#set_highlight("cssProp", { "fg": onedark#GetColors().purple })
+        " `bg` will not be styled since there is no `bg` setting
+        autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", { "fg": onedark#GetColors().green })
+        autocmd ColorScheme * call onedark#set_highlight("cssValueLength", { "fg": onedark#GetColors().green })
+        autocmd ColorScheme * call onedark#set_highlight("cssUnitDecorators", { "fg": onedark#GetColors().green})
+
+        autocmd ColorScheme * call onedark#set_highlight("jsVariableDef", { "fg": onedark#GetColors().red})
+    augroup END
+endif
+
+let g:onedark_color_overrides = {
+\   "blue": {'gui': '#5DAEF2', 'cterm': '38', 'cterm16': '4'}
+\}
+
+let g:onedark_terminal_italics=1
+colorscheme onedark

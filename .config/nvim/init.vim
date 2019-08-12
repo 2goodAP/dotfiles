@@ -15,6 +15,9 @@ set termguicolors
 " Remapping the leader to ,
 let mapleader = ','
 
+" Source plugin management script
+source ~/.config/nvim/plugins.vim
+
 " Auto complete characters
 " Brace Completion
 inoremap    {      {
@@ -57,7 +60,7 @@ let g:lightline = {
 \ }
 
 " Git Branch and symbol
-function LightlineGitBranch()
+function! LightlineGitBranch()
     return exists('*fugitive#head') ? ("\uE0A0 " . fugitive#head()) : ''
 endfunction
 
@@ -97,7 +100,6 @@ let g:indentLine_char = '┆'
 
 
 " Customizing vim/nvim
-"
 
 
 " Highlight search
@@ -136,6 +138,13 @@ nnoremap <c-l> <c-w><c-l>
 " vim-javascript stuff
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
+
+" Setting default sql type
+let g:sql_type_default = 'mysql'
+
+" Vim-sql-workbench
+let g:sw_exe = $HOME.'/bin/sqlworkbenchj/sqlwbconsole'
+let g:sw_config_dir = $HOME.'/.sqlworkbench'
 
 " Custom colors
 
