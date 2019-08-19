@@ -20,7 +20,9 @@ runtime! archlinux.vim
 " Disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
 " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-set t_ut=
+if !has('nvim')
+    set t_ut=
+endif
 
 " Enable basic vim features
 filetype plugin on
@@ -67,6 +69,35 @@ function! <SID>SynStack()
   endif
   :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Nvim split manipulation keybindings
+" Terminal mode
+if exists(':tnoremap')
+    " <C-r>bufferNumber like keymapping for terminal mode
+    tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+    " 'Escaping' to normal mode in terminal mode
+    tnoremap    <A-[>   <C-\><C-n>
+    " Split manipulation
+    tnoremap    <C-h>   <C-\><C-n><C-w>h
+    tnoremap    <C-l>   <C-\><C-n><C-w>l
+    tnoremap    <C-j>   <C-\><C-n><C-w>j
+    tnoremap    <C-k>   <C-\><C-n><C-w>k
+endif
+" Normal mode
+nnoremap    <C-k>   <C-w>k
+nnoremap    <C-j>   <C-w>j
+nnoremap    <C-h>   <C-w>h
+nnoremap    <C-l>   <C-w>l
+" Insert mode
+inoremap    <C-k>   <ESC><C-w>k
+inoremap    <C-j>   <ESC><C-w>j
+inoremap    <C-h>   <ESC><C-w>h
+inoremap    <C-l>   <ESC><C-w>l
+" Visual mode
+vnoremap    <C-k>   <ESC><C-w>k
+vnoremap    <C-j>   <ESC><C-w>j
+vnoremap    <C-h>   <ESC><C-w>h
+vnoremap    <C-l>   <ESC><C-w>l
 
 " lightline config
 let g:lightline={
@@ -150,10 +181,6 @@ set cursorline
 " Split manipulation
 set splitright
 set splitbelow
-nnoremap <c-k> <c-w><c-k>
-nnoremap <c-j> <c-w><c-j>
-nnoremap <c-h> <c-w><c-h>
-nnoremap <c-l> <c-w><c-l>
 
 " vim-cpp-enhanced-highlight options
 " Enable highlighting class scope
