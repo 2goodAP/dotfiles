@@ -157,6 +157,11 @@ let g:indentLine_char='┆'
 set hlsearch
 set incsearch
 
+" Live substitution
+if exists('inccommand')
+    set inccommand=split
+endif
+
 " Show the line number
 set number
 set relativenumber
