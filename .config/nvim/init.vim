@@ -44,6 +44,11 @@ function! <SID>SynStack()
   :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+" <C-R>-like register selection pasting in terminal mode
+if has('nvim')
+  tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+endif
+
 " lightline config
 let g:lightline={
     \ 'colorscheme': 'onedark',
