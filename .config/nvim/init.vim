@@ -13,7 +13,7 @@ set fileencoding=utf-8
 set termguicolors
 
 " Remapping the leader to ,
-let mapleader = ','
+let mapleader=','
 
 " Source plugin management script
 source ~/.config/nvim/plugins.vim
@@ -45,7 +45,7 @@ function! <SID>SynStack()
 endfunc
 
 " lightline config
-let g:lightline = {
+let g:lightline={
     \ 'colorscheme': 'onedark',
     \ 'active': {
     \   'left': [['mode', 'paste'],
@@ -69,8 +69,8 @@ function! LightlineReadonly()
   return &readonly && &filetype !~# '\v(help|vimfiler|unite)' ? 'RO' : ''
 endfunction
 
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
+let g:unite_force_overwrite_statusline=0
+let g:vimfiler_force_overwrite_statusline=0
 " Ends here
 
 " For trimming file format and encoding in narrow windows
@@ -84,19 +84,19 @@ endfunction
 " Ends here
 
 " Lightline separators and supseparators
-let g:lightline.separator = {
+let g:lightline.separator={
     \ 'left': '', 'right': ''
 \ }
 
-let g:lightline.subseparator = {
+let g:lightline.subseparator={
     \ 'left': '', 'right': ''
 \ }
 
 " Indentation stuff
 set listchars=tab:\¦\ 
 set list
-let g:indentLine_setColors = 1
-let g:indentLine_char = '┆'
+let g:indentLine_setColors=1
+let g:indentLine_char='┆'
 
 
 " Customizing vim/nvim
@@ -135,16 +135,26 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-h> <c-w><c-h>
 nnoremap <c-l> <c-w><c-l>
 
-" vim-javascript stuff
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
+" vim-cpp-enhanced-highlight options
+" Enable highlighting class scope
+let g:cpp_class_scope_highlight=1
+" Enable highlighting member variables
+let g:cpp_member_variable_highlight=1
+" Enable highlighting class names in declarations
+let g:cpp_class_decl_highlight=1
+" Enable highlighting template functions (faster implementation)
+let g:cpp_experimental_template_highlight=1
+" Enable highlighting the keywords 'concept' and 'requires' as well as 
+" all named requirements (like 'DefaultConstructible') in the standard library
+let g:cpp_concepts_highlight=1
 
 " Setting default sql type
-let g:sql_type_default = 'mysql'
+let g:sql_type_default='mysql'
 
-" Vim-sql-workbench
-let g:sw_exe = $HOME.'/bin/sqlworkbenchj/sqlwbconsole'
-let g:sw_config_dir = $HOME.'/.sqlworkbench'
+" vim-javascript stuff
+let g:javascript_plugin_flow=1
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required=0
 
 " Custom colors
 
@@ -154,20 +164,60 @@ packadd! onedark.vim
 if (has("autocmd") && !has("gui_running"))
     augroup colorset
         autocmd!
-        autocmd ColorScheme * call onedark#set_highlight("cssProp", { "fg": onedark#GetColors().purple })
         " `bg` will not be styled since there is no `bg` setting
-        autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", { "fg": onedark#GetColors().green })
-        autocmd ColorScheme * call onedark#set_highlight("cssValueLength", { "fg": onedark#GetColors().green })
-        autocmd ColorScheme * call onedark#set_highlight("cssUnitDecorators", { "fg": onedark#GetColors().green})
+        " Custom CSS highlights
+        autocmd ColorScheme * call onedark#set_highlight("cssProp", {
+                    \   "fg": onedark#GetColors().purple
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cssValueNumber", {
+                    \   "fg": onedark#GetColors().green
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cssValueLength", {
+                    \   "fg": onedark#GetColors().green
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cssUnitDecorators", {
+                    \   "fg": onedark#GetColors().green
+                    \ })
 
-        autocmd ColorScheme * call onedark#set_highlight("jsVariableDef", { "fg": onedark#GetColors().red})
+        " Custom JavaScript highlights
+        autocmd ColorScheme * call onedark#set_highlight("jsTemplateBraces", {
+                    \   "fg": onedark#GetColors().purple
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsGlobalNodeObjects", {
+                    \   "fg": onedark#GetColors().yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsClassDefinition", {
+                    \   "fg": onedark#GetColors().yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsThis", {
+                    \   "fg": onedark#GetColors().yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsFuncArgs", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsObjectProp", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsFlowObjectKey", { 
+                    \   "fg": onedark#GetColors().red
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsObjectColon", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsRegexpString", {
+                    \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+
+        " Custom Vim highlights
+        autocmd ColorScheme * call onedark#set_highlight("vimFunction", {
+                    \   "fg": onedark#GetColors().blue
+                    \ })
     augroup END
 endif
 
-let g:onedark_color_overrides = {
+let g:onedark_color_overrides={
 \   "blue": {'gui': '#5DAEF2', 'cterm': '38', 'cterm16': '4'}
-\}
-
+\ }
 
 let g:onedark_terminal_italics=1
 colorscheme onedark

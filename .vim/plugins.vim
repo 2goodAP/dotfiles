@@ -10,6 +10,9 @@ call minpac#init()
 " Add minpac first
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
+" Add onedark colorscheme
+call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
+
 " Add other plugins
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-surround')
