@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/superap/.config'
 let g:netrw_dirhist_2='/home/superap/.config/nvim'
+let g:netrw_dirhist_3='/home/superap/Vim/code'
+let g:netrw_dirhist_4='/home/superap/Vim/code/insert_mode'
+let g:netrw_dirhist_5='/home/superap/Vim/code'
+let g:netrw_dirhist_6='/home/superap/Vim/code/copy_and_paste'
+let g:netrw_dirhist_7='/home/superap/Vim/code'
+let g:netrw_dirhist_8='/home/superap/Vim/code/insert_mode'
