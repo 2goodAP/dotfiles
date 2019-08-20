@@ -148,10 +148,10 @@ let g:lightline.subseparator={
 \ }
 
 " Indentation stuff
-set listchars=tab:\¦\ 
+set listchars=tab:\▏\ 
 set list
 let g:indentLine_setColors=1
-let g:indentLine_char='│'
+let g:indentLine_char='▏'
 
 " Highlight search
 set hlsearch
