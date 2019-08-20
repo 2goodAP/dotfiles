@@ -245,7 +245,9 @@ if (has("autocmd") && !has("gui_running"))
                     \   "fg": onedark#GetColors().yellow
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsThis", {
-                    \   "fg": onedark#GetColors().yellow
+                    \   "fg": onedark#GetColors().yellow,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsFuncArgs", {
                     \   "fg": onedark#GetColors().red
