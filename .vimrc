@@ -203,6 +203,9 @@ let g:cpp_concepts_highlight=1
 " javascript-libraries-syntax stuff
 let g:used_javascript_libs = 'underscore,backbone,react'
 
+" Python highlights
+let python_highlight_all = 1
+
 " Setting default sql type
 let g:sql_type_default='mysql'
 

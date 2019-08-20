@@ -26,4 +26,5 @@ call minpac#add('Yggdroot/indentLine')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('plasticboy/vim-markdown')
+call minpac#add('hdima/python-syntax')
 
