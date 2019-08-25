@@ -183,12 +183,9 @@ bar {
         background #cab19235
         separator #330066
         statusline #fdf6e3
-        # focused_background
-        # focused_statusline
-        # focused_seperator
-        focused_workspace #00000000 #7bb540a6 #ffffff
-        active_workspace #00000000 #7bb540a6 #ffffff
-        inactive_workspace #00000000 #a0cd73a6 #ffffff
+        focused_workspace #00000000 #222d32a6 #cfd4b4
+        active_workspace #00000000 #222d32a6 #dfd4b4
+        inactive_workspace #00000000 #364046a6 #999999
         urgent_workspace #00000000 #dc322f #ffffff
         #binding_mode
 
