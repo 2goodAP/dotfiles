@@ -183,8 +183,8 @@ bar {
         background #cab19235
         separator #330066
         statusline #fdf6e3
-        focused_workspace #00000000 #222d32a6 #cfd4b4
-        active_workspace #00000000 #222d32a6 #dfd4b4
+        focused_workspace #00000000 #222d32a6 #efd4b4
+        active_workspace #00000000 #222d32a6 #efd4b4
         inactive_workspace #00000000 #364046a6 #999999
         urgent_workspace #00000000 #dc322f #ffffff
         #binding_mode
