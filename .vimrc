@@ -309,24 +309,33 @@ if (has("autocmd") && !has("gui_running"))
         autocmd ColorScheme * call onedark#set_highlight("jsTemplateBraces", {
                     \   "fg": onedark#GetColors().purple
                     \ })
+
         autocmd ColorScheme * call onedark#set_highlight("jsGlobalNodeObjects", {
                     \   "fg": onedark#GetColors().yellow
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsClassDefinition", {
                     \   "fg": onedark#GetColors().yellow
                     \ })
+
         autocmd ColorScheme * call onedark#set_highlight("jsFuncArgs", {
                     \   "fg": onedark#GetColors().red
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsObjectProp", {
                     \   "fg": onedark#GetColors().red
                     \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsDestructuringBlock", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("jsFlowObjectKey", { 
+                    \   "fg": onedark#GetColors().red
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsModuleKeyword", {
                     \   "fg": onedark#GetColors().red
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsObjectColon", {
                     \   "fg": onedark#GetColors().red
                     \ })
+
         autocmd ColorScheme * call onedark#set_highlight("jsRegexpString", {
                     \   "fg": onedark#GetColors().dark_yellow
                     \ })
