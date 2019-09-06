@@ -214,6 +214,7 @@ alias less='less -i'
 # Vim
 alias v='nvim'
 alias vi='nvim'
+alias vimconf='nvim ~/.vimrc'
 
 # Anaconda
 alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'

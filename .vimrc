@@ -223,6 +223,13 @@ if (has("autocmd") && !has("gui_running"))
     augroup colorset
         autocmd!
         " `bg` will not be styled since there is no `bg` setting
+        " Custom HTML highlights
+        autocmd ColorScheme * call onedark#set_highlight("htmlArg", {
+                    \   "fg": onedark#GetColors().dark_yellow,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
         " Custom CSS highlights
         autocmd ColorScheme * call onedark#set_highlight("cssProp", {
                     \   "fg": onedark#GetColors().purple
@@ -238,6 +245,67 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
 
         " Custom JavaScript highlights
+        autocmd ColorScheme * call onedark#set_highlight("jsOperatorKeyword", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("jsConditional", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsRepeat", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("jsImport", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsFrom", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("jsStorageClass", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("jsReturn", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsFunction", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("jsClassKeyword", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsClassMethodType", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsThis", {
+                    \   "fg": onedark#GetColors().yellow,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
         autocmd ColorScheme * call onedark#set_highlight("jsTemplateBraces", {
                     \   "fg": onedark#GetColors().purple
                     \ })
@@ -246,11 +314,6 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsClassDefinition", {
                     \   "fg": onedark#GetColors().yellow
-                    \ })
-        autocmd ColorScheme * call onedark#set_highlight("jsThis", {
-                    \   "fg": onedark#GetColors().yellow,
-                    \   "gui": "italic",
-                    \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsFuncArgs", {
                     \   "fg": onedark#GetColors().red
