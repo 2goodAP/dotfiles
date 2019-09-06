@@ -273,6 +273,17 @@ if (has("autocmd") && !has("gui_running"))
                     \   "cterm": "italic"
                     \ })
 
+        autocmd ColorScheme * call onedark#set_highlight("jsExport", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsExportDefault", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
         autocmd ColorScheme * call onedark#set_highlight("jsStorageClass", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
