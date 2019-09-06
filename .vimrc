@@ -323,6 +323,9 @@ if (has("autocmd") && !has("gui_running"))
         autocmd ColorScheme * call onedark#set_highlight("jsObjectProp", {
                     \   "fg": onedark#GetColors().red
                     \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsObjectShorthandProp", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("jsDestructuringBlock", {
                     \   "fg": onedark#GetColors().red
                     \ })
