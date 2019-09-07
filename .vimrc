@@ -197,8 +197,9 @@ let g:cpp_class_decl_highlight=1
 " Enable highlighting template functions (faster implementation)
 let g:cpp_experimental_template_highlight=1
 " Enable highlighting the keywords 'concept' and 'requires' as well as 
-" all named requirements (like 'DefaultConstructible') in the standard library
 let g:cpp_concepts_highlight=1
+" Highlighting of user defined functions
+let g:cpp_no_function_highlight=0
 
 " javascript-libraries-syntax stuff
 let g:used_javascript_libs = 'underscore,backbone,react'
@@ -230,6 +231,13 @@ if (has("autocmd") && !has("gui_running"))
                     \   "cterm": "italic"
                     \ })
 
+        autocmd ColorScheme * call onedark#set_highlight("htmlTag", {
+                    \   "fg": onedark#GetColors().cyan
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("htmlEndTag", {
+                    \   "fg": onedark#GetColors().cyan
+                    \ })
+ 
         " Custom CSS highlights
         autocmd ColorScheme * call onedark#set_highlight("cssProp", {
                     \   "fg": onedark#GetColors().purple
@@ -351,6 +359,78 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
 
         autocmd ColorScheme * call onedark#set_highlight("jsRegexpString", {
+                    \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+
+        " Custom C/C++ highlights
+        autocmd ColorScheme * call onedark#set_highlight("cInclude", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cDefine", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cConditional", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cRepeat", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cCustomClassKey", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cStatement", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cppStatement", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("cOperator", {
+                    \   "fg": onedark#GetColors().purple
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cConstant", {
+                    \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cAnsiFunction", {
+                    \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cCustomMemVar", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("cCustomClass", {
+                    \   "fg": onedark#GetColors().yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cFormat", {
+                    \   "fg": onedark#GetColors().yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cCustomClassName", {
+                    \   "fg": onedark#GetColors().yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cSpecial", {
+                    \   "fg": onedark#GetColors().cyan
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cppSTLnamespace", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cppSTLconstant", {
+                    \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cppSTLios", {
                     \   "fg": onedark#GetColors().dark_yellow
                     \ })
 
