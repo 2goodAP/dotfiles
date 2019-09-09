@@ -130,8 +130,8 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 # Powerlevel10k configuration
 POWERLEVEL9K_MODE='nerdfont-complete'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon vi_mode context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs root_indicator time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon vi_mode context dir vcs root_indicator)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
 
 # Icons
 # POWERLEVEL9K_LINUX_ICON=$' \uF300'
