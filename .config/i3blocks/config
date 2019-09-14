@@ -88,7 +88,7 @@ signal=10
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-label=
+label= 
 instance=wlp2s0
 interval=10
 separator=false
@@ -105,7 +105,7 @@ separator=false
 # interval=10
 
 [bandwidth]
-label=
+label= 
 instance=enp3s0
 interval=10
 
@@ -126,7 +126,7 @@ separator=false
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 #label=MEM
-label=龍
+label=龍 
 interval=5
 
 #[memory]
@@ -159,7 +159,7 @@ interval=60
 # color=#000000
 
 [time]
-label=
+label= 
 command=date '+%I:%M%p'
 interval=5
 # color=#000000
