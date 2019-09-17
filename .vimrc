@@ -253,6 +253,11 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
 
         " Custom JavaScript highlights
+        autocmd ColorScheme * call onedark#set_highlight("jsStatement", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("jsOperatorKeyword", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
