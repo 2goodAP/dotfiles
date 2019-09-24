@@ -187,6 +187,23 @@ set cursorline
 set splitright
 set splitbelow
 
+" Custom IDE-like features
+"
+" vim-syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" eslint_d for syntastic
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
+"
 " vim-cpp-enhanced-highlight options
 " Enable highlighting class scope
 let g:cpp_class_scope_highlight=1
@@ -200,6 +217,13 @@ let g:cpp_experimental_template_highlight=1
 let g:cpp_concepts_highlight=1
 " Highlighting of user defined functions
 let g:cpp_no_function_highlight=0
+
+" Configure path to look for headers inside indlude dirs
+let &path.="src/include,/usr/include/AL,"
+" The following line changes all . to / for gf command (and related):
+set includeexpr=substitute(v:fname,'\\.','/','g')
+" Build command
+set makeprg=make
 
 " javascript-libraries-syntax stuff
 let g:used_javascript_libs = 'underscore,backbone,react'
