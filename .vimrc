@@ -199,6 +199,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"
+" vim-markdown
+"
+" Enable strikethroughs using ~~Strike~~
+let g:vim_markdown_strikethrough = 1
+" Do not require .md extensions for Markdown links (followed using 'ge')
+let g:vim_markdown_no_extensions_in_markdown = 1
+" Auto-write when following links with 'ge'
+let g:vim_markdown_autowrite = 1
+
+"
 " eslint_d for syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
