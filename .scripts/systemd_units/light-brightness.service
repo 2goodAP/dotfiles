@@ -1,0 +1,11 @@
+[Unit]
+Description=Set lowest possible brightness
+Documentation=man:light(1)
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/light -S 0.1
+
+[Install]
+WantedBy=multi-user.target
