@@ -132,10 +132,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart Sway inplace (preserves your layout/session, can be used to upgrade Sway)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# exit i3 (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway? This will end your Wayland session.' -B 'Yes, exit Sway' 'swaymsg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -168,7 +168,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	status_command i3blocks #-c ~/.config/i3blocks/config
-    i3bar_command i3bar -t 0.1
+    # i3bar_command i3bar -t 0.1
     strip_workspace_numbers yes
 
 
@@ -198,7 +198,12 @@ bar {
 ###############################################################################
 
 ##############################################################
-# For window borders                                         #
+# Workspace Containers                                       #
+##############################################################
+workspace_layout tabbed
+
+##############################################################
+# Windows
 ##############################################################
 #
 # Set float and unfloat variables
@@ -206,12 +211,16 @@ set $FLOAT floating enable, border normal 1
 set $UNFLOAT floating disable, border none
 
 # Disable window title and borders for new tiling windows
-new_window none
+default_border none
 # new_window normal|pixel [<px>]
 
 # Enable window title and borders for new floating windows
-new_float normal 1
+default_floating_border normal 1
 # new_float none
+
+# Set floating maximum and minumum sizes 
+floating_maximum_size 1336 x 650
+floating_minimum_size -1 x -1
 
 # Disabling window borders
 # for_window [class="^.*"] border normal 0
@@ -220,17 +229,14 @@ new_float normal 1
 # Startup manager                                                                  #
 ####################################################################################
 #
-# Desktop background with feh
-exec --no-startup-id feh --bg-scale /home/superap/Pictures/keep_on_keeping_on.jpg
+# Desktop background with output
+output LVDS-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 
 # Nm-applet
 exec --no-startup-id nm-applet
 
-# Start Compton
-exec --no-startup-id compton --dbus -f
-
 # Autostart redshift and geoclue-2.0
-exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift
 
 # Start gpaste-dawmon
 exec_always --no-startup-id gpaste-client start
@@ -252,11 +258,11 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+#                       border              background         text                 indicator   child_border
+client.focused          $bg-color           $bg-color          $text-color          #00ff00     $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00     $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00     $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00     $bg-color
 
 # i3blocks requirements for NUM and CAPS indicators
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
@@ -272,36 +278,39 @@ bindsym $mod+Shift+f $FLOAT
 # Put windows on tiling layer and remove borders
 bindsym $mod+Shift+space $UNFLOAT
 
-# i3lock
-bindsym $mod+Shift+x exec betterlockscreen --lock blur
+# swaylock
+bindsym $mod+Shift+x exec swaylock
 
 # Greenclip
 bindsym $mod+c exec rofi -show greenclip -theme onedark
 
 # PulseAudio controls
 # Change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks # mute sound
+#
+# Increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks
+# Decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
+# Mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+#
+# Increase screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5
+# Decrease screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5
 
 ####################################################################################
-# Custom config for i3-gaps                                                        #
+# Config for Gaps                                                        #
 ####################################################################################
 #
 # Gaps config
 gaps inner 7
 gaps outer 10
 
-
 gaps horizontal 7
 gaps vertical 5
-
-# Only enable gaps on a workspace when there is at least one container
-smart_gaps on
 
 # Only enable outer gaps when there is exactly one container
 smart_gaps inverse_outer
@@ -309,3 +318,13 @@ smart_gaps inverse_outer
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders on
 
+##############################################################
+# Sway configurations                                        #
+##############################################################
+#
+# Libinput touchpad config
+input 2:8:AlpsPS/2_ALPS_GlidePoint {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+}

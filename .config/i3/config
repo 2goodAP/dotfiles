@@ -188,7 +188,6 @@ bar {
         inactive_workspace #00000000 #364046a6 #999999
         urgent_workspace #00000000 #dc322f #ffffff
         #binding_mode
-
     }
 }
 
@@ -198,7 +197,12 @@ bar {
 ###############################################################################
 
 ##############################################################
-# For window borders                                         #
+# Workspace Containers                                       #
+##############################################################
+workspace_layout tabbed
+
+##############################################################
+# Windows
 ##############################################################
 #
 # Set float and unfloat variables
@@ -206,12 +210,16 @@ set $FLOAT floating enable, border normal 1
 set $UNFLOAT floating disable, border none
 
 # Disable window title and borders for new tiling windows
-new_window none
+default_border none
 # new_window normal|pixel [<px>]
 
 # Enable window title and borders for new floating windows
-new_float normal 1
+default_floating_border normal 1
 # new_float none
+
+# Set floating maximum and minumum sizes 
+floating_maximum_size 1336 x 650
+floating_minimum_size -1 x -1
 
 # Disabling window borders
 # for_window [class="^.*"] border normal 0
@@ -252,11 +260,11 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+#                       border              background         text                 indicator   child_border
+client.focused          $bg-color           $bg-color          $text-color          #00ff00     $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00     $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00     $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00     $bg-color
 
 # i3blocks requirements for NUM and CAPS indicators
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
@@ -289,23 +297,18 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 ####################################################################################
-# Custom config for i3-gaps                                                        #
+# Config for i3-gaps                                                        #
 ####################################################################################
 #
 # Gaps config
 gaps inner 7
 gaps outer 10
 
-
 gaps horizontal 7
 gaps vertical 5
-
-# Only enable gaps on a workspace when there is at least one container
-smart_gaps on
 
 # Only enable outer gaps when there is exactly one container
 smart_gaps inverse_outer
 
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders on
-
