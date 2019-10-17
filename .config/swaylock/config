@@ -1,5 +1,6 @@
 daemonize
 show-failed-attempts
+ignore-empty-password
 
 image=~/Pictures/keep_on_keeping_on.jpg
 scaling=stretch
