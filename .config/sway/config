@@ -235,9 +235,6 @@ output LVDS-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 # Autostart redshift and geoclue-2.0
 exec --no-startup-id redshift
 
-# Start gpaste-dawmon
-exec_always --no-startup-id gpaste-client start
-
 # Start the greenclip daemon
 exec_always --no-startup-id exec $HOME/.scripts/greenklip-daemon.sh
 
