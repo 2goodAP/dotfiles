@@ -236,7 +236,8 @@ output LVDS-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 exec --no-startup-id redshift
 
 # Start the greenclip daemon
-exec_always --no-startup-id exec $HOME/.scripts/greenklip-daemon.sh
+exec wl-paste --watch clipman store
+exec wl-paste -p --watch clipman store --histpath="~/.local/share/clipman-primary.json"
 
 # Disable focus following mouse behavior
 focus_follows_mouse no
@@ -276,7 +277,8 @@ bindsym $mod+Shift+space $UNFLOAT
 bindsym $mod+Shift+x exec swaylock
 
 # Greenclip
-bindsym $mod+c exec rofi -show greenclip -theme onedark
+bindsym $mod+c exec clipman pick
+bindsym $mod+p exec clipman pick --histpath="~/.local/share/clipman-primary.json"
 
 # PulseAudio controls
 # Change volume or toggle mute
