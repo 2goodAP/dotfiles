@@ -1,10 +1,10 @@
 [Unit]
-Description=Lock X session when lid is closed using i3lock
+Description=Lock X-session of user %I when lid closed (using i3lock)
 Documentation=man:i3lock(1)
 Before=sleep.target
 
 [Service]
-User=superap
+User=%i
 Type=forking
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/betterlockscreen --lock blur

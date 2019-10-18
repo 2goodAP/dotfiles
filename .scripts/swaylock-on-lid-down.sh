@@ -1,7 +1,6 @@
 #!/bin/sh
-sway &
-sleep 3s # could be less
-export XDG_RUNTIME_DIR=/run/user/1000
+# Script for initiating swaylock
+export XDG_RUNTIME_DIR=/run/user/$UID
 export WAYLAND_DISPLAY=wayland-0
-export DISPLAY=:1
+export DISPLAY=:0
 exec /usr/bin/swaylock

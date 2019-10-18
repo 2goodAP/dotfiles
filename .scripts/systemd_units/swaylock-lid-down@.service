@@ -1,10 +1,10 @@
 [Unit]
-Description=Lock Wayland session when lid is closed using swaylock
+Description=Lock Wayland session of user %I when lid closed (using swaylock)
 Documentation=man:swaylock(1)
 Before=sleep.target
 
 [Service]
-User=superap
+User=%i
 Type=forking
 ExecStart=/home/superap/.scripts/swaylock-on-lid-down.sh
 ExecStartPost=/usr/bin/sleep 1
