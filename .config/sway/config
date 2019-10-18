@@ -296,7 +296,7 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
 ####################################################################################
-# Config for Gaps                                                        #
+# Config for Gaps                                                                  #
 ####################################################################################
 #
 # Gaps config
