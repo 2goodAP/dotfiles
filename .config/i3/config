@@ -285,13 +285,20 @@ bindsym $mod+c exec rofi -show greenclip -theme onedark
 
 # PulseAudio controls
 # Change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks # mute sound
+#
+# Increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks
+# Decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
+# Mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+#
+# Increase screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+# Decrease screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 ####################################################################################
 # Config for i3-gaps                                                        #
