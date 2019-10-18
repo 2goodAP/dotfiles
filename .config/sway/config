@@ -291,9 +291,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill
 # Sreen brightness controls
 #
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 ####################################################################################
 # Config for Gaps                                                                  #
