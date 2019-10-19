@@ -165,6 +165,8 @@ POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export MOZ_ENABLE_WAYLAND=1
+
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 

@@ -1,0 +1,7 @@
+width=600
+height=300
+mode=drun
+allow_images=true
+image_size=25
+
+# vim:ft=cfg

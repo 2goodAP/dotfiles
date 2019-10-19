@@ -66,6 +66,8 @@ export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 
 # Environment Variables
 #-----------------------------------------------#
+export MOZ_ENABLE_WAYLAND=1
+
 export XDG_CONFIG_HOME=$HOME/.config
 
 # Using vi as bash keybinds
