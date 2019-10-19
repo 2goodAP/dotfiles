@@ -2,7 +2,7 @@ window {
     font: 18px "Fantasque Sans Mono";
     color: #abb2bf;
     margin: 5px;
-    background-color: rgba(40, 44, 52, .2);
+    background-color: transparent;
 }
 
 #input {
@@ -26,8 +26,8 @@ window {
     /* border: 2px solid #e06c75; */
     border-width: 3px 3px 3px 15px;
     border-style: solid;
-    border-color: #e06c75;
-    background-color: #282c34;
+    border-color: rgba(224, 108, 117, .75);
+    background-color: rgba(40, 44, 52, .75);
 }
 
 #scroll {
