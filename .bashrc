@@ -66,8 +66,8 @@ export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 
 # Environment Variables
 #-----------------------------------------------#
-export MOZ_ENABLE_WAYLAND=1
 
+# Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 
 # Using vi as bash keybinds
@@ -80,22 +80,55 @@ export HISTSIZE=1000
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# Enable wayland display for mozilla firefox
+if echo $WAYLAND_DISPLAY | grep -q "wayland-."; then
+    export MOZ_ENABLE_WAYLAND=1
+else
+    export MOZ_ENABLE_WAYLAND=0
+fi
+
+# Set TERM variable
+export TERM=xterm-256color
+
+# Set the DISPLAY variable
+export DISPLAY=:0.0
+
+# Using neovim as the default shell editor
+export VISUAL='nvim'
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
 # Aliases
 #-----------------------------------------------#
-# Grep
-alias grep='grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
+# Meta aliases
+alias dotfiles='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'
+alias c='clear'
+alias cls='clear && ls'
+alias Syyu='sudo pacman -Syyu --color auto'
+alias diff='diff --color'
+alias less='less -i'
 
 # Vim
-export VISUAL='nvim'
-alias vi='/usr/bin/vim'
-alias vim='nvim'
+alias v='nvim'
+alias vi='nvim'
+alias vimconf='nvim ~/.vimrc'
 
 # Anaconda
 alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
 alias spyder='exec /opt/anaconda/bin/spyder &'
+alias conda='sudo /opt/anaconda/condabin/conda'
 
-# Browsers
-alias chrome-dev='google-chrome-unstable'
+# Grep
+alias grep='grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # Books
 alias CLRS='zathura ~/Documents/NAALEDGE/Algorithms/Introduction_to_algorithm/Introduction-to-algorithms-3rd-edition.pdf &'
@@ -128,5 +161,3 @@ unset __conda_setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-alias config='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'

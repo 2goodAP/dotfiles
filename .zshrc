@@ -165,10 +165,15 @@ POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export MOZ_ENABLE_WAYLAND=1
-
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
+
+# Enable wayland display for mozilla firefox
+if echo $WAYLAND_DISPLAY | grep -q "wayland-."; then
+    export MOZ_ENABLE_WAYLAND=1
+else
+    export MOZ_ENABLE_WAYLAND=0
+fi
 
 # Set TERM variable
 export TERM=xterm-256color
@@ -223,15 +228,9 @@ alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
 alias spyder='exec /opt/anaconda/bin/spyder &'
 alias conda='sudo /opt/anaconda/condabin/conda'
 
-# Browsers
-alias chrome-dev='google-chrome-unstable'
-
 # Grep
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-
-# gpaste-client clip board manager
-alias gpaste='gpaste-client'
 
 # Books
 alias CLRS='zathura ~/Documents/NAALEDGE/Algorithms/Introduction_to_algorithm/Introduction-to-algorithms-3rd-edition.pdf &'
