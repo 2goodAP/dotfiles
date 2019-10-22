@@ -275,8 +275,8 @@ bindsym $mod+Shift+space $UNFLOAT
 bindsym $mod+Shift+x exec swaylock
 
 # Greenclip
-bindsym $mod+c exec clipman pick -t dmenu --max-items=30
-bindsym $mod+p exec clipman pick -t dmenu --max-items=30 --histpath="~/.local/share/clipman-primary.json"
+bindsym $mod+c exec clipman pick -t rofi --max-items=30
+bindsym $mod+p exec clipman pick -t rofi --max-items=30 --histpath="~/.local/share/clipman-primary.json"
 
 # PulseAudio controls
 # Change volume or toggle mute
