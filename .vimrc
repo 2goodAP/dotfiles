@@ -99,6 +99,9 @@ vnoremap    <C-j>   <ESC><C-w>j
 vnoremap    <C-h>   <ESC><C-w>h
 vnoremap    <C-l>   <ESC><C-w>l
 
+" Hide netrw directory listing banner
+let g:netrw_banner=0
+
 " lightline config
 let g:lightline={
     \ 'colorscheme': 'onedark',
