@@ -312,6 +312,16 @@ if (has("autocmd") && !has("gui_running"))
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsTry", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsCatch", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
 
         autocmd ColorScheme * call onedark#set_highlight("jsImport", {
                     \   "fg": onedark#GetColors().purple,
