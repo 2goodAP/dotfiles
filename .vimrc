@@ -181,7 +181,7 @@ set smartcase
 set showcmd
 
 " Arranging the size of a tab character
-set tabstop=4 softtabstop=4 shiftwidth=0 expandtab
+set shiftwidth=4 softtabstop=-1 noexpandtab
 
 " Highlighting the current cursor line
 set cursorline
