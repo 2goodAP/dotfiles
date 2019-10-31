@@ -151,8 +151,6 @@ let g:lightline.subseparator={
 \ }
 
 " Indentation stuff
-set listchars=tab:\▏\ 
-set list
 let g:indentLine_setColors=1
 let g:indentLine_char='▏'
 
@@ -181,7 +179,7 @@ set smartcase
 set showcmd
 
 " Arranging the size of a tab character
-set shiftwidth=4 softtabstop=-1 noexpandtab
+set tabstop=4 shiftwidth=0 expandtab
 
 " Highlighting the current cursor line
 set cursorline
