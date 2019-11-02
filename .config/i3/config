@@ -206,16 +206,14 @@ workspace_layout tabbed
 ##############################################################
 #
 # Set float and unfloat variables
-set $FLOAT floating enable, border normal 1
-set $UNFLOAT floating disable, border none
+set $FLOAT      floating enable, border none
+set $UNFLOAT    floating disable, border none
 
 # Disable window title and borders for new tiling windows
 default_border none
-# new_window normal|pixel [<px>]
 
 # Enable window title and borders for new floating windows
-default_floating_border normal 1
-# new_float none
+default_floating_border none
 
 # Set floating maximum and minumum sizes 
 floating_maximum_size 1336 x 650

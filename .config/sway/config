@@ -205,15 +205,15 @@ workspace_layout tabbed
 ##############################################################
 #
 # Set float and unfloat variables
-set $FLOAT floating enable, border normal 1
-set $UNFLOAT floating disable, border none
+set $FLOAT      floating enable, border none
+set $UNFLOAT    floating disable, border none
 
 # Disable window title and borders for new tiling windows
 default_border none
 # new_window normal|pixel [<px>]
 
 # Enable window title and borders for new floating windows
-default_floating_border normal 1
+default_floating_border none
 # new_float none
 
 # Set floating maximum and minumum sizes 
@@ -326,8 +326,8 @@ input 2:8:AlpsPS/2_ALPS_GlidePoint {
 # Screenshot using grim with slurp
 set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
 
-bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot-path
+bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot-path | wl-copy
 
-bindsym $mod+Print exec grim -g "$(slurp)" $screenshot-path
+bindsym $mod+Print exec grim -g "$(slurp)" $screenshot-path | wl-copy
 
-bindsym $mod+Shift+Print grim -t png $screenshot-path
+bindsym $mod+Shift+Print grim -t png $screenshot-path | wl-copy
