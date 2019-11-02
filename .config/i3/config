@@ -300,6 +300,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Decrease screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
+# Screenshot using scrot with PrintScr key
+bindsym Print exec scrot 'screenshot_%Y-%m-%d_%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
+
 ####################################################################################
 # Config for i3-gaps                                                        #
 ####################################################################################
