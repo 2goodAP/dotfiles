@@ -300,8 +300,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Decrease screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
-# Screenshot using scrot with PrintScr key
-bindsym Print exec scrot 'screenshot_%Y-%m-%d_%H:%M:%S.png' -e 'mv $f ~/Pictures/Screenshots'
+# Screenshot using maim with PrintScr key
+set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+
+bindsym Print exec maim -m 8 -u -g $(i3-msg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.width)x\(.height)+\(.x)+\(.y)"') $screenshot-path
+
+bindsym --release $mod+Print exec maim -m 8 -u -s $screenshot-path
+
+bindsym $mod+Shift+Print exec maim -m 8 -u $screenshot-path
 
 ####################################################################################
 # Config for i3-gaps                                                        #

@@ -323,5 +323,11 @@ input 2:8:AlpsPS/2_ALPS_GlidePoint {
     dwt enabled
 }
 
-# Screenshot using grim with PrintScr key
-bindsym Print exec grim -t png ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S.png`
+# Screenshot using grim with slurp
+set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
+
+bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot-path
+
+bindsym $mod+Print exec grim -g "$(slurp)" $screenshot-path
+
+bindsym $mod+Shift+Print grim -t png $screenshot-path
