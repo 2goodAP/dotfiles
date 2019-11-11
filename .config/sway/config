@@ -279,7 +279,7 @@ bindsym $mod+c exec clipman pick -t rofi --max-items=30
 bindsym $mod+p exec clipman pick -t rofi --max-items=30 --histpath="~/.local/share/clipman-primary.json"
 
 # Firefox Developer Edition
-bindsym $mod+b exec ~/.scripts/launch-firefox.sh
+bindsym $mod+b exec ~/.scripts/launch-firefox-wayland.sh
 
 # Screenshot using grim with slurp
 set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
