@@ -274,9 +274,21 @@ bindsym $mod+Shift+space $UNFLOAT
 # swaylock
 bindsym $mod+Shift+x exec swaylock
 
-# Greenclip
+# Clipman
 bindsym $mod+c exec clipman pick -t rofi --max-items=30
 bindsym $mod+p exec clipman pick -t rofi --max-items=30 --histpath="~/.local/share/clipman-primary.json"
+
+# Firefox Developer Edition
+bindsym $mod+b exec ~/.scripts/launch-firefox.sh
+
+# Screenshot using grim with slurp
+set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
+
+bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot-path | wl-copy
+
+bindsym $mod+Print exec grim -g "$(slurp)" $screenshot-path | wl-copy
+
+bindsym $mod+Shift+Print grim -t png $screenshot-path | wl-copy
 
 # PulseAudio controls
 # Change volume or toggle mute
@@ -296,6 +308,13 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 ####################################################################################
+# Window-specific configs                                                         #
+####################################################################################
+#
+# Custom window titles
+# for_window [shell=".*"] title_format "%title :: %shell"
+
+####################################################################################
 # Config for Gaps                                                                  #
 ####################################################################################
 #
@@ -312,22 +331,12 @@ smart_gaps inverse_outer
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders on
 
-##############################################################
-# Sway configurations                                        #
-##############################################################
-#
-# Libinput touchpad config
+####################################################################################
+# Libinput touchpad config                                                         #
+####################################################################################
 input 2:8:AlpsPS/2_ALPS_GlidePoint {
     tap enabled
     natural_scroll enabled
     dwt enabled
 }
 
-# Screenshot using grim with slurp
-set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
-
-bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot-path | wl-copy
-
-bindsym $mod+Print exec grim -g "$(slurp)" $screenshot-path | wl-copy
-
-bindsym $mod+Shift+Print grim -t png $screenshot-path | wl-copy
