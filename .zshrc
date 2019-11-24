@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.cargo/bin:$HOME/bin:$HOME/.scripts:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH:/opt/android-sdk/platform-tools
+export PATH=$HOME/.cargo/bin:$HOME/.bin:$HOME/.scripts:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH:/opt/android-sdk/platform-tools
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/superap/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -211,7 +211,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 #-----------------------------------------------#
 
 # Meta aliases
-alias dotfiles='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias c='clear'
 alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
@@ -246,14 +246,14 @@ alias Clean_Code='zathura ~/Documents/NAALEDGE/Clean_Code/Clean_Code.pdf &'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/superap/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/superap/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/superap/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/superap/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
