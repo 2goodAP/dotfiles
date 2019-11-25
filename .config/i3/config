@@ -29,6 +29,9 @@ font pango: System San Francisco Display 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Disable focus following mouse behavior
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+Return exec kitty #i3-sensible-terminal
 
@@ -234,14 +237,11 @@ exec --no-startup-id nm-applet
 # Start picom
 exec_always --no-startup-id picom --dbus -f
 
-# Autostart redshift and geoclue-2.0
-exec --no-startup-id redshift-gtk
+# Autostart clight
+exec --no-startup-id clight
 
 # Start the greenclip daemon
-exec_always --no-startup-id exec $HOME/.scripts/greenklip-daemon.sh
-
-# Disable focus following mouse behavior
-focus_follows_mouse no
+exec_always --no-startup-id exec $HOME/.scripts/greenclip-daemon.sh
 
 ####################################################################################
 # Colors                                                                           #
