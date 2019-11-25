@@ -173,11 +173,11 @@ bar {
 
 	# Position and visibility for i3bar
 	position top
-    height 29
+    height 33
 	mode dock
 
 	# Fonts and colors
-    font pango: FantasqueSansMono Nerd Font 12
+    font pango: FantasqueSansMono Nerd Font 13
     colors {
         background #cab19235
         separator #330066
