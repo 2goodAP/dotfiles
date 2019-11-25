@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Path to the bash it configuration
-export BASH_IT="/home/superap/bin/bash-it"
+export BASH_IT="$HOME/bin/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -110,7 +110,7 @@ fi
 #-----------------------------------------------#
 
 # Meta aliases
-alias dotfiles='/usr/bin/git --git-dir=/home/superap/.dotfiles --work-tree=/home/superap'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias c='clear'
 alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
@@ -144,14 +144,14 @@ alias Clean_Code='zathura ~/Documents/NAALEDGE/Clean_Code/Clean_Code.pdf &'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/superap/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/superap/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/superap/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/superap/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
