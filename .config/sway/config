@@ -244,18 +244,18 @@ focus_follows_mouse no
 # Colors                                                                           #
 ####################################################################################
 #
-set $bg-color 	         #222d32
-set $inactive-bg-color   #364046
-set $text-color          #cfd4b4
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $bg_color 	         #222d32
+set $inactive_bg_color   #364046
+set $text_color          #cfd4b4
+set $inactive_text_color #676E7D
+set $urgent_bg_color     #E53935
 
 # window colors
 #                       border              background         text                 indicator   child_border
-client.focused          $bg-color           $bg-color          $text-color          #00ff00     $bg-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00     $bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00     $bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00     $bg-color
+client.focused          $bg_color           $bg_color          $text_color          #00ff00     $bg_color
+client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color #00ff00     $bg_color
+client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color #00ff00     $bg_color
+client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #00ff00     $bg_color
 
 # i3blocks requirements for NUM and CAPS indicators
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
@@ -282,23 +282,22 @@ bindsym $mod+p exec clipman pick -t rofi --max-items=30 --histpath="~/.local/sha
 bindsym $mod+b exec ~/.scripts/launch-firefox-wayland.sh
 
 # Screenshot using grim with slurp
-set $screenshot-path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
+set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
 
-bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot-path | wl-copy
+bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp | grim -g - -t png $screenshot_path | wl-copy
 
-bindsym $mod+Print exec grim -g "$(slurp)" $screenshot-path | wl-copy
+bindsym $mod+Print exec grim -g "$(slurp)" $screenshot_path | wl-copy
 
-bindsym $mod+Shift+Print grim -t png $screenshot-path | wl-copy
+bindsym $mod+Shift+Print grim -t png $screenshot_path | wl-copy
 
 # PulseAudio controls
 # Change volume or toggle mute
 #
-# Increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks
-# Decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
-# Mute sound
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
+set $refresh_i3blocks pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
 # Sreen brightness controls
 #
