@@ -4,6 +4,7 @@ Documentation=man:swayidle(1)
 PartOf=graphical-session.target
 
 [Service]
+User=%i
 Type=simple
 ExecStart=/usr/bin/swayidle -w \
             timeout 300 'swaylock' \
