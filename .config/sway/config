@@ -290,8 +290,8 @@ bindsym $mod+Print exec grim -g "$(slurp)" $screenshot_path | wl-copy
 bindsym $mod+Shift+Print grim -t png $screenshot_path | wl-copy
 
 # i3blocks requirements for NUM and CAPS indicators
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # PulseAudio controls
 # Change volume or toggle mute
