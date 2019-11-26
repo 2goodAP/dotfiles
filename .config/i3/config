@@ -234,14 +234,14 @@ exec --no-startup-id feh --bg-scale $HOME/Pictures/keep_on_keeping_on.jpg
 # Nm-applet
 exec --no-startup-id nm-applet
 
-# Start picom
-exec_always --no-startup-id picom --dbus -f
-
 # Autostart clight
 exec --no-startup-id clight
 
+# Start picom
+exec_always --no-startup-id picom --dbus -f
+
 # Start the greenclip daemon
-exec_always --no-startup-id exec $HOME/.scripts/greenclip-daemon.sh
+exec_always --no-startup-id sh $HOME/.scripts/start-greenclip-daemon.sh
 
 ####################################################################################
 # Colors                                                                           #
