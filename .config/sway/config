@@ -257,10 +257,6 @@ client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_co
 client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color #00ff00     $bg_color
 client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #00ff00     $bg_color
 
-# i3blocks requirements for NUM and CAPS indicators
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-
 ####################################################################################
 # Keybindings                                                                      #
 ####################################################################################
@@ -289,6 +285,10 @@ bindsym Print exec swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?)
 bindsym $mod+Print exec grim -g "$(slurp)" $screenshot_path | wl-copy
 
 bindsym $mod+Shift+Print grim -t png $screenshot_path | wl-copy
+
+# i3blocks requirements for NUM and CAPS indicators
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # PulseAudio controls
 # Change volume or toggle mute
