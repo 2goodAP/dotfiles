@@ -293,9 +293,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Sreen brightness controls
 #
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q s 10%+
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 10%-
 
 # Screenshot using maim with PrintScr key
 set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png

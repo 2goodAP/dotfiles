@@ -302,9 +302,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Sreen brightness controls
 #
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q s 10%+
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 10%-
 
 ####################################################################################
 # Window-specific configs                                                         #
@@ -333,9 +333,11 @@ smart_borders on
 ####################################################################################
 # Libinput touchpad config                                                         #
 ####################################################################################
-input 2:8:AlpsPS/2_ALPS_GlidePoint {
+input 1267:12433:ELAN0504:01_04F3:3091_Touchpad {
     tap enabled
     natural_scroll enabled
+    middle_emulation enabled
     dwt enabled
+    events disabled_on_external_mouse
 }
 
