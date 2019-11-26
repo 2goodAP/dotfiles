@@ -231,7 +231,7 @@ floating_minimum_size -1 x -1
 ####################################################################################
 #
 # Desktop background with output
-output LVDS-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
+output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 
 # Autostart redshift-wlroots
 exec --no-startup-id redshift
