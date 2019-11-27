@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Add to PATH
-export PATH=$HOME/.cargo/bin:$HOME/.bin:usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH:/opt/android-sdk/platform-tools
+export PATH=$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH:/opt/android-sdk/platform-tools
 
 # If not running interactively, don't do anything
 case $- in
