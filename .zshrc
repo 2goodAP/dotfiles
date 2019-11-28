@@ -202,7 +202,7 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# zsh aliases
 alias zshconf="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
@@ -217,6 +217,7 @@ alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
 alias diff='diff --color'
 alias less='less -i'
+alias hibernate='sudo systemctl hibernate'
 
 # Vim
 alias v='nvim'
