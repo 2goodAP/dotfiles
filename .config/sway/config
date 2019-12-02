@@ -240,6 +240,13 @@ exec --no-startup-id redshift
 exec wl-paste -p --watch clipman store --max-items=30 --histpath="~/.local/share/clipman-primary.json" 
 exec wl-paste --watch clipman store --max-items=30
 
+# Auto-import gtk settings from $XDG_CONFIG_HOME/gtk-3.0/settings.ini
+exec_always ~/.scripts/import-gsettings.sh \
+    gtk-theme:gtk-theme-name \
+    icon-theme:gtk-icon-theme-name \
+    cursor-theme:gtk-cursor-theme-name
+
+
 ####################################################################################
 # Colors                                                                           #
 ####################################################################################
