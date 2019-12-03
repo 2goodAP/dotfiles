@@ -101,7 +101,7 @@ interval=10
 
 [bandwidth]
 label= 
-instance=enp3s0
+instance=enp7s0f1
 interval=10
 
 # CPU usage
