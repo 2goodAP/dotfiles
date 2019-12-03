@@ -176,7 +176,7 @@ bar {
 
 # Position and visibility for i3bar
         position top
-        height 35
+        height 36
         mode dock
 
 # Fonts and colors
