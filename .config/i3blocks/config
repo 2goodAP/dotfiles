@@ -91,12 +91,12 @@ signal=10
 [wifi]
 label= 
 separator=false
-instance=wlp2s0
+instance=wlp0s20f3
 interval=10
 
 [essid]
 separator=false
-instance=wlp2s0
+instance=wlp0s20f3
 interval=10
 
 [bandwidth]
