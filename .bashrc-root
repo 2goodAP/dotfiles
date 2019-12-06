@@ -68,7 +68,7 @@ source "$BASH_IT"/bash_it.sh
 # My Custom Configurations                                                    #
 #-----------------------------------------------------------------------------#
 
-# Environment Variables
+# Scrips
 #-----------------------------------------------#
 
 # Configs fo nnn
@@ -97,6 +97,16 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+zeal-docs-fix() {
+    pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
+    find . -iname 'react-main*.js' -exec rm '{}' \;
+    popd >/dev/null || exit
+}
+
+
+# Environment Variables
+#-----------------------------------------------#
 
 export NNN_USE_EDITOR=1
 

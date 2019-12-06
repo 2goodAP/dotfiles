@@ -163,8 +163,10 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='#C678DD'
 POWERLEVEL9K_STATUS_OK_FOREGROUND='040'
 POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
+###############################################################################
+# Scripts                                                                     #
+###############################################################################
+#
 # Configs for nnn
 n ()
 {
@@ -191,6 +193,18 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+zeal-docs-fix() {
+    pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
+    find . -iname 'react-main*.js' -exec rm '{}' \;
+    popd >/dev/null || exit
+}
+
+###############################################################################
+# Exposts                                                                     #
+###############################################################################
+#
+# export MANPATH="/usr/local/man:$MANPATH"
 
 export NNN_USE_EDITOR=1
 
@@ -224,8 +238,12 @@ else
 fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
+###############################################################################
+# Aliases                                                                     #
+###############################################################################
+#
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -235,9 +253,6 @@ fi
 alias zshconf="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-
-# Aliases
-#-----------------------------------------------#
 
 # Meta aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
