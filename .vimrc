@@ -190,15 +190,10 @@ set splitbelow
 
 " Custom IDE-like features
 "
-" vim-syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" vim-ale
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '●'
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 "
 " vim-markdown
@@ -209,11 +204,6 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
 " Auto-write when following links with 'ge'
 let g:vim_markdown_autowrite = 1
-
-"
-" eslint_d for syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 "
 " vim-cpp-enhanced-highlight options
@@ -249,7 +239,9 @@ let g:sql_type_default='mysql'
 " vim-javascript stuff
 let g:javascript_plugin_flow=1
 let g:javascript_plugin_jsdoc = 1
-let g:jsx_ext_required=0
+
+" vim-jsx configs
+let g:jsx_ext_required=1
 
 " Custom colors
 
