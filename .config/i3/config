@@ -177,7 +177,7 @@ bar {
     # Position and visibility for i3bar
     mode dock
     position top
-    height 35
+    height 36
     # Added for the sole purpose of fixing tray icon size
     tray_padding 5
 
@@ -210,21 +210,21 @@ workspace_layout tabbed
 ##############################################################
 #
 # Set float and unfloat variables
-set $FLOAT      floating enable, border none
-set $UNFLOAT    floating disable, border none
+set $FLOAT      floating enable
+set $UNFLOAT    floating disable
 
 # Disable window title and borders for new tiling windows
-default_border none
+default_border pixel 3
 
 # Enable window title and borders for new floating windows
-default_floating_border none
+default_floating_border pixel 3
 
 # Set floating maximum and minumum sizes 
-floating_maximum_size 1336 x 650
+floating_maximum_size 1000 x 900
 floating_minimum_size -1 x -1
 
-# Disabling window borders
-# for_window [class="^.*"] border normal 0
+# Disabling window titlebars
+# for_window [class=".*"] border pixel 0
 
 ####################################################################################
 # Startup manager                                                                  #
@@ -249,18 +249,21 @@ exec_always --no-startup-id sh $HOME/.scripts/start-greenclip-daemon.sh
 # Colors                                                                           #
 ####################################################################################
 #
-set $bg_color 	         #222d32
-set $inactive_bg_color   #364046
-set $text_color          #cfd4b4
-set $inactive_text_color #676E7D
-set $urgent_bg_color     #E53935
+set $bg_color 	            #222d32
+set $inactive_bg_color      #364046
+set $text_color             #cfd4b4
+set $inactive_text_color    #676E7D
+set $urgent_bg_color        #E53935
+set $border_color           #676d3d
+set $inactive_border_color  #333333
+set $urgent_border_color    #383a3b
 
 # window colors
 #                       border              background         text                 indicator   child_border
-client.focused          $bg_color           $bg_color          $text_color          #00ff00     $bg_color
-client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color #00ff00     $bg_color
-client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color #00ff00     $bg_color
-client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #00ff00     $bg_color
+client.focused          $bg_color           $bg_color          $text_color          $border_color     $border_color
+client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color $border_color     $inactive_border_color
+client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color $border_color     $inactive_border_color
+client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          $border_color     $urgent_border_color
 
 ####################################################################################
 # Keybindings                                                                      #
@@ -312,10 +315,8 @@ bindsym $mod+Shift+Print exec maim -m 8 -u $screenshot_path
 # Config for i3-gaps                                                        #
 ####################################################################################
 #
-# Gaps config
-gaps inner 7
-gaps outer 10
-
+# gaps inner 7
+# gaps outer 5
 gaps horizontal 7
 gaps vertical 5
 
@@ -323,4 +324,5 @@ gaps vertical 5
 smart_gaps inverse_outer
 
 # Activate smart borders (only when there are effectively no gaps)
-smart_borders on
+smart_borders no_gaps
+
