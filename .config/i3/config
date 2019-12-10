@@ -170,19 +170,21 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    i3bar_command i3bar -t
     status_command i3blocks #-c ~/.config/i3blocks/config
-    i3bar_command i3bar -t 0.1
     strip_workspace_numbers yes
 
     # Position and visibility for i3bar
-    position top
-    height 36
     mode dock
+    position top
+    height 35
+    # Added for the sole purpose of fixing tray icon size
+    tray_padding 5
 
     # Fonts and colors
     font pango: FantasqueSansMono Nerd Font 14
     colors {
-        background #cab19235
+        background #cab19200
         separator #330066
         statusline #fdf6e3
         focused_workspace #00000000 #222d32a6 #efd4b4
@@ -234,8 +236,8 @@ exec --no-startup-id feh --bg-scale $HOME/Pictures/keep_on_keeping_on.jpg
 # Nm-applet
 exec --no-startup-id nm-applet
 
-# Autostart clight
-exec --no-startup-id clight
+# Autostart redshift
+exec --no-startup-id redshift-gtk
 
 # Start picom
 exec_always --no-startup-id picom --dbus -f

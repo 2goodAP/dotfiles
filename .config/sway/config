@@ -171,18 +171,18 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	status_command i3blocks #-c ~/.config/i3blocks/config
-    strip_workspace_numbers no
+    strip_workspace_numbers yes
 
 
 	# Position and visibility for i3bar
+	mode dock
 	position top
     height 36
-	mode dock
 
 	# Fonts and colors
     font pango: FantasqueSansMono Nerd Font 14
     colors {
-        background #cab19235
+        background #cab19200
         separator #330066
         statusline #fdf6e3
         focused_workspace #00000000 #222d32a6 #efd4b4
