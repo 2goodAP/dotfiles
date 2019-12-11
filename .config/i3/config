@@ -315,8 +315,8 @@ bindsym $mod+Shift+Print exec maim -m 8 -u $screenshot_path
 # Config for i3-gaps                                                        #
 ####################################################################################
 #
-# gaps inner 7
-# gaps outer 5
+gaps inner 7
+gaps outer 5
 gaps horizontal 7
 gaps vertical 5
 

@@ -330,8 +330,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 10%-
 # Config for Gaps                                                                  #
 ####################################################################################
 #
-# gaps inner 7
-# gaps outer 5
+gaps inner 7
+gaps outer 5
 gaps horizontal 7
 gaps vertical 5
 
