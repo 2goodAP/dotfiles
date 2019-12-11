@@ -199,6 +199,8 @@ bar {
 ###############################################################################
 #                          My Custom Configurations                           #
 ###############################################################################
+# Set up scripts directory
+set $scripts_dir $HOME/.scripts/wm_scripts
 
 ##############################################################
 # Workspace Containers                                       #
@@ -234,7 +236,7 @@ floating_minimum_size -1 x -1
 exec --no-startup-id feh --bg-scale $HOME/Pictures/keep_on_keeping_on.jpg
 
 # Nm-applet
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 
 # Autostart redshift
 exec --no-startup-id redshift-gtk
@@ -243,7 +245,7 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id picom --dbus -f
 
 # Start the greenclip daemon
-exec_always --no-startup-id sh $HOME/.scripts/start-greenclip-daemon.sh
+exec_always --no-startup-id sh $scripts_dir/start-greenclip-daemon.sh
 
 ####################################################################################
 # Colors                                                                           #

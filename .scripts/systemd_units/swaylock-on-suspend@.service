@@ -6,7 +6,7 @@ Before=sleep.target
 [Service]
 User=%i
 Type=forking
-ExecStart=/home/%i/.scripts/swaylock-on-lid-down.sh
+ExecStart=/home/%i/.scripts/systemd_scripts/swaylock-on-suspend.sh
 ExecStartPost=/usr/bin/sleep 1
 
 [Install]

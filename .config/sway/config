@@ -197,6 +197,8 @@ bar {
 ###############################################################################
 #                          My Custom Configurations                           #
 ###############################################################################
+# Set up scripts directory
+set $scripts_dir $HOME/.scripts/wm_scripts
 
 ##############################################################
 # Workspace Containers                                       #
@@ -233,7 +235,7 @@ floating_minimum_size -1 x -1
 # Desktop background with output
 output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 
-# Autostart redshift-wlroots
+# Start redshift-wlroots
 exec --no-startup-id redshift
 
 # Start the clipman daemon
@@ -241,7 +243,7 @@ exec wl-paste -p --watch clipman store --max-items=30 --histpath="~/.local/share
 exec wl-paste --watch clipman store --max-items=30
 
 # Auto-import gtk settings from $XDG_CONFIG_HOME/gtk-3.0/settings.ini
-exec_always ~/.scripts/import-gsettings.sh \
+exec_always $scripts_dir/import-gsettings.sh \
     gtk-theme:gtk-theme-name \
     icon-theme:gtk-icon-theme-name \
     cursor-theme:gtk-cursor-theme-name
@@ -285,10 +287,10 @@ bindsym $mod+c exec clipman pick -t rofi --max-items=30
 bindsym $mod+p exec clipman pick -t rofi --max-items=30 --histpath="~/.local/share/clipman-primary.json"
 
 # Firefox Developer Edition
-bindsym $mod+b exec $HOME/.scripts/launch-firefox-wayland.sh
+bindsym $mod+b exec $scripts_dir/launch-firefox-wayland.sh
 
 # Toggle redshift
-bindsym Alt+End exec $HOME/.scripts/toggle-redshift.sh
+bindsym Alt+End exec $scripts_dir/toggle-redshift.sh
 
 # Screenshot using grim with slurp
 set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
