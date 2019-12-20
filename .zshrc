@@ -222,7 +222,7 @@ fi
 export TERM=xterm-256color
 
 # Set the DISPLAY variable
-export DISPLAY=:0.0
+export DISPLAY=:0
 
 # Using neovim as the default shell editor
 export VISUAL='nvim'
@@ -236,6 +236,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
+
+# Environment Variable for Vulkan
+export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"

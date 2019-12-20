@@ -2,7 +2,7 @@ daemonize
 show-failed-attempts
 ignore-empty-password
 
-image=~/.cache/i3lock/current/l_blur.png
+image=~/.cache/i3lock/current/l_dimblur.png
 scaling=stretch
 
 indicator-caps-lock

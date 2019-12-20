@@ -5,7 +5,7 @@ Documentation=man:brightnessctl(1)
 [Service]
 Type=oneshot
 RemainAfterExit=true
-ExecStart=/usr/bin/brightnessctl -q s 20%
+ExecStart=/usr/bin/brightnessctl s 15%
 
 [Install]
 WantedBy=multi-user.target

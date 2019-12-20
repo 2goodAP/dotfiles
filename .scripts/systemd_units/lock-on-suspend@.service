@@ -1,0 +1,13 @@
+[Unit]
+Description=Lock X-session of user %I when lid closed (using i3lock)
+Documentation=man:i3lock-color(1)
+Documentation=man:swaylock(1)
+Before=sleep.target suspend.target
+
+[Service]
+User=%i
+Type=forking
+ExecStart=/home/%i/.scripts/systemd_scripts/lock-on-suspend.sh
+
+[Install]
+WantedBy=sleep.target suspend.target
