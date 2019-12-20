@@ -188,10 +188,10 @@ set $FLOAT      floating enable
 set $UNFLOAT    floating disable
 
 # Disable window title and borders for new tiling windows
-default_border pixel 2
+default_border pixel 3
 
 # Enable window title and borders for new floating windows
-default_floating_border pixel 2
+default_floating_border pixel 3
 
 # Set floating maximum and minumum sizes 
 floating_maximum_size 1000 x 900
