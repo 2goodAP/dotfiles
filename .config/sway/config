@@ -167,32 +167,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start waybar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-	status_command i3blocks #-c ~/.config/i3blocks/config
-    strip_workspace_numbers yes
-
-
-	# Position and visibility for i3bar
-	mode dock
-	position top
-    height 36
-
-	# Fonts and colors
-    font pango: FantasqueSansMono Nerd Font 14
-    colors {
-        background #cab19200
-        separator #330066
-        statusline #fdf6e3
-        focused_workspace #00000000 #222d32a6 #efd4b4
-        active_workspace #00000000 #222d32a6 #efd4b4
-        inactive_workspace #00000000 #364046a6 #999999
-        urgent_workspace #00000000 #dc322f #ffffff
-        #binding_mode
-    }
-}
-
 
 ###############################################################################
 #                          My Custom Configurations                           #
@@ -214,11 +188,11 @@ set $FLOAT      floating enable
 set $UNFLOAT    floating disable
 
 # Disable window title and borders for new tiling windows
-default_border pixel 2
+default_border pixel 3
 # new_window normal|pixel [<px>]
 
 # Enable window title and borders for new floating windows
-default_floating_border pixel 2
+default_floating_border pixel 3
 # new_float none
 
 # Set floating maximum and minumum sizes 
@@ -248,26 +222,58 @@ exec_always $scripts_dir/import-gsettings.sh \
     icon-theme:gtk-icon-theme-name \
     cursor-theme:gtk-cursor-theme-name
 
-
 ####################################################################################
 # Colors                                                                           #
 ####################################################################################
 #
-set $bg_color 	            #222d32
-set $inactive_bg_color      #364046
-set $text_color             #cfd4b4
-set $inactive_text_color    #676E7D
-set $urgent_bg_color        #E53935
-set $border_color           #676d3d
-set $inactive_border_color  #333333
-set $urgent_border_color    #383a3b
+set $border_color           #61afef
+set $unfocused_border_color #98c379
+set $inactive_border_color  #abb2bf
+set $urgent_border_color    #e06c75
+
+set $bg_color 	            #61afef
+set $unfocused_bg_color     #98c379
+set $inactive_bg_color      #abb2bf
+set $urgent_bg_color        #e06c75
+
+set $text_color             #282c34
+set $unfocused_text_color   #282c34
+set $inactive_text_color    #282c34
+set $urgent_text_color      #282c34
+
+# Start waybar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	status_command i3blocks #-c ~/.config/i3blocks/config
+    strip_workspace_numbers yes
+
+
+	# Position and visibility for i3bar
+	mode dock
+	position top
+    height 36
+
+	# Fonts and colors
+    font pango: FantasqueSansMono Nerd Font 14
+    colors {
+        background #cab19200
+        separator #330066
+        statusline #fdf6e3
+        # colorclass       border                  background          text
+        focused_workspace  $border_color           $bg_color           $text_color
+        active_workspace   $unfocused_border_color $unfocused_bg_color $text_color
+        inactive_workspace $inactive_border_color  $inactive_bg_color  $inactive_text_color
+        urgent_workspace   $urgent_border_color    $urgent_bg_color    $urgent_text_color
+        #binding_mode
+    }
+}
 
 # window colors
-#                       border              background         text                 indicator   child_border
-client.focused          $bg_color           $bg_color          $text_color          $border_color     $border_color
-client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color $border_color     $inactive_border_color
-client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color $border_color     $inactive_border_color
-client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          $border_color     $urgent_border_color
+#                       border                  background          text                  indicator     child_border
+client.focused          $border_color           $bg_color           $text_color           $border_color $border_color
+client.unfocused        $unfocused_border_color $unfocused_bg_color $unfocused_text_color $border_color $unfocused_border_color
+client.focused_inactive $inactive_border_color  $inactive_bg_color  $inactive_text_color  $border_color $inactive_border_color
+client.urgent           $urgent_border_color    $urgent_bg_color    $text_color           $border_color $urgent_border_color
 
 ####################################################################################
 # Keybindings                                                                      #
