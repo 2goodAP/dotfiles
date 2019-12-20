@@ -237,9 +237,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Environment Variable for Vulkan
-export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
-
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
