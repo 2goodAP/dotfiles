@@ -207,6 +207,25 @@ floating_minimum_size -1 x -1
 # Desktop background with feh
 exec --no-startup-id feh --bg-scale $HOME/Pictures/keep_on_keeping_on.jpg
 
+# xset s <n1> <n2>
+# n1: is the time it takes to launch the first signal that the screen will be
+# shutdown. Here we generally dim the screen a bit.
+# n2: is the time after n1 that we launch the second signal.
+# Here we lock the screen.
+# With n1 = 60 and n2 = 30 the screen will be dimmed 60 seconds after the last
+# time pc was not idle and 30 seconds later (90 seconds from last non-idle 
+# state) the screen will be locked.
+exec --no-startup-id xset s 300 300
+ 
+# xset dpms <n>
+# n: is the time from last non-idle state after which the screen will be shutdown. 
+exec --no-startup-id xset dpms 600
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend.
+exec --no-startup-id xss-lock -n $scripts_dir/dim-screen.sh \
+    -- betterlockscreen --lock dimblur
+
 # Nm-applet
 exec_always --no-startup-id nm-applet
 
@@ -285,7 +304,7 @@ bindsym $mod+Shift+f $FLOAT
 bindsym $mod+Shift+space $UNFLOAT
 
 # i3lock
-bindsym $mod+Shift+x exec betterlockscreen --lock blur
+bindsym $mod+Shift+x exec betterlockscreen --lock dimblur
 
 # Greenclip
 bindsym $mod+c exec rofi -show greenclip -theme onedark
@@ -307,9 +326,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Sreen brightness controls
 #
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q s 10%+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --quiet s 10%+
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 10%-
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --quiet s 10%-
 
 # Screenshot using maim with PrintScr key
 set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png

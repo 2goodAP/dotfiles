@@ -209,6 +209,9 @@ floating_minimum_size -1 x -1
 # Desktop background with output
 output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 
+#
+exec --no-startup-id systemctl --user start swayidle.service
+
 # Start redshift-wlroots
 exec --no-startup-id redshift
 

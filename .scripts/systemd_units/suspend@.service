@@ -8,6 +8,7 @@ Before=sleep.target
 User=%i
 Type=forking
 ExecStart=/home/%i/.scripts/systemd_scripts/lock-on-suspend.sh
+ExecStartPost=/usr/bin/sleep 1
 
 [Install]
 WantedBy=sleep.target
