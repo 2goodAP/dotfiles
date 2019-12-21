@@ -261,7 +261,6 @@ alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
 alias diff='diff --color'
 alias less='less -i'
-alias hibernate='sudo systemctl hibernate'
 
 # Vim
 alias v='nvim'
