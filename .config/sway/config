@@ -289,8 +289,8 @@ bindsym $mod+Shift+space $UNFLOAT
 bindsym $mod+Shift+x exec swaylock
 
 # Clipman
-bindsym $mod+c exec clipman pick -t rofi --max-items=30
-bindsym $mod+p exec clipman pick -t rofi --max-items=30 --histpath="~/.local/share/clipman-primary.json"
+bindsym $mod+c exec clipman pick -t wofi --max-items=30
+bindsym $mod+p exec clipman pick -t wofi --max-items=30 --histpath="~/.local/share/clipman-primary.json"
 
 # Firefox Developer Edition
 bindsym $mod+b exec $scripts_dir/launch-firefox-wayland.sh
