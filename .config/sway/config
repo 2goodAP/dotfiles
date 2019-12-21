@@ -209,7 +209,7 @@ floating_minimum_size -1 x -1
 # Desktop background with output
 output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 
-#
+# Use swayidle.service in userspace to lock sway session on systemd-events
 exec --no-startup-id systemctl --user start swayidle.service
 
 # Start redshift-wlroots
@@ -326,9 +326,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Sreen brightness controls
 #
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q s 10%+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --quiet s 10%+
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q s 10%-
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --quiet s 10%-
 
 ####################################################################################
 # Window-specific configs                                                         #
