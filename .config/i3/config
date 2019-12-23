@@ -252,9 +252,9 @@ set $unfocused_bg_color     #98c379
 set $inactive_bg_color      #abb2bf
 set $urgent_bg_color        #e06c75
 
-set $text_color             #01162b
-set $unfocused_text_color   #818743
-set $inactive_text_color    #818743
+set $text_color             #0c1b21
+set $unfocused_text_color   #858774
+set $inactive_text_color    #858774
 set $urgent_text_color      #ffffff
 
 # Start waybar to display a workspace bar (plus the system information i3status
