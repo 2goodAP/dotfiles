@@ -1,0 +1,2 @@
+# Make a file when discharging even is received
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", RUN+="/usr/bin/touch /home/aashishp/discharging"
