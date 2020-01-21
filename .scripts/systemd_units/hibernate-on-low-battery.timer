@@ -3,7 +3,7 @@ Description=Battery status check every 5 minutes
 Documentation=man:systemctl
 
 [Timer]
-OnBootSec=2min30s
+OnBootSec=2min
 OnUnitInactiveSec=5min
 Persistent=true
 Unit=hibernate-on-low-battery.service
