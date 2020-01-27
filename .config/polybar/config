@@ -547,7 +547,7 @@ double-click-right =
 ; - pointer   : Typically in the form of a hand
 ; - ns-resize : Up and down arrows, can be used to indicate scrolling
 cursor-click = pointer
-cursor-scroll = ns-resize
+cursor-scroll =
 
 ;openbox
 ;awesome
@@ -560,3 +560,5 @@ cursor-scroll = ns-resize
 [section/modules]
 ; The configuration dirctiry for polybar
 include-file = $HOME/.config/polybar/modules.ini
+
+; vim: ft=dosini
