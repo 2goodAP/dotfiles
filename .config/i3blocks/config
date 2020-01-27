@@ -39,17 +39,27 @@ color=#0c1b21
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 [keyindicator]
-separator=false
-instance=NUM
-interval=once
+KEY=CAPS
 markup=pango
+separator=false
+interval=once
 signal=11
+HIDE_WHEN_OFF=1
+#COLOR_ON=#00FF00
+#COLOR_OFF=#222222
+#BG_COLOR_ON=
+#BG_COLOR_OFF=
 
 [keyindicator]
-instance=CAPS
-interval=once
+KEY=NUM
 markup=pango
+interval=once
 signal=11
+HIDE_WHEN_OFF=1
+#COLOR_ON=#00FF00
+#COLOR_OFF=#222222
+#BG_COLOR_ON=
+#BG_COLOR_OFF=
 
 # Volume indicator
 #
