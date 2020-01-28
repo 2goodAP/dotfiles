@@ -31,260 +31,78 @@
 [colors]
 
 ;; Active Colors
-bg = #282c34
+bg = #50282c34
 fg = #f5f5f5
 ac = #1e88e5
 mf = #f5f5f5
  
-;; Bars
-bi = #1e88e5
-be = #1e88e5
-bf = #43a047
-bn = #43a047
-bm = #fdd835
-bd = #e53935
-
-trans = #00000000
+transparent = #00000000
 white = #ffffff
 black = #000000
 
 ;; One-Dark colors
 
-od-white        = #abb2bf
-od-light-red    = #e06c75
-od-dark-red     = #be5046
-od-green        = #98c379
-od-light-yellow = #e5c07b
-od-dark-yellow  = #d19a66
-od-blue         = #61afef
-od-magenta      = #c678dd
-od-cyan         = #56b6c2
-od-gutter-grey  = #4b5263
-od-comment-grey = #5c6370
+odBlack         = #282c34
+odWhite         = #abb2bf
+odLightRed      = #e06c75
+odDarkRed       = #be5046
+odGreen         = #98c379
+odLightYellow   = #e5c07b
+odDarkYellow    = #d19a66
+odBlue          = #61afef
+odMagenta       = #c678dd
+odCyan          = #56b6c2
+odGutterGrey    = #4b5263
+odCommentGrey   = #5c6370
 
 ;; Material Colors
 
-red = #e53935
-pink = #d81b60
-purple = #8e24aa
-deep-purple = #5e35b1
-indigo = #3949ab
-blue = #1e88e5
-light-blue = #039be5
-cyan = #00acc1
-teal = #00897b
-green = #43a047
-light-green = #7cb342
-lime = #c0ca33
-yellow = #fdd835
-amber = #ffb300
-orange = #fb8c00
-deep-orange = #f4511e
-brown = #6d4c41
-grey = #757575
-blue-gray = #546e7a
+mtRed = #e53935
+mtPink = #d81b60
+mtPurple = #8e24aa
+mtDeepPurple = #5e35b1
+mtIndigo = #3949ab
+mtBlue = #1e88e5
+mtLightBlue = #039be5
+mtCyan = #00acc1
+mtTeal = #00897b
+mtGreen = #43a047
+mtLightGreen = #7cb342
+mtLime = #c0ca33
+mtYellow = #fdd835
+mtAmber = #ffb300
+mtOrange = #fb8c00
+mtDeepOrange = #f4511e
+mtBrown = #6d4c41
+mtGrey = #757575
+mtBlueGrey = #546e7a
 
 ;; Material Colors Shades
 
-; Amber
-amshade1 = #ff6f00
-amshade2 = #ff8f00
-amshade3 = #ffa000
-amshade4 = #ffb300
-amshade5 = #ffc107
-amshade6 = #ffca28
-amshade7 = #ffd54f
-amshade8 = #ffe082
-
-; Blue 
-blshade1 = #0d47a1
-blshade2 = #1565c0
-blshade3 = #1976d2
-blshade4 = #1e88e5
-blshade5 = #2196f3
-blshade6 = #42a5f5
-blshade7 = #64b5f6
-blshade8 = #90caf9
-
 ; Blue-Grey
-bgshade1 = #263238
-bgshade2 = #37474f
-bgshade3 = #455a64
-bgshade4 = #546e7a
-bgshade5 = #607d8b
-bgshade6 = #78909c
-bgshade7 = #90a4ae
-bgshade8 = #b0bec5
-
-; Brown
-brshade1 = #3e2723
-brshade2 = #4e342e
-brshade3 = #5d4037
-brshade4 = #6d4c41
-brshade5 = #795548
-brshade6 = #8d6e63
-brshade7 = #a1887f
-brshade8 = #bcaaa4
-
-; Cyan
-cyshade1 = #006064
-cyshade2 = #00838f
-cyshade3 = #0097a7
-cyshade4 = #00acc1
-cyshade5 = #00bcd4
-cyshade6 = #26c6da
-cyshade7 = #4dd0e1
-cyshade8 = #80deea
-
-; Deep-Orange
-doshade1 = #bf360c
-doshade2 = #d84315
-doshade3 = #e64a19
-doshade4 = #f4511e
-doshade5 = #ff5722
-doshade6 = #ff7043
-doshade7 = #ff8a65
-doshade8 = #ffab91
-
-; Deep-Purple
-dpshade1 = #311b92
-dpshade2 = #4527a0
-dpshade3 = #512da8
-dpshade4 = #5e35b1
-dpshade5 = #673ab7
-dpshade6 = #7e57c2
-dpshade7 = #9575cd
-dpshade8 = #b39ddb
-
-; Green
-grshade1 = #1b5e20
-grshade2 = #2e7d32
-grshade3 = #388e3c
-grshade4 = #43a047
-grshade5 = #4caf50
-grshade6 = #66bb6a
-grshade7 = #81c784
-grshade8 = #a5d6a7
+mtBgShade1 = #263238
+mtBgShade2 = #37474f
+mtBgShade3 = #455a64
+mtBgShade4 = #546e7a
+mtBgShade5 = #607d8b
+mtBgShade6 = #78909c
+mtBgShade7 = #90a4ae
+mtBgShade8 = #b0bec5
 
 ; Grey
-greshade1 = #212121
-greshade2 = #424242
-greshade3 = #616161
-greshade4 = #757575
-greshade5 = #9e9e9E
-greshade6 = #bdbdbD
-greshade7 = #d4d4d4
-greshade8 = #eeeeeE
-
-; Indigo
-inshade1 = #1a237e
-inshade2 = #283593
-inshade3 = #303f9f
-inshade4 = #3949ab
-inshade5 = #3f51b5
-inshade6 = #5c6bc0
-inshade7 = #7986cb
-inshade8 = #9fa8da
-
-; Light-Blue
-lbshade1 = #01579b
-lbshade2 = #0277bd
-lbshade3 = #0288d1
-lbshade4 = #039be5
-lbshade5 = #03a9f4
-lbshade6 = #29b6f6
-lbshade7 = #4fc3f7
-lbshade8 = #81d4fa
-
-; Light-Green
-lgshade1 = #33691e
-lgshade2 = #558b2f
-lgshade3 = #689f38
-lgshade4 = #7cb342
-lgshade5 = #8bc34a
-lgshade6 = #9ccc65
-lgshade7 = #aed581
-lgshade8 = #c5e1a5
-
-; Lime
-lishade1 = #827717
-lishade2 = #9e9d24
-lishade3 = #afb42b
-lishade4 = #c0ca33
-lishade5 = #cddc39
-lishade6 = #d4e157
-lishade7 = #dce775
-lishade8 = #e6ee9c
-
-; Orange
-orshade1 = #e65100
-orshade2 = #ef6c00
-orshade3 = #f57c00
-orshade4 = #fb8c00
-orshade5 = #ff9800
-orshade6 = #ffa726
-orshade7 = #ffb74d
-orshade8 = #ffcc80
-
-; Pink
-pishade1 = #880e4f
-pishade2 = #ad1457
-pishade3 = #c2185b
-pishade4 = #d81b60
-pishade5 = #e91e63
-pishade6 = #ec407a
-pishade7 = #f06292
-pishade8 = #f48fb1
-
-; Purple
-prshade1 = #4a148c
-prshade2 = #6a1b9a
-prshade3 = #7b1fa2
-prshade4 = #8e24aa
-prshade5 = #9c27b0
-prshade6 = #ab47bc
-prshade7 = #ba68c8
-prshade8 = #ce93d8
-
-; Red
-reshade1 = #b71c1c
-reshade2 = #c62828
-reshade3 = #d32f2f
-reshade4 = #e53935
-reshade5 = #ee413d
-reshade6 = #ef5350
-reshade7 = #e57373
-reshade8 = #ef9a9a
-
-; Teal
-teshade1 = #004d40
-teshade2 = #00695c
-teshade3 = #00796b
-teshade4 = #00897b
-teshade5 = #009688
-teshade6 = #26a69a
-teshade7 = #4db6ac
-teshade8 = #80cbc4
-
-; Yellow
-yeshade1 = #f57f17
-yeshade2 = #f9a825
-yeshade3 = #fbc02d
-yeshade4 = #fdd835
-yeshade5 = #ffeb3b
-yeshade6 = #ffee58
-yeshade7 = #fff176
-yeshade8 = #fff59d
+mtGrShade1 = #212121
+mtGrShade2 = #424242
+mtGrShade3 = #616161
+mtGrShade4 = #757575
+mtGrShade5 = #9e9e9E
+mtGrShade6 = #bdbdbD
+mtGrShade7 = #d4d4d4
+mtGrShade8 = #eeeeeE
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-;
-;;	    __________  ______
-;;	   / ____/ __ \/ ____/
-;;	  / __/ / / / / /_    
-;;	 / /___/ /_/ / __/    
-;;	/_____/\____/_/       
 ;;
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;; Global WM Settings
+;;
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 
@@ -297,7 +115,11 @@ margin-bottom = 0
 ;   Used for bottom aligned bars
 margin-top = 0
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;;
 ;; Application Settings
+;;
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [settings]
 ; The throttle settings lets the eventloop swallow up til X events
@@ -326,8 +148,8 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = 
-format-background = 
+format-foreground =
+format-background =
 format-underline =
 format-overline =
 format-spacing =
@@ -339,11 +161,13 @@ format-offset =
 ; If set to true the bar can be transparent without a compositor.
 pseudo-transparency = false
 
-;;=========================
-;; Bar Settings
-;;=========================
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;;
+;; MainBar Settings
+;;
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[bar/mainBar]
+[bar/MainBar]
 ; Use either of the following command to list available outputs:
 ; If unspecified, the application will pick the first one it finds.
 ; $ polybar -m | cut -d ':' -f 1
@@ -390,12 +214,16 @@ height = 30
 ; the percentage can optionally be extended with a pixel offset like so:
 ; 50%:-10, this will result in an offset in the x or y direction 
 ; of 50% minus 10 pixels
-offset-x = -10%
+offset-x =
 offset-y = 0
+
+; Default bar background color
+;   background = #aarrggbb
+background = ${colors.bg}
 
 ; Background gradient (vertical steps)
 ;   background-[0-9]+ = #aarrggbb
-background-0 = colors.bg
+; background-0 =
 
 ; Value used for drawing rounded corners
 ; Note: This shouldn't be used together with border-size because the border 
@@ -410,7 +238,7 @@ radius = 0.0
 ;   {overline,underline}-size
 ;   {overline,underline}-color
 line-size =
-line-color = colors.blue
+line-color = colors.mtBlue
 
 ; Values applied to all borders
 ; Individual side values can be defined using:
@@ -428,18 +256,18 @@ line-color = colors.blue
 ; 50%:-10, this will result in 50% minus 10 pixels. The percentage is relative
 ; to the bar width or height depending on the border. 
 border-size =
-border-color = colors.blue
+border-color = colors.mtTeal
 
 ; Number of spaces to add at the beginning/end of the bar
 ; Individual side values can be defined using:
 ;   padding-{left,right}
-padding = 1
+padding = 0
 
 ; Number of spaces to add before/after each module
 ; Individual side values can be defined using:
 ;   module-margin-{left,right}
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 ; Fonts are defined using <font-name>;<vertical-offset>
 ; Font names are specified using a fontconfig pattern.
@@ -448,21 +276,23 @@ module-margin-right = 2
 ;   font-2 = Termsynu:size=8;-1
 ;   font-3 = FontAwesome:size=10
 ; See the Fonts wiki page for more details
-font-0 = FantasqueSansMono Nerd Font:style=Regular:size=13
+font-0 = FantasqueSansMono Nerd Font:style=Regular:size=13;3
+font-1 = FantasqueSansMono Nerd Font:style=Regular:size=20;5
+font-2 = FantasqueSansMono Nerd Font:style=Regular:size=21;6
 
 ; Modules are added to one of the available blocks
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
-modules-left = i3 xwindow
-modules-center = date
-modules-right = xkeyboard pulseaudio backlight-acpi battery
+modules-left = i3 RtArrow1 xwindow RtStripe
+modules-center = MidArrowLt date xkeyboard MidArrowRt
+modules-right = LtStripe cpu memory LtArrow3  pulseaudio backlight-acpi LtArrow2 battery LtArrow1
 
 ; The separator will be inserted between the output of each module
 separator =
 
 ; Opacity value between 0.0 and 1.0 used on fade in/out
-dim-value = 0.7
+dim-value = 1
 
 ; Value to be used to set the WM_NAME atom
 ; If the value is empty or undefined, the atom value
@@ -496,7 +326,7 @@ tray-maxsize = 16
 ; ARGB color (e.g. #f00, #ff992a, #ddff1023)
 ; By default the tray container will use the bar
 ; background color.
-tray-background = ${colors.blue}
+tray-background = ${colors.mtTeal}
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 tray-offset-x = 0
@@ -517,7 +347,7 @@ tray-scale = 1.0
 ; Currently supported WM's:
 ;   bspwm
 ;   i3 (requires: `override-redirect = true`)
-; wm-restack =
+; wm-restack = i3
 
 ; Set a DPI values used when rendering text
 ; This only affects scalable fonts
