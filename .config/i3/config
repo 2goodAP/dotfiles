@@ -209,7 +209,7 @@ floating_minimum_size -1 x -1
 # Startup manager                                                                  #
 ####################################################################################
 #
-#Start polybar
+# Start polybar
 exec_always --no-startup-id $scripts_dir/launch-polybar.sh
 
 # Desktop background with feh
@@ -265,33 +265,33 @@ set $unfocused_text_color   #858774
 set $inactive_text_color    #858774
 set $urgent_text_color      #0c1b21
 
-# Start waybar to display a workspace bar (plus the system information i3status
+# Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
-#     i3bar_command i3bar -t
-# 	status_command i3blocks #-c ~/.config/i3blocks/config
-#     strip_workspace_numbers yes
-#
-#
-# 	# Position and visibility for i3bar
-# 	mode dock
-# 	position top
-#     height 36
-#     tray_padding 4
-#
-# 	# Fonts and colors
-#     font pango: FantasqueSansMono Nerd Font 14
-#     colors {
-#         background #cab19200
-#         separator #330066
-#         statusline #fdf6e3
-#         # colorclass       border                  background          text
-#         focused_workspace  $border_color           $bg_color           $text_color
-#         active_workspace   $unfocused_border_color $unfocused_bg_color $text_color
-#         inactive_workspace $inactive_border_color  $inactive_bg_color  $inactive_text_color
-#         urgent_workspace   $urgent_border_color    $urgent_bg_color    $urgent_text_color
-#         #binding_mode
-#     }
+    # i3bar_command i3bar -t
+	# status_command i3blocks #-c ~/.config/i3blocks/config
+    # strip_workspace_numbers yes
+    #
+    #
+	# # Position and visibility for i3bar
+	# mode dock
+	# position top
+    # height 36
+    # tray_padding 4
+    #
+	# # Fonts and colors
+    # font pango: FantasqueSansMono Nerd Font 14
+    # colors {
+    #     background #cab19200
+    #     separator #330066
+    #     statusline #fdf6e3
+    #     # colorclass       border                  background          text
+    #     focused_workspace  $border_color           $bg_color           $text_color
+    #     active_workspace   $unfocused_border_color $unfocused_bg_color $text_color
+    #     inactive_workspace $inactive_border_color  $inactive_bg_color  $inactive_text_color
+    #     urgent_workspace   $urgent_border_color    $urgent_bg_color    $urgent_text_color
+    #     #binding_mode
+    # }
 # }
 
 # window colors
