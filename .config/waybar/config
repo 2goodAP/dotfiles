@@ -1,0 +1,162 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 35, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/window", "custom/media"],
+    "modules-center": ["clock", "network"],
+    "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "backlight", "battery", "idle_inhibitor", "tray"],
+
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": "ﱤ"
+        }
+    },
+    "sway/window": {
+       "format": {},
+       "max-length": 50
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+        "tooltip": false
+    },
+    "clock": {
+        "format": " {:%I:%M %p, %b %d}",
+        "format-alt": " {:%I:%M %p,  (%a) %b %d, %Y}",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 10,
+        "format": " {percentage}%",
+        "tooltip": false
+    },
+    "temperature": {
+        "thermal-zone": 1,
+        //"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "tooltip": false
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "good": 88,
+            "warning": 30,
+            "critical": 22
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        "format-full": " FULL",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "直 {essid} ({signalStrength}%)",
+        "format-icons": ["▂___", "▂▄__","▂▄▆_","▂▄▆█"],
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": " Disconnected",
+        "format-alt": "ﯱ {ipaddr}/{cidr} , {bandwidthDownBits},  {bandwidthUpBits}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "ﱝ Muted {icon}",
+        "format-muted": "ﱝ",
+        "format-source":"  {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "魯",
+            "car": "",
+            "default": ["奄", "奔", "墳", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/right1": {
+        "format": {}
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "tooltip": false
+    }
+}
+
+// vim: ft=json
