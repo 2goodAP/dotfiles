@@ -31,7 +31,7 @@
 [colors]
 
 ;; Active Colors
-bg = #50282c34
+bg = #00282c34
 fg = #f5f5f5
 ac = #1e88e5
 mf = #f5f5f5

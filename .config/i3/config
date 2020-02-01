@@ -205,6 +205,9 @@ floating_minimum_size -1 x -1
 # Disabling window titlebars
 # for_window [class=".*"] border pixel 3
 
+# Make pauvcontrol floating by default
+for_window [title="(?i)Volume.*"] $FLOAT
+
 ####################################################################################
 # Startup manager                                                                  #
 ####################################################################################
@@ -260,7 +263,7 @@ set $unfocused_bg_color     #283c34
 set $inactive_bg_color      #abb2bf
 set $urgent_bg_color        #e06c75
 
-set $text_color             #283c34#ffffff
+set $text_color             #283c34
 set $unfocused_text_color   #858774
 set $inactive_text_color    #858774
 set $urgent_text_color      #0c1b21

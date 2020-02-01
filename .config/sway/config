@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: System San Francisco Display 11
+font pango: System San Francisco Display 0
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -193,11 +193,11 @@ set $FLOAT      floating enable
 set $UNFLOAT    floating disable
 
 # Disable window title and borders for new tiling windows
-default_border pixel 3
+default_border pixel 4
 # new_window normal|pixel [<px>]
 
 # Enable window title and borders for new floating windows
-default_floating_border pixel 3
+default_floating_border pixel 4
 # new_float none
 
 # Set floating maximum and minumum sizes 
@@ -206,11 +206,24 @@ floating_minimum_size -1 x -1
 
 # Disabling window borders
 # for_window [class=".*"] border pixel 0
+
+# Make pauvcontrol floating by default
+for_window [title="(?i)Volume.*"] $FLOAT
  
 ####################################################################################
 # Startup manager                                                                  #
 ####################################################################################
 #
+# Start swayidle for screen locking
+exec --no-startup-id swayidle -w \
+            timeout 540 'swaymsg "output * dpms off"' \
+                resume 'swaymsg "output * dpms on"' \
+            timeout 600 'swaylock -f' \
+            before-sleep 'swaylock -f'
+
+# Start Waybar
+exec_always --no-startup-id $scripts_dir/launch-waybar.sh
+
 # Desktop background with output
 output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 
@@ -234,48 +247,47 @@ exec_always $scripts_dir/import-gsettings.sh \
 # Colors                                                                           #
 ####################################################################################
 #
-set $border_color           #61afef
-set $unfocused_border_color #98c379
+set $border_color           #98c379
+set $unfocused_border_color #283c34
 set $inactive_border_color  #abb2bf
 set $urgent_border_color    #e06c75
 
-set $bg_color 	            #61afef
-set $unfocused_bg_color     #98c379
+set $bg_color 	            #98c379
+set $unfocused_bg_color     #283c34
 set $inactive_bg_color      #abb2bf
 set $urgent_bg_color        #e06c75
 
-set $text_color             #ffffff
+set $text_color             #283c34
 set $unfocused_text_color   #858774
 set $inactive_text_color    #858774
 set $urgent_text_color      #0c1b21
 
 # Start waybar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    # swaybar_command waybar
-	status_command i3blocks #-c ~/.config/i3blocks/config
-    strip_workspace_numbers yes
-
-
-	# Position and visibility for i3bar
-	mode dock
-	position top
-    height 36
-
-	# Fonts and colors
-    font pango: FantasqueSansMono Nerd Font 14
-    colors {
-        background #cab19200
-        separator #330066
-        statusline #fdf6e3
-        # colorclass       border                  background          text
-        focused_workspace  $border_color           $bg_color           $text_color
-        active_workspace   $unfocused_border_color $unfocused_bg_color $text_color
-        inactive_workspace $inactive_border_color  $inactive_bg_color  $inactive_text_color
-        urgent_workspace   $urgent_border_color    $urgent_bg_color    $urgent_text_color
-        #binding_mode
-    }
-}
+# bar {
+	# status_command i3blocks #-c ~/.config/i3blocks/config
+    # strip_workspace_numbers yes
+    #
+    #
+	# # Position and visibility for i3bar
+	# mode dock
+	# position top
+    # height 36
+    #
+	# # Fonts and colors
+    # font pango: FantasqueSansMono Nerd Font 14
+    # colors {
+    #     background #cab19200
+    #     separator #330066
+    #     statusline #fdf6e3
+    #     # colorclass       border                  background          text
+    #     focused_workspace  $border_color           $bg_color           $text_color
+    #     active_workspace   $unfocused_border_color $unfocused_bg_color $text_color
+    #     inactive_workspace $inactive_border_color  $inactive_bg_color  $inactive_text_color
+    #     urgent_workspace   $urgent_border_color    $urgent_bg_color    $urgent_text_color
+    #     #binding_mode
+    # }
+# }
 
 # window colors
 #                       border                  background          text                  indicator     child_border

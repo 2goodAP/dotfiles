@@ -4,11 +4,12 @@ Documentation=man:swayidle(1)
 PartOf=graphical-session.target
 
 [Service]
+User=%i
 Type=simple
 ExecStart=/usr/bin/swayidle -w \
-            timeout 570 'swaylock -f' \
-            timeout 600 'swaymsg "output * dpms off"' \
+            timeout 540 'swaymsg "output * dpms off"' \
                 resume 'swaymsg "output * dpms on"' \
+            timeout 600 'swaylock -f' \
             before-sleep 'swaylock -f'
 ExecStartPost=/usr/bin/sleep 1
 

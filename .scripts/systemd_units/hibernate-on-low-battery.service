@@ -1,6 +1,6 @@
 [Unit]
 Description=Hibernate the system when battery drops below critical threshold
-Documentation=man:systemctl
+Documentation=man:systemd-sleep
 
 [Service]
 Type=simple

@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Terminate already running bar instances
-killall -q polybar
+killall -q waybar
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 
-# Launch MainBar
-echo "---" | tee -a /tmp/MainBar.log
-polybar MainBar >>/tmp/MainBar.log 2>&1 &
+# Launch Waybar
+echo "---" | tee -a /tmp/waybar.log
+waybar >>/tmp/waybar.log 2>&1 &
 
 echo "Bars launched..."
