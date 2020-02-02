@@ -10,7 +10,7 @@
 #window {
     background-color: #98c379;
     color: #282c34;
-    padding: 0 20px 0 10px;
+    padding: 0 20px 0 15px;
     border-radius: 0 20px 20px 0;
 }
 
@@ -90,15 +90,14 @@ window#waybar.empty {
 #clock {
     background-color: #4b5263;
     border-radius: 0 0 0 15px;
-    padding-left: 15px;
+    padding: 0 15px 0 20px;
 }
 
 #battery {
     background-color: #4b5263;
     color: #fff;
-    border-radius: 0 0 20px 0;
-    padding: 0 20px 0 15px;
-    margin-right: 10px;
+    border-radius: 0 7px 7px 0;
+    padding: 0 15px;
 }
 
 #battery.full-from {
@@ -135,7 +134,7 @@ window#waybar.empty {
 #cpu {
     background-color: #4b5263;
     color: #fff;
-    border-radius: 0 0 0 20px;
+    border-radius: 20px 0 0 20px;
     padding-left: 20px;
 }
 
@@ -194,12 +193,13 @@ window#waybar.empty {
 #backlight {
     background-color: #e06c75;
     color: #282c34;
+    padding-right: 15px;
 }
 
 #network {
     background-color: #61afef;
     border-radius: 0 0 15px 0;
-    padding-right: 15px;
+    padding: 0 20px 0 15px;
 }
 
 #network.disconnected {
@@ -232,6 +232,7 @@ window#waybar.empty {
 
 #temperature {
     background-color: #4b5263;
+    padding-right: 15px;
 }
 
 #temperature.critical {
@@ -250,7 +251,7 @@ window#waybar.empty {
 #idle_inhibitor {
     background-color: #d19a66;
     color: #757575;
-    border-radius: 20px 0 0 20px;
+    border-radius: 7px 0 0 7px;
     padding-right: 10px;
 }
 
