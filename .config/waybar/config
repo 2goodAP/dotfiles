@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 35, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/window", "custom/media"],
@@ -74,20 +74,36 @@
     "cpu": {
         "interval": 1,
         "format": " {usage}%",
+        "states": {
+            "good": 10,
+            "okay": 20,
+            "concern": 30,
+            "high": 50,
+            "very-high": 75,
+            "full": 88
+        },
         "tooltip": false
     },
     "memory": {
         "interval": 10,
         "format": " {percentage}%",
+        "states": {
+            "good": 10,
+            "okay": 20,
+            "concern": 30,
+            "high": 50,
+            "very-high": 75,
+            "full": 88
+        },
         "tooltip": false
     },
     "temperature": {
         "thermal-zone": 1,
         //"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""],
+        //"format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""],
         "tooltip": false
     },
     "backlight": {
@@ -98,27 +114,30 @@
     },
     "battery": {
         "states": {
-            "good": 88,
-            "warning": 30,
+            "full-from": 100,
+            "full-upto": 88,
+            "concern": 40,
+            "warn": 30,
             "critical": 22
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": "{icon} {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
+        // An empty format will hide the module
+        // "format-good": "",
         "format-full": " FULL",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "直 {essid} ({signalStrength}%)",
-        "format-icons": ["▂___", "▂▄__","▂▄▆_","▂▄▆█"],
+        "format-wifi": "直 {signalStrength}% ({essid})",
+        // "format-icons": ["▂___", "▂▄__","▂▄▆_","▂▄▆█"],
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": " Disconnected",
-        "format-alt": "ﯱ {ipaddr}/{cidr} , {bandwidthDownBits},  {bandwidthUpBits}",
+        "format-alt": " {bandwidthDownBits},  {bandwidthUpBits}",
         "tooltip": false
     },
     "pulseaudio": {
@@ -141,9 +160,6 @@
         "on-click": "pavucontrol",
         "tooltip": false
     },
-    "custom/right1": {
-        "format": {}
-    },
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
@@ -153,8 +169,10 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        // Script in resources folder
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+        // Filter player based on name
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
         "tooltip": false
     }
 }
