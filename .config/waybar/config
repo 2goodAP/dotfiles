@@ -132,6 +132,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 20,
         "format-wifi": "直 {signalStrength}% ({essid})",
         // "format-icons": ["▂___", "▂▄__","▂▄▆_","▂▄▆█"],
         "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
