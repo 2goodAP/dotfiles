@@ -96,7 +96,7 @@ window#waybar.empty {
 #battery {
     background-color: #4b5263;
     color: #fff;
-    border-radius: 0 7px 7px 0;
+    border-radius: 0 8px 8px 0;
     padding: 0 15px;
 }
 
@@ -251,7 +251,7 @@ window#waybar.empty {
 #idle_inhibitor {
     background-color: #d19a66;
     color: #757575;
-    border-radius: 7px 0 0 7px;
+    border-radius: 8px 0 0 8px;
     padding-right: 10px;
 }
 
