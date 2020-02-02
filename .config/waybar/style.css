@@ -48,7 +48,7 @@ window#waybar.empty {
 #workspaces button {
     color: #ffffff;
     border-bottom: 3px solid transparent;
-    padding: 5px;
+    padding: 0 2px 0 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -65,10 +65,10 @@ window#waybar.empty {
     color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
+/* #mode { */
+/*     background-color: #64727D; */
+/*     border-bottom: 3px solid #ffffff; */
+/* } */
 
 #clock,
 #battery,
