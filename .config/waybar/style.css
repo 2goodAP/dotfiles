@@ -1,4 +1,5 @@
 * {
+    background-color: transparent;
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
@@ -14,19 +15,17 @@
     border-radius: 0 20px 20px 0;
 }
 
-window#waybar {
-    background-color: transparent;
-    color: #ffffff;
-    border: none;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-window#waybar.empty {
-    background-color: transparent;
-}
-
 /*
+ * window#waybar {
+ *     border: none;
+ *     transition-property: background-color;
+ *     transition-duration: .5s;
+ * }
+ * 
+ * window#waybar.empty {
+ *     background-color: transparent;
+ * }
+ * 
  * window#waybar.hidden {
  *     opacity: 0.2;
  * }
@@ -44,6 +43,10 @@ window#waybar.empty {
  *     border: none;
  * }
  */
+
+#workspaces {
+    background-color: rgba(75, 82, 99, .8);
+}
 
 #workspaces button {
     color: #ffffff;
@@ -245,7 +248,7 @@ window#waybar.empty {
 }
 
 #tray {
-    background-color: rgba(75, 82, 99, .3);
+    background-color: rgba(75, 82, 99, .4);
 }
 
 #idle_inhibitor {
