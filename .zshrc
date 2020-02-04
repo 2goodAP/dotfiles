@@ -68,7 +68,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git archlinux npm colored-man-pages colorize)
+plugins=(archlinux colored-man-pages common-aliases gitfast git-extras systemd vi-mode)
 
 
 # User configuration
@@ -127,11 +127,11 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 
 
-# Powerlevel10k configuration
+# PowerLevel10k configuration
 POWERLEVEL9K_MODE='nerdfont-complete'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon vi_mode context dir vcs root_indicator)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs root_indicator)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs)
 
 # Icons
 # POWERLEVEL9K_LINUX_ICON=$' \uF300'
@@ -152,48 +152,16 @@ POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND='#E06C75'
 POWERLEVEL9K_CONTEXT_REMOTE_SUDO_FOREGROUND='282828'
 POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND='#E06C75'
 
-POWERLEVEL9K_VI_MODE_FOREGROUND='#282828'
-POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='#98C379'
-POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='#61AFEF'
-POWERLEVEL9K_VI_MODE_VISUAL_BACKGROUND='#6678DD'
-
 POWERLEVEL9K_DIR_HOME_BACKGROUND='#C678DD'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='#C678DD'
 
 POWERLEVEL9K_STATUS_OK_FOREGROUND='040'
-POWERLEVEL9K_TIME_BACKGROUND='#ABB2BF'
 
 ###############################################################################
 # Scripts                                                                     #
 ###############################################################################
 #
-# Configs for nnn
-n ()
-{
-    # Block nesting of nnn in subshells
-    if [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, export NNN_TMPFILE after the call to nnn
-    # NOTE: NNN_TMPFILE is fixed, should not be modified
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-
-    nnn "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
+# MDN "Rendering Error" fix for Zeal
 zeal-docs-fix() {
     pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
     find . -iname 'react-main*.js' -exec rm '{}' \;
@@ -267,42 +235,12 @@ alias v='nvim'
 alias vi='nvim'
 alias vimconf='nvim ~/.vimrc'
 
-# nnn
-alias n='nnn'
-
-# Anaconda
-alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
-alias spyder='exec /opt/anaconda/bin/spyder &'
-alias conda='sudo /opt/anaconda/condabin/conda'
-
 # Grep
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
-# Books
-alias CLRS='zathura ~/Documents/NAALEDGE/Algorithms/Introduction_to_algorithm/Introduction-to-algorithms-3rd-edition.pdf &'
-alias Eloquent_JavaScript='zathura ~/Documents/NAALEDGE/JavaScript/Eloquent_JavaScript-3rd_Edition.pdf &'
-alias Fundamentals_Database='zathura ~/Documents/NAALEDGE/Database/Fundamentals_of_Database_Systems-7th_edition.pdf &'
-alias CSS3_The_Missing_Manual='zathura ~/Documents/NAALEDGE/HTML_and_CSS/CSS-The-Missing-Manual-4th.pdf &'
-alias Learning_Python='zathura ~/Documents/NAALEDGE/Python/LearningPython.pdf &'
-alias C_Programming='zathura ~/Documents/NAALEDGE/C-C++/C_Programming_A_Modern_Approach_2nd_Ed.pdf &'
-alias Practical_Vim='zathura ~/Documents/NAALEDGE/Vim/Drew\ Neil\ -\ Practical\ Vim\ Edit\ Text\ at\ the\ Speed\ of\ Thought\,\ 2nd\ Edition\ -\ 2015.pdf &'
-alias Clean_Code='zathura ~/Documents/NAALEDGE/Clean_Code/Clean_Code.pdf &'
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# nnn
+alias n='nnn'
 
 # NVM installation
 export NVM_DIR="$HOME/.nvm"

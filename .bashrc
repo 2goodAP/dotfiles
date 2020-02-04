@@ -71,33 +71,7 @@ source "$BASH_IT"/bash_it.sh
 # Scrips
 #-----------------------------------------------#
 
-# Configs fo nnn
-n ()
-{
-    # Block nesting of nnn in subshells
-    if [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, export NNN_TMPFILE after the call to nnn
-    # NOTE: NNN_TMPFILE is fixed, should not be modified
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-
-    nnn "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
+# MDN "Rendering Error" fix for Zeal
 zeal-docs-fix() {
     pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
     find . -iname 'react-main*.js' -exec rm '{}' \;
@@ -164,42 +138,12 @@ alias v='nvim'
 alias vi='nvim'
 alias vimconf='nvim ~/.vimrc'
 
-# nnn
-alias n='nnn'
-
-# Anaconda
-alias anaconds-navigator='exec /opt/anaconda/bin/anaconda-navigator &'
-alias spyder='exec /opt/anaconda/bin/spyder &'
-alias conda='sudo /opt/anaconda/condabin/conda'
-
 # Grep
 alias grep='grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias pgrep='pgrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
-# Books
-alias CLRS='zathura ~/Documents/NAALEDGE/Algorithms/Introduction_to_algorithm/Introduction-to-algorithms-3rd-edition.pdf &'
-alias Eloquent_JavaScript='zathura ~/Documents/NAALEDGE/JavaScript/Eloquent_JavaScript-3rd_Edition.pdf &'
-alias Fundamentals_Database='zathura ~/Documents/NAALEDGE/Database/Fundamentals_of_Database_Systems-7th_edition.pdf &'
-alias CSS3_The_Missing_Manual='zathura ~/Documents/NAALEDGE/HTML_and_CSS/CSS-The-Missing-Manual-4th.pdf &'
-alias Learning_Python='zathura ~/Documents/NAALEDGE/Python/LearningPython.pdf &'
-alias C_Programming='zathura ~/Documents/NAALEDGE/C-C++/C_Programming_A_Modern_Approach_2nd_Ed.pdf &'
-alias Practical_Vim='zathura ~/Documents/NAALEDGE/Vim/Drew\ Neil\ -\ Practical\ Vim\ Edit\ Text\ at\ the\ Speed\ of\ Thought\,\ 2nd\ Edition\ -\ 2015.pdf &'
-alias Clean_Code='zathura ~/Documents/NAALEDGE/Clean_Code/Clean_Code.pdf &'
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# nnn
+alias n='nnn'
 
 # NVM installation
 export NVM_DIR="$HOME/.nvm"
