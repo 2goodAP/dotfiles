@@ -68,7 +68,7 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git archlinux colored-man-pages colorize)
+plugins=(archlinux colored-man-pages common-aliases fasd gitfast git-extras systemd vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,33 +131,7 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 # Scripts                                                                     #
 ###############################################################################
 #
-# Configs for nnn
-n ()
-{
-    # Block nesting of nnn in subshells
-    if [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, export NNN_TMPFILE after the call to nnn
-    # NOTE: NNN_TMPFILE is fixed, should not be modified
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-
-    nnn "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
+# MDN "Rendering Error" fix for Zeal
 zeal-docs-fix() {
     pushd "$HOME/.local/share/Zeal/Zeal/docsets" >/dev/null || return
     find . -iname 'react-main*.js' -exec rm '{}' \;
@@ -230,7 +204,6 @@ alias diff='diff --color'
 alias less='less -i'
 
 # Vim
-alias v='nvim'
 alias vi='nvim'
 alias vimconf='nvim ~/.vimrc'
 

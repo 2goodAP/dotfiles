@@ -231,7 +231,6 @@ alias diff='diff --color'
 alias less='less -i'
 
 # Vim
-alias v='nvim'
 alias vi='nvim'
 alias vimconf='nvim ~/.vimrc'
 
