@@ -15,7 +15,7 @@ export BASH_IT="/home/aashishp/.bash_it"
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline'
+export BASH_IT_THEME='pure'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -139,8 +139,7 @@ alias vi='nvim'
 alias vimconf='nvim ~/.vimrc'
 
 # Grep
-alias grep='grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-alias pgrep='pgrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias grep='grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # nnn
 alias n='nnn'
