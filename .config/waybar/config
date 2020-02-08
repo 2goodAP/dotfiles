@@ -151,12 +151,12 @@
         "format-source":"  {volume}%",
         "format-source-muted": "",
         "format-icons": {
-            "headphones": "",
+            "headphones": "",
             "handsfree": "",
             "headset": "",
             "phone": "",
             "portable": "魯",
-            "car": "",
+            "car": "",
             "default": ["奄", "奔", "墳", ""]
         },
         "on-click": "pavucontrol",
