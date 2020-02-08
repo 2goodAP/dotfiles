@@ -14,7 +14,8 @@ bs-hl-color=d23c3dff
 inside-color=00000000
 inside-ver-color=00000000
 inside-wrong-color=d23c3dff
-inside-caps-lock-color=fdd20aff
+inside-clear-color=c678ddff
+inside-caps-lock-color=e5c07bff
 
 line-color=00000000
 line-caps-lock-color=00000000
