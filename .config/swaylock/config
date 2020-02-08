@@ -7,13 +7,13 @@ scaling=stretch
 
 indicator-caps-lock
 
-key-hl-color=65bc46ff
-caps-lock-key-hl-color=65bc46ff
-bs-hl-color=d23c3dff
+key-hl-color=98c379ff
+caps-lock-key-hl-color=98c379ff
+bs-hl-color=be5046ff
 
 inside-color=00000000
 inside-ver-color=00000000
-inside-wrong-color=d23c3dff
+inside-wrong-color=be5046ff
 inside-clear-color=c678ddff
 inside-caps-lock-color=e5c07bff
 
@@ -23,11 +23,11 @@ line-clear-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
 
-ring-color=ffffffff
-ring-caps-lock-color=ffffffff
-ring-ver-color=ffffffff
-ring-wrong-color=ffffffff
-ring-clear-color=ffffffff
+ring-color=282c34ff
+ring-caps-lock-color=282c34ff
+ring-ver-color=282c34ff
+ring-wrong-color=282c34ff
+ring-clear-color=282c34ff
 
 separator-color=00000000
 
