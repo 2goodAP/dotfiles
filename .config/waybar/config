@@ -34,11 +34,11 @@
         "unknown-tag": "N/A",
         "interval": 2,
         "consume-icons": {
-            "on": " "
+            "on": ""
         },
         "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
+            "off": "<span color=\"#f53c3c\">ﱙ</span> ",
+            "on": ""
         },
         "repeat-icons": {
             "on": " "
@@ -136,7 +136,7 @@
         "interval": 15,
         "format-wifi": "直 {signalStrength}% ({essid})",
         // "format-icons": ["▂___", "▂▄__","▂▄▆_","▂▄▆█"],
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-ethernet": " {ifname}: {ipaddr}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": " Disconnected",
         "format-alt": " {bandwidthDownBits},  {bandwidthUpBits}",
@@ -145,13 +145,13 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": "ﱝ Muted {icon}",
-        "format-muted": "ﱝ",
-        "format-source":"  {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "婢",
+        "format-muted": "婢",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
-            "headphones": "",
+            "headphones": "",
             "handsfree": "",
             "headset": "",
             "phone": "",

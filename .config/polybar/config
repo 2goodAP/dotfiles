@@ -77,28 +77,6 @@ mtBrown = #6d4c41
 mtGrey = #757575
 mtBlueGrey = #546e7a
 
-;; Material Colors Shades
-
-; Blue-Grey
-mtBgShade1 = #263238
-mtBgShade2 = #37474f
-mtBgShade3 = #455a64
-mtBgShade4 = #546e7a
-mtBgShade5 = #607d8b
-mtBgShade6 = #78909c
-mtBgShade7 = #90a4ae
-mtBgShade8 = #b0bec5
-
-; Grey
-mtGrShade1 = #212121
-mtGrShade2 = #424242
-mtGrShade3 = #616161
-mtGrShade4 = #757575
-mtGrShade5 = #9e9e9E
-mtGrShade6 = #bdbdbD
-mtGrShade7 = #d4d4d4
-mtGrShade8 = #eeeeeE
-
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;
 ;; Global WM Settings
