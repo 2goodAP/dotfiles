@@ -136,7 +136,7 @@
         "interval": 15,
         "format-wifi": "直 {signalStrength}% ({essid})",
         // "format-icons": ["▂___", "▂▄__","▂▄▆_","▂▄▆█"],
-        "format-ethernet": " {ifname}: {ipaddr}",
+        "format-ethernet": " {ifname} ({ipaddr})",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": " Disconnected",
         "format-alt": " {bandwidthDownBits},  {bandwidthUpBits}",

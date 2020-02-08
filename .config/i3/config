@@ -206,7 +206,7 @@ floating_minimum_size -1 x -1
 # for_window [class=".*"] border pixel 3
 
 # Make pauvcontrol floating by default
-for_window [title="(?i)Volume.*"] $FLOAT
+for_window [title="^(?i).*Volume Control.*$"] $FLOAT
 
 ####################################################################################
 # Startup manager                                                                  #
