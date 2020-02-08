@@ -18,25 +18,25 @@ inside-clear-color=c678ddff
 inside-caps-lock-color=e5c07bff
 
 line-color=00000000
-line-caps-lock-color=00000000
-line-clear-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
 
 ring-color=282c34ff
-ring-caps-lock-color=282c34ff
 ring-ver-color=282c34ff
 ring-wrong-color=282c34ff
 ring-clear-color=282c34ff
+ring-caps-lock-color=282c34ff
 
 separator-color=00000000
 
 font="sans-serif"
 
-text-color=d23c3dff
-disable-caps-lock-text
-text-clear-color=00000000
+text-color=ffffffff
 text-ver-color=00000000
 text-wrong-color=00000000
+text-clear-color=00000000
+disable-caps-lock-text
 
 # vim:ft=conf
