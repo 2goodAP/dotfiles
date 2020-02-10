@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH:/opt/android-sdk/platform-tools
 
@@ -126,37 +133,6 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 # To disable highlighting of globbing expressions
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 
-
-# PowerLevel10k configuration
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs root_indicator)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs)
-
-# Icons
-# POWERLEVEL9K_LINUX_ICON=$' \uF300'
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_first_and_last
-
-POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-
-# Segment Colors
-POWERLEVEL9K_OS_ICON_BACKGROUND='#eeeeee'
-POWERLEVEL9K_OS_ICON_FOREGROUND='#3465a4'
-
-# POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='#282828'
-POWERLEVEL9K_CONTEXT_BACKGROUND='#4B5263'
-POWERLEVEL9K_CONTEXT_SUDO_FOREGROUND='282828'
-POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND='#E06C75'
-POWERLEVEL9K_CONTEXT_REMOTE_SUDO_FOREGROUND='282828'
-POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND='#E06C75'
-
-POWERLEVEL9K_DIR_HOME_BACKGROUND='#C678DD'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='#C678DD'
-
-POWERLEVEL9K_STATUS_OK_FOREGROUND='040'
-
 ###############################################################################
 # Scripts                                                                     #
 ###############################################################################
@@ -251,3 +227,5 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
