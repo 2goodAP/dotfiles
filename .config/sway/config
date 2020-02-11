@@ -344,9 +344,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Sreen brightness controls
 #
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --quiet s 10%+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --quiet s 5%+
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --quiet s 10%-
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --quiet s 5%-
 
 ####################################################################################
 # Window-specific configs                                                         #
