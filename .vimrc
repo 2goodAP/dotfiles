@@ -70,34 +70,60 @@ function! <SID>SynStack()
   :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" Nvim split manipulation keybindings
+" Vim tab and split navigation keybindings
 " Terminal mode
 if exists(':tnoremap')
     " <C-r>bufferNumber like keymapping for terminal mode
     tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
     " 'Escaping' to normal mode in terminal mode
     tnoremap    <A-[>   <C-\><C-n>
-    " Split manipulation
+    " Split navigation
     tnoremap    <C-h>   <C-\><C-n><C-w>h
     tnoremap    <C-l>   <C-\><C-n><C-w>l
     tnoremap    <C-j>   <C-\><C-n><C-w>j
     tnoremap    <C-k>   <C-\><C-n><C-w>k
+    " Tab navigation
+    tnoremap    <A-l>   <C-\><C-n>gt
+    tnoremap    <A-h>   <C-\><C-n>gT
 endif
 " Normal mode
-nnoremap    <C-k>   <C-w>k
-nnoremap    <C-j>   <C-w>j
-nnoremap    <C-h>   <C-w>h
-nnoremap    <C-l>   <C-w>l
+nnoremap    <C-k>           <C-w>k
+nnoremap    <C-j>           <C-w>j
+nnoremap    <C-h>           <C-w>h
+nnoremap    <C-l>           <C-w>l
+" Tab navigation
+nnoremap    <A-l>           gt
+nnoremap    <A-h>           gT
+" Tab jumping
+nnoremap    <A-1>           1gt   
+nnoremap    <A-2>           2gt   
+nnoremap    <A-3>           3gt   
+nnoremap    <A-4>           4gt   
+nnoremap    <A-5>           5gt   
+nnoremap    <A-6>           6gt   
+nnoremap    <A-7>           7gt   
+nnoremap    <A-8>           8gt   
+nnoremap    <A-9>           9gt   
+nnoremap    <A-0>           0gt   
+" Tab moving
+nnoremap    <silent><C-A-h> :execute 'silent! tabmove'.(tabpagenr()-2)<CR>
+nnoremap    <silent><C-A-l> :execute 'silent! tabmove'.(tabpagenr()+1)<CR>
 " Insert mode
-inoremap    <C-k>   <ESC><C-w>k
-inoremap    <C-j>   <ESC><C-w>j
-inoremap    <C-h>   <ESC><C-w>h
-inoremap    <C-l>   <ESC><C-w>l
+inoremap    <C-k>           <ESC><C-w>k
+inoremap    <C-j>           <ESC><C-w>j
+inoremap    <C-h>           <ESC><C-w>h
+inoremap    <C-l>           <ESC><C-w>l
+" Tab navigation
+inoremap    <A-l>           <ESC>gt
+inoremap    <A-h>           <ESC>gT
 " Visual mode
-vnoremap    <C-k>   <ESC><C-w>k
-vnoremap    <C-j>   <ESC><C-w>j
-vnoremap    <C-h>   <ESC><C-w>h
-vnoremap    <C-l>   <ESC><C-w>l
+vnoremap    <C-k>           <ESC><C-w>k
+vnoremap    <C-j>           <ESC><C-w>j
+vnoremap    <C-h>           <ESC><C-w>h
+vnoremap    <C-l>           <ESC><C-w>l
+" Tab navigation
+vnoremap    <A-l>           <ESC>gt
+vnoremap    <A-h>           <ESC>gT
 
 " Hide netrw directory listing banner
 let g:netrw_banner=0
@@ -222,7 +248,7 @@ let g:cpp_concepts_highlight=1
 let g:cpp_no_function_highlight=0
 
 " Configure path to look for headers inside indlude dirs
-let &path.="src/include,/usr/include/AL,"
+let &path.="**,src/include,/usr/include/AL,"
 " The following line changes all . to / for gf command (and related):
 set includeexpr=substitute(v:fname,'\\.','/','g')
 " Build command

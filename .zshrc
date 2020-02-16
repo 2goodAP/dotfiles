@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH:/opt/android-sdk/platform-tools
+export PATH=$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$(ruby -v | cut -f 2 -d ' ' | cut -f 1 -d 'p')/bin:$PATH:/opt/android-sdk/platform-tools
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -218,6 +218,9 @@ alias vimconf='nvim ~/.vimrc'
 # Grep
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
+# Sed
+alias sed='sed -E'
 
 # nnn
 alias n='nnn'
