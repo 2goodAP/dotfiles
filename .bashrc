@@ -81,7 +81,11 @@ zeal-docs-fix() {
 # Environment Variables
 #-----------------------------------------------#
 
+# Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1
+
+# Set default action of todo.sh to list outstanding items
+export TODOTXT_DEFAULT_ACTION=ls
 
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
@@ -128,6 +132,7 @@ fi
 # Meta aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias c='clear'
+alias ecode='echo $?'
 alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
 alias diff='diff --color'
