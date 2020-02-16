@@ -38,28 +38,65 @@ set fileencoding=utf-8
 " Enabling true colors for terminal neovim
 set termguicolors
 
+" Highlight search
+set hlsearch
+set incsearch
+
+" Live substitution
+if exists('inccommand')
+    set inccommand=split
+endif
+
+" Show the line number
+set number
+set relativenumber
+
+" Softwrap
+set wrap linebreak nolist
+set showbreak=…
+
+" Ignore case
+set ignorecase
+set smartcase
+
+" Show command
+set showcmd
+
+" Arranging the size of a tab character
+set tabstop=4 shiftwidth=0 expandtab
+
+" Highlighting the current cursor line
+set cursorline
+
+" Split manipulation
+set splitright
+set splitbelow
+
 " Remapping the leader to ,
 let mapleader=','
+
+" Configure path to look for files
+let &path.="src/include,/usr/include/AL,**"
 
 " Sourcing the plugin manager file
 source ~/.vim/plugins.vim
 
 " Auto complete characters
 " Brace Completion
-inoremap    {      {
+inoremap    {       {
 inoremap    {}      {}
-inoremap    {{       {}<left>
+inoremap    {{      {}<Left>
 inoremap    {<CR>   {<CR>}<ESC>O
 
 " Square brackets completion
-inoremap    [      [
+inoremap    [       [
 inoremap    []      []
-inoremap    [[       []<left>
+inoremap    [[      []<Left>
 inoremap    [<CR>   [<CR>]<ESC>O
 
 " Parenthesis Completion
 inoremap    (       (
-inoremap    ((       ()<LEFT>
+inoremap    ((      ()<Left>
 
 " Show syntax groups
 nmap <F10> :call <SID>SynStack()<CR>
@@ -180,40 +217,7 @@ let g:lightline.subseparator={
 let g:indentLine_setColors=1
 let g:indentLine_char='▏'
 
-" Highlight search
-set hlsearch
-set incsearch
-
-" Live substitution
-if exists('inccommand')
-    set inccommand=split
-endif
-
-" Show the line number
-set number
-set relativenumber
-
-" Softwrap
-set wrap linebreak nolist
-set showbreak=…
-
-" Ignore case
-set ignorecase
-set smartcase
-
-" Show command
-set showcmd
-
-" Arranging the size of a tab character
-set tabstop=4 shiftwidth=0 expandtab
-
-" Highlighting the current cursor line
-set cursorline
-
-" Split manipulation
-set splitright
-set splitbelow
-
+"
 " Custom IDE-like features
 "
 " vim-ale
@@ -222,7 +226,6 @@ let g:ale_sign_warning = ''
 " Less distracting when opening a new file
 let g:ale_lint_on_enter = 0
 
-"
 " vim-markdown
 "
 " Enable strikethroughs using ~~Strike~~
@@ -232,8 +235,8 @@ let g:vim_markdown_no_extensions_in_markdown = 1
 " Auto-write when following links with 'ge'
 let g:vim_markdown_autowrite = 1
 
-"
 " vim-cpp-enhanced-highlight options
+"
 " Enable highlighting class scope
 let g:cpp_class_scope_highlight=1
 " Enable highlighting member variables
@@ -247,21 +250,19 @@ let g:cpp_concepts_highlight=1
 " Highlighting of user defined functions
 let g:cpp_no_function_highlight=0
 
-" Configure path to look for headers inside indlude dirs
-let &path.="**,src/include,/usr/include/AL,"
 " The following line changes all . to / for gf command (and related):
 set includeexpr=substitute(v:fname,'\\.','/','g')
 " Build command
 set makeprg=make
-
-" javascript-libraries-syntax stuff
-let g:used_javascript_libs = 'underscore,backbone,react'
 
 " Python highlights
 let python_highlight_all = 1
 
 " Setting default sql type
 let g:sql_type_default='mysql'
+
+" javascript-libraries-syntax stuff
+let g:used_javascript_libs = 'underscore,backbone,react'
 
 " vim-javascript stuff
 let g:javascript_plugin_flow=1
@@ -270,8 +271,9 @@ let g:javascript_plugin_jsdoc = 1
 " vim-jsx configs
 let g:jsx_ext_required=1
 
+"
 " Custom colors
-
+"
 " Using vim's package feature to load onedark
 packadd! onedark.vim
 
