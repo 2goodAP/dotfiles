@@ -22,7 +22,8 @@
     },
     "sway/window": {
        "format": {},
-       "max-length": 35
+       "max-length": 35,
+       "tooltip": false
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
