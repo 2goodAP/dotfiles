@@ -249,6 +249,9 @@ exec_always --no-startup-id picom --dbus -f
 # Start the greenclip daemon
 exec_always --no-startup-id sh $scripts_dir/start-greenclip-daemon.sh
 
+# Toggle redshift
+bindsym Alt+End exec pkill -USR1 redshift
+
 ####################################################################################
 # Colors                                                                           #
 ####################################################################################
