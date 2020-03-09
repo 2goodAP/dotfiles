@@ -386,6 +386,11 @@ if (has("autocmd") && !has("gui_running"))
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
+        autocmd ColorScheme * call onedark#set_highlight("jsExtendsKeyword", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("jsClassMethodType", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
