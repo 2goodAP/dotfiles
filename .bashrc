@@ -137,6 +137,7 @@ alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
 alias diff='diff --color'
 alias less='less -i'
+alias info='info --vi-keys'
 
 # Vim
 alias vi='nvim'
