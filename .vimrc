@@ -221,15 +221,6 @@ let g:lightline.subseparator={
 let g:indentLine_setColors=1
 let g:indentLine_char='▏'
 
-" Tcomment custom type definition
-"
-" Assembly
-call tcomment#type#Define('asm', '# %s')
-call tcomment#type#Define('asm_block', "/**%s */\n * ")
-
-" Javascript
-call tcomment#type#Define('javascript_block', "/**%s */\n * ")
-
 " Linter Plugin
 " vim-ale
 let g:ale_sign_error = 'ﱣ'

@@ -209,7 +209,7 @@ floating_minimum_size -1 x -1
 for_window [title="^(?i).*Volume Control.*$"] $FLOAT
 
 # Make QEMU floating by default
-for_window [title="^(?i)QEMU$"] $FLOAT
+for_window [title="^QEMU.*$"] $FLOAT
 
 ####################################################################################
 # Startup manager                                                                  #
