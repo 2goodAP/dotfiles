@@ -165,6 +165,10 @@ vnoremap    <A-h>           <ESC>gT
 " Hide netrw directory listing banner
 let g:netrw_banner=0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          CUSTOM PLUGINS                           "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " lightline config
 let g:lightline={
     \ 'colorscheme': 'onedark',
@@ -217,9 +221,16 @@ let g:lightline.subseparator={
 let g:indentLine_setColors=1
 let g:indentLine_char='▏'
 
+" Tcomment custom type definition
 "
-" Custom IDE-like features
-"
+" Assembly
+call tcomment#type#Define('asm', '# %s')
+call tcomment#type#Define('asm_block', "/**%s */\n * ")
+
+" Javascript
+call tcomment#type#Define('javascript_block', "/**%s */\n * ")
+
+" Linter Plugin
 " vim-ale
 let g:ale_sign_error = 'ﱣ'
 let g:ale_sign_warning = ''
