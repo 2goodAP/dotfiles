@@ -472,11 +472,42 @@ if (has("autocmd") && !has("gui_running"))
 
         " Custom C/C++ highlights
         autocmd ColorScheme * call onedark#set_highlight("cInclude", {
-                    \   "fg": onedark#GetColors().purple,
+                    \   "fg": onedark#GetColors().yellow,
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cDefine", {
+                    \   "fg": onedark#GetColors().yellow,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cPreCondit", {
+                    \   "fg": onedark#GetColors().yellow,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cPreConditMatch", {
+                    \   "fg": onedark#GetColors().yellow,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("cType", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cStorageClass", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cStructure", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cCustomClassKey", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
                     \   "cterm": "italic"
@@ -493,17 +524,6 @@ if (has("autocmd") && !has("gui_running"))
                     \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cStatement", {
-                    \   "fg": onedark#GetColors().purple,
-                    \   "gui": "italic",
-                    \   "cterm": "italic"
-                    \ })
-        autocmd ColorScheme * call onedark#set_highlight("cCustomClassKey", {
-                    \   "fg": onedark#GetColors().purple,
-                    \   "gui": "italic",
-                    \   "cterm": "italic"
-                    \ })
-
-        autocmd ColorScheme * call onedark#set_highlight("cppStatement", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
                     \   "cterm": "italic"
@@ -533,6 +553,12 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cCustomClassName", {
                     \   "fg": onedark#GetColors().yellow
+                    \ })
+
+        autocmd ColorScheme * call onedark#set_highlight("cppStatement", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
                     \ })
 
         autocmd ColorScheme * call onedark#set_highlight("cppSTLnamespace", {
