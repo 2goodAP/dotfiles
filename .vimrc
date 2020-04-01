@@ -28,6 +28,11 @@ endif
 filetype plugin on
 syntax enable
 
+" Source .vimrc file if present in surrent directory
+set exrc
+" Restrict usage of some commands in non-default .vimrc files
+set secure
+
 " Using Omni Completion
 set omnifunc=syntaxcomplete#Complete
 
@@ -68,6 +73,9 @@ set tabstop=4 shiftwidth=0 expandtab
 " Highlighting the current cursor line
 set cursorline
 
+" Display column break at 80 characters
+set colorcolumn=80
+
 " Split manipulation
 set splitright
 set splitbelow
@@ -76,7 +84,12 @@ set splitbelow
 let mapleader=','
 
 " Configure path to look for files
-let &path.="src/include,/usr/include/AL,**"
+let &path.="**,"
+
+" The following line changes all . to / for gf command (and related):
+set includeexpr=substitute(v:fname,'\\.','/','g')
+" Build command
+set makeprg=make
 
 " Sourcing the plugin manager file
 source ~/.vim/plugins.vim
@@ -163,14 +176,14 @@ vnoremap    <A-l>           <ESC>gt
 vnoremap    <A-h>           <ESC>gT
 
 " Hide netrw directory listing banner
-let g:netrw_banner=0
+let g:netrw_banner = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          CUSTOM PLUGINS                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " lightline config
-let g:lightline={
+let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ 'active': {
     \   'left': [['mode', 'paste'],
@@ -194,8 +207,8 @@ function! LightlineReadonly()
   return &readonly && &filetype !~# '\v(help|vimfiler|unite)' ? 'RO' : ''
 endfunction
 
-let g:unite_force_overwrite_statusline=0
-let g:vimfiler_force_overwrite_statusline=0
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
 " Ends here
 
 " For trimming file format and encoding in narrow windows
@@ -209,17 +222,23 @@ endfunction
 " Ends here
 
 " Lightline separators and supseparators
-let g:lightline.separator={
+let g:lightline.separator = {
     \ 'left': '', 'right': ''
 \ }
 
-let g:lightline.subseparator={
+let g:lightline.subseparator = {
     \ 'left': '', 'right': ''
 \ }
 
 " Indentation stuff
-let g:indentLine_setColors=1
-let g:indentLine_char='▏'
+let g:indentLine_setColors = 1
+let g:indentLine_char = '▏'
+
+" YouCompleteMe settings
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")
 
 " Linter Plugin
 " vim-ale
@@ -227,6 +246,34 @@ let g:ale_sign_error = 'ﱣ'
 let g:ale_sign_warning = ''
 " Less distracting when opening a new file
 let g:ale_lint_on_enter = 0
+" Select linters for C
+let g:ale_linters = {
+\   'c': ['ccls', 'clang', 'clangd', 'clangtidy', 'cppcheck'],
+\   'cpp': ['ccls', 'clang', 'clangcheck', 'clangd', 'clangtidy', 'cppcheck', 'cpplint']
+\}
+
+" Executable for cpplint
+let g:ale_cpp_cpplint_executable = 'cpplint-py3'
+
+" Select fixers for C
+let g:ale_fixers = {
+\   'c': [
+\           'trim_whitespace',
+\           'remove_trailing_lines',
+\           'clang-format',
+\           'clangtidy'
+\   ],
+\   'cpp': [
+\           'trim_whitespace',
+\           'remove_trailing_lines',
+\           'clang-format',
+\           'clangtidy'
+\   ]
+\}
+" Fix files on save using fixers
+let g:ale_fix_on_save = 1
+" Options for clang-format
+let g:ale_c_clangformat_options = '-style="{BasedOnStyle: Google, IndentWidth: 4}"'
 
 " vim-markdown
 "
@@ -240,38 +287,33 @@ let g:vim_markdown_autowrite = 1
 " vim-cpp-enhanced-highlight options
 "
 " Enable highlighting class scope
-let g:cpp_class_scope_highlight=1
+let g:cpp_class_scope_highlight = 1
 " Enable highlighting member variables
-let g:cpp_member_variable_highlight=1
+let g:cpp_member_variable_highlight = 1
 " Enable highlighting class names in declarations
-let g:cpp_class_decl_highlight=1
+let g:cpp_class_decl_highlight = 1
 " Enable highlighting template functions (faster implementation)
-let g:cpp_experimental_template_highlight=1
+let g:cpp_experimental_template_highlight = 1
 " Enable highlighting the keywords 'concept' and 'requires' as well as 
-let g:cpp_concepts_highlight=1
+let g:cpp_concepts_highlight = 1
 " Highlighting of user defined functions
-let g:cpp_no_function_highlight=0
-
-" The following line changes all . to / for gf command (and related):
-set includeexpr=substitute(v:fname,'\\.','/','g')
-" Build command
-set makeprg=make
+let g:cpp_no_function_highlight = 0
 
 " Python highlights
 let python_highlight_all = 1
 
 " Setting default sql type
-let g:sql_type_default='mysql'
+let g:sql_type_default = 'mysql'
 
 " javascript-libraries-syntax stuff
 let g:used_javascript_libs = 'underscore,backbone,react'
 
 " vim-javascript stuff
-let g:javascript_plugin_flow=1
+let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
 " vim-jsx configs
-let g:jsx_ext_required=1
+let g:jsx_ext_required = 1
 
 "
 " Custom colors
@@ -578,9 +620,9 @@ if (has("autocmd") && !has("gui_running"))
     augroup END
 endif
 
-let g:onedark_color_overrides={
+let g:onedark_color_overrides = {
 \   "blue": {'gui': '#5DAEF2', 'cterm': '38', 'cterm16': '4'}
 \ }
 
-let g:onedark_terminal_italics=1
+let g:onedark_terminal_italics = 1
 colorscheme onedark
