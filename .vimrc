@@ -575,16 +575,17 @@ if (has("autocmd") && !has("gui_running"))
                     \   "fg": onedark#GetColors().purple
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cFormat", {
-                    \   "fg": onedark#GetColors().yellow
+                    \   "fg": onedark#GetColors().dark_yellow
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cSpecial", {
                     \   "fg": onedark#GetColors().cyan
                     \ })
+
         autocmd ColorScheme * call onedark#set_highlight("cConstant", {
                     \   "fg": onedark#GetColors().dark_yellow
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cAnsiFunction", {
-                    \   "fg": onedark#GetColors().dark_yellow
+                    \   "fg": onedark#GetColors().yellow
                     \ })
 
         autocmd ColorScheme * call onedark#set_highlight("cCustomMemVar", {
@@ -610,7 +611,7 @@ if (has("autocmd") && !has("gui_running"))
                     \   "fg": onedark#GetColors().dark_yellow
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cppSTLios", {
-                    \   "fg": onedark#GetColors().dark_yellow
+                    \   "fg": onedark#GetColors().yellow
                     \ })
 
         " Custom Vim highlights
