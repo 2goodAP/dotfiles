@@ -519,17 +519,17 @@ if (has("autocmd") && !has("gui_running"))
                     \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cDefine", {
-                    \   "fg": onedark#GetColors().yellow,
+                    \   "fg": onedark#GetColors().dark_yellow,
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cPreCondit", {
-                    \   "fg": onedark#GetColors().yellow,
+                    \   "fg": onedark#GetColors().dark_yellow,
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cPreConditMatch", {
-                    \   "fg": onedark#GetColors().yellow,
+                    \   "fg": onedark#GetColors().dark_yellow,
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
