@@ -91,6 +91,9 @@ export TODOTXT_DEFAULT_ACTION=ls
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 
+# Set XDG_CURRENT_DESKTOP for waybar
+export XDG_CURRENT_DESKTOP=Unity
+
 # Using vi as bash keybinds
 set -o vi
 
