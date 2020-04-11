@@ -47,6 +47,9 @@ set termguicolors
 set hlsearch
 set incsearch
 
+" Enable spell checking
+set spell
+
 " Live substitution
 if exists('inccommand')
     set inccommand=split
@@ -58,7 +61,7 @@ set relativenumber
 
 " Softwrap
 set wrap linebreak nolist
-set showbreak=…
+let showbreak = '> '
 
 " Ignore case
 set ignorecase
@@ -258,16 +261,22 @@ let g:ale_cpp_cpplint_executable = 'cpplint-py3'
 " Select fixers for C
 let g:ale_fixers = {
 \   'c': [
-\           'trim_whitespace',
-\           'remove_trailing_lines',
-\           'clang-format',
-\           'clangtidy'
+\       'trim_whitespace',
+\       'remove_trailing_lines',
+\       'clang-format',
+\       'clangtidy'
 \   ],
 \   'cpp': [
-\           'trim_whitespace',
-\           'remove_trailing_lines',
-\           'clang-format',
-\           'clangtidy'
+\       'trim_whitespace',
+\       'remove_trailing_lines',
+\       'clang-format',
+\       'clangtidy'
+\   ],
+\   'javascript': [
+\       'trim_whitespace',
+\       'remove_trailing_lines',
+\       'prettier',
+\       'eslint'
 \   ]
 \}
 " Fix files on save using fixers
@@ -598,6 +607,11 @@ if (has("autocmd") && !has("gui_running"))
                     \   "fg": onedark#GetColors().yellow
                     \ })
 
+        autocmd ColorScheme * call onedark#set_highlight("cppType", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("cppStatement", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
@@ -607,8 +621,16 @@ if (has("autocmd") && !has("gui_running"))
         autocmd ColorScheme * call onedark#set_highlight("cppSTLnamespace", {
                     \   "fg": onedark#GetColors().red
                     \ })
+        autocmd ColorScheme * call onedark#set_highlight("cppSTLtype", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("cppSTLconstant", {
                     \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cppSTLfunction", {
+                    \   "fg": onedark#GetColors().yellow
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cppSTLios", {
                     \   "fg": onedark#GetColors().yellow
