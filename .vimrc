@@ -569,6 +569,11 @@ if (has("autocmd") && !has("gui_running"))
                     \   "gui": "italic",
                     \   "cterm": "italic"
                     \ })
+        autocmd ColorScheme * call onedark#set_highlight("cLabel", {
+                    \   "fg": onedark#GetColors().purple,
+                    \   "gui": "italic",
+                    \   "cterm": "italic"
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("cRepeat", {
                     \   "fg": onedark#GetColors().purple,
                     \   "gui": "italic",
@@ -592,6 +597,9 @@ if (has("autocmd") && !has("gui_running"))
 
         autocmd ColorScheme * call onedark#set_highlight("cConstant", {
                     \   "fg": onedark#GetColors().dark_yellow
+                    \ })
+        autocmd ColorScheme * call onedark#set_highlight("cUserLabel", {
+                    \   "fg": onedark#GetColors().red
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("cAnsiFunction", {
                     \   "fg": onedark#GetColors().yellow
