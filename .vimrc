@@ -282,7 +282,7 @@ let g:ale_fixers = {
 " Fix files on save using fixers
 let g:ale_fix_on_save = 1
 " Options for clang-format
-let g:ale_c_clangformat_options = '-style="{BasedOnStyle: Google, IndentWidth: 4}"'
+let g:ale_c_clangformat_options = '-style="{BasedOnStyle: LLVM, IndentWidth: 4}"'
 
 " vim-markdown
 "
