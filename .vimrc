@@ -277,6 +277,11 @@ let g:ale_fixers = {
 \       'remove_trailing_lines',
 \       'prettier',
 \       'eslint'
+\   ],
+\   'cmake': [
+\       'trim_whitespace',
+\       'remove_trailing_lines',
+\       'cmakeformat'
 \   ]
 \}
 " Fix files on save using fixers
