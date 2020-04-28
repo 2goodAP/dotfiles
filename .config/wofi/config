@@ -1,7 +1,10 @@
-width=600
-height=300
-mode=drun
+show=drun
+
+width=800
+lines=10
+
 allow_images=true
-image_size=20
+image_size=25
+gtk-dark=true
 
 # vim:ft=cfg
