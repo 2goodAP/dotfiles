@@ -1,0 +1,10 @@
+# Path to the music directory and the music library
+directory: ~/Music
+library: ~/.local/share/beets/beets-music-library.db
+
+# Move the music files instead of copying to save space
+import:
+    move: yes
+
+# Plugins
+plugins: chroma edit fetchart fromfilename
