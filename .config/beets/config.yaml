@@ -7,4 +7,11 @@ import:
     move: yes
 
 # Plugins
-plugins: chroma edit fetchart fromfilename
+plugins: chroma edit fetchart fromfilename zero
+
+# Settings for the 'zero' plugin
+zero:
+    fields: comments images day month
+    # The stuff inside the square brackets is regexp to identify comments
+    comments: [EAC, LAME, from.+collection, 'ripped by']
+    update_database: true
