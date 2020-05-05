@@ -7,7 +7,6 @@
     "modules-left": ["sway/workspaces", "sway/window", "custom/media"],
     "modules-center": ["clock", "network"],
     "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "backlight", "battery", "idle_inhibitor", "tray"],
-    "gtk-layer-shell": false,
 
     // Modules configuration
     "sway/workspaces": {
