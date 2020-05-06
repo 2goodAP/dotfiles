@@ -234,7 +234,7 @@ output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
 exec --no-startup-id systemctl --user start swayidle.service
 
 # Start redshift-wlroots
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 
 # Start the clipman daemon
 exec wl-paste -p --watch clipman store --max-items=30 --histpath="~/.local/share/clipman-primary.json" 
