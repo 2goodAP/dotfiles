@@ -320,7 +320,7 @@ bindsym $mod+p exec clipman pick -t wofi --max-items=30 --histpath="~/.local/sha
 bindsym $mod+b exec $scripts_dir/launch-firefox-wayland.sh
 
 # Toggle redshift
-bindsym Alt+End exec pkill -USR1 redshift
+bindsym Alt+End exec pkill -USR1 redshift-gtk
 
 # Screenshot using grim with slurp
 set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%y-%m-%d_%H:%M:%S`.png
