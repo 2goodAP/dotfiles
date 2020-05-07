@@ -330,6 +330,18 @@ bindsym $mod+c exec rofi -show greenclip -theme onedark
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
+# Screenshot using maim with PrintScr key
+set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+
+bindsym Print exec maim -m 8 -u -g $(i3-msg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.width)x\(.height)+\(.x)+\(.y)"') $screenshot_path
+
+bindsym --release $mod+Print exec maim -m 8 -u -s $screenshot_path
+
+bindsym $mod+Shift+Print exec maim -m 8 -u $screenshot_path
+
+# Toggle redshift
+bindsym Alt+End exec pkill -USR1 redshift-gtk
+
 # PulseAudio controls
 # Change volume or toggle mute
 #
@@ -346,15 +358,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --quiet s 5%+
 # Decrease screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --quiet s 5%-
-
-# Screenshot using maim with PrintScr key
-set $screenshot_path ~/Pictures/Screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
-
-bindsym Print exec maim -m 8 -u -g $(i3-msg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.width)x\(.height)+\(.x)+\(.y)"') $screenshot_path
-
-bindsym --release $mod+Print exec maim -m 8 -u -s $screenshot_path
-
-bindsym $mod+Shift+Print exec maim -m 8 -u $screenshot_path
 
 ####################################################################################
 # Config for i3-gaps                                                        #
