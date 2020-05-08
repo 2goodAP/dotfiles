@@ -7,6 +7,7 @@ killall -q waybar
 
 # Launch Waybar
 echo "---" | tee -a /tmp/waybar.log
+
 waybar >>/tmp/waybar.log 2>&1 &
 
 echo "Bars launched..."

@@ -2,9 +2,9 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 32, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "width": 1920, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/window", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["clock", "network"],
     "modules-right": ["cpu", "memory", "temperature", "pulseaudio", "backlight", "battery", "idle_inhibitor", "tray"],
 
@@ -21,8 +21,7 @@
     },
     "sway/window": {
        "format": {},
-       "max-length": 35,
-       "tooltip": false
+       "max-length": 35
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -64,8 +63,7 @@
     },
     "tray": {
         "icon-size": 20,
-        "spacing": 10,
-        "tooltip": false
+        "spacing": 10
     },
     "clock": {
         "format": " {:%I:%M %p, %b %d}",
@@ -128,8 +126,7 @@
         // An empty format will hide the module
         // "format-good": "",
         "format-full": " FULL",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false
+        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface

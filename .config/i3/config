@@ -211,16 +211,13 @@ for_window [title="^(?i).*Volume Control.*$"] $FLOAT
 # Make QEMU floating by default
 for_window [title="^QEMU.*$"] $FLOAT
 
+# Make Network Connections Editor floating by default
+for_window [title="^(?i)Network Connections$"] $FLOAT
+
 ####################################################################################
 # Startup manager                                                                  #
 ####################################################################################
 #
-# Start polybar
-exec_always --no-startup-id $scripts_dir/launch-polybar.sh
-
-# Desktop background with feh
-exec --no-startup-id feh --bg-scale $HOME/Pictures/keep_on_keeping_on.jpg
-
 # xset s <n1> <n2>
 # n1: is the time it takes to launch the first signal that the screen will be
 # shutdown. Here we generally dim the screen a bit.
@@ -240,6 +237,12 @@ exec --no-startup-id xset dpms 600
 exec --no-startup-id xss-lock -n $scripts_dir/dim-screen.sh \
     -- betterlockscreen --lock dimblur
 
+# Start polybar
+exec_always --no-startup-id $scripts_dir/launch-polybar.sh
+
+# Desktop background with feh
+exec --no-startup-id feh --bg-scale $HOME/Pictures/keep_on_keeping_on.jpg
+
 # Nm-applet
 exec_always --no-startup-id nm-applet
 
@@ -251,9 +254,6 @@ exec_always --no-startup-id picom --dbus -f
 
 # Start the greenclip daemon
 exec_always --no-startup-id sh $scripts_dir/start-greenclip-daemon.sh
-
-# Toggle redshift
-bindsym Alt+End exec pkill -USR1 redshift
 
 ####################################################################################
 # Colors                                                                           #
@@ -340,7 +340,7 @@ bindsym --release $mod+Print exec maim -m 8 -u -s $screenshot_path
 bindsym $mod+Shift+Print exec maim -m 8 -u $screenshot_path
 
 # Toggle redshift
-bindsym Alt+End exec pkill -USR1 redshift-gtk
+bindsym Mod1+End exec pkill -USR1 redshift-gtk
 
 # PulseAudio controls
 # Change volume or toggle mute
@@ -373,4 +373,3 @@ smart_gaps inverse_outer
 
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders no_gaps
-

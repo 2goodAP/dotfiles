@@ -1,5 +1,5 @@
-* {
-    background-color: transparent;
+#waybar {
+    background: transparent;
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
@@ -50,8 +50,7 @@
 
 #workspaces button {
     color: #ffffff;
-    border: none;
-    padding: 0;
+    padding: 0 10px 0 5px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */

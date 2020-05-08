@@ -212,6 +212,9 @@ for_window [title="^(?i).*Volume Control.*$"] $FLOAT
 
 # Make QEMU floating by default
 for_window [title="^QEMU.*$"] $FLOAT
+
+# Make Network Connections Editor floating by default
+for_window [title="^(?i)Network Connections$"] $FLOAT
  
 ####################################################################################
 # Startup manager                                                                  #
@@ -229,9 +232,6 @@ exec_always --no-startup-id $scripts_dir/launch-waybar.sh
 
 # Desktop background with output
 output eDP-1 bg ~/Pictures/keep_on_keeping_on.jpg stretch
-
-# Use swayidle.service in userspace to lock sway session on systemd-events
-exec --no-startup-id systemctl --user start swayidle.service
 
 # Start redshift-wlroots
 exec --no-startup-id redshift-gtk

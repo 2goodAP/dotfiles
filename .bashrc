@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Add to PATH
-export PATH=$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$(ruby -v | cut -f 2 -d ' ' | cut -f 1 -d 'p')/bin:$PATH:/opt/android-sdk/platform-tools
+export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$(ruby -v | cut -f 2 -d ' ' | cut -f 1 -d 'p')/bin:$PATH:/opt/android-sdk/platform-tools"
 
 # If not running interactively, don't do anything
 case $- in
@@ -81,52 +81,52 @@ zeal-docs-fix() {
 # Environment Variables
 #-----------------------------------------------#
 
-# Enable using $EDITOR for nnn
-export NNN_USE_EDITOR=1
-
-# Set default action of todo.sh to list outstanding items
-export TODOTXT_DEFAULT_ACTION=ls
-
-# Set the XDG_CONFIG_HOME
-export XDG_CONFIG_HOME=$HOME/.config
-
-# Set XDG_CURRENT_DESKTOP for waybar
-export XDG_CURRENT_DESKTOP=Unity
-
 # Using vi as bash keybinds
 set -o vi
 
 # Increasing history size
 export HISTSIZE=1000
 
-# For gpg-agent
-GPG_TTY=$(tty)
-export GPG_TTY
-
-# Enable wayland display for mozilla firefox
-if echo $WAYLAND_DISPLAY | grep -q "wayland-."; then
-    export MOZ_ENABLE_WAYLAND=1
-else
-    export MOZ_ENABLE_WAYLAND=0
-fi
-
-# Set TERM variable
-export TERM=xterm-256color
-
-# Set the DISPLAY variable
-export DISPLAY=:0
-
-# Using neovim as the default shell editor
-export VISUAL='nvim'
+# Set the XDG_CONFIG_HOME
+export XDG_CONFIG_HOME=$HOME/.config
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+
+# Set TERM variable
+export TERM=xterm-256color
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
+fi
+
+# Using neovim as the default shell editor
+export VISUAL='nvim'
+
+# Set the DISPLAY variable
+export DISPLAY=:0
+
+# For gpg-agent
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# Enable using $EDITOR for nnn
+export NNN_USE_EDITOR=1
+
+# Set default action of todo.sh to list outstanding items
+export TODOTXT_DEFAULT_ACTION=ls
+
+# Set XDG_CURRENT_DESKTOP for waybar
+export XDG_CURRENT_DESKTOP=Unity
+
+# Enable wayland display for mozilla firefox
+if echo $WAYLAND_DISPLAY | grep -q "wayland-."; then
+    export MOZ_ENABLE_WAYLAND=1
+else
+    export MOZ_ENABLE_WAYLAND=0
 fi
 
 # Aliases
