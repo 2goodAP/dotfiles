@@ -4,7 +4,7 @@ width=800
 lines=10
 
 allow_images=true
-image_size=25
+image_size=20
 gtk-dark=true
 
 # vim:ft=cfg
