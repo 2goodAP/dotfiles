@@ -244,7 +244,8 @@ exec wl-paste --watch clipman store --max-items=30
 exec_always $scripts_dir/import-gsettings.sh \
     gtk-theme:gtk-theme-name \
     icon-theme:gtk-icon-theme-name \
-    cursor-theme:gtk-cursor-theme-name
+    cursor-theme:gtk-cursor-theme-name \
+    cursor-size:gtk-cursor-theme-size
 
 ####################################################################################
 # Colors                                                                           #
