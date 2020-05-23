@@ -226,15 +226,15 @@ for_window [title="^(?i)Network Connections$"] $FLOAT
 # With n1 = 60 and n2 = 30 the screen will be dimmed 60 seconds after the last
 # time pc was not idle and 30 seconds later (90 seconds from last non-idle 
 # state) the screen will be locked.
-exec --no-startup-id xset s 300 300
+exec_always --no-startup-id xset s 540 60
  
 # xset dpms <n>
 # n: is the time from last non-idle state after which the screen will be shutdown. 
-exec --no-startup-id xset dpms 600
+exec_always --no-startup-id xset dpms 600
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend.
-exec --no-startup-id xss-lock -n $scripts_dir/dim-screen.sh \
+exec_always --no-startup-id xss-lock -n $scripts_dir/dim-screen.sh \
     -- betterlockscreen --lock dimblur
 
 # Start polybar
