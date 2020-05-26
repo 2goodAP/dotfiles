@@ -63,7 +63,7 @@
     },
     "tray": {
         "icon-size": 20,
-        "spacing": 10
+        "spacing": 5
     },
     "clock": {
         "format": " {:%I:%M %p, %b %d}",

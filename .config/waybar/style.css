@@ -248,6 +248,7 @@
 
 #tray {
     background-color: rgba(75, 82, 99, .4);
+    padding: 5px;
 }
 
 #idle_inhibitor {
