@@ -63,9 +63,9 @@ set relativenumber
 set wrap linebreak nolist
 let showbreak = '> '
 
-" Ignore case
-set ignorecase
+" Case
 set smartcase
+set ignorecase
 
 " Show command
 set showcmd

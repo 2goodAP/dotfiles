@@ -216,6 +216,9 @@ for_window [title="^QEMU.*$"] $FLOAT
 # Make Network Connections Editor floating by default
 for_window [title="^(?i)Network Connections$"] $FLOAT
  
+# Make Firefox Sharing Indicator
+for_window [title="^(?i)Firefox.*Sharing Indicator$"] $FLOAT
+ 
 ####################################################################################
 # Startup manager                                                                  #
 ####################################################################################
