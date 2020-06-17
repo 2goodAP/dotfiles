@@ -9,6 +9,6 @@ Target = linux-zen
 Description = Signing Kernel with Machine Owner Key for Secure Boot
 When = PostTransaction
 Exec = /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; then /usr/bin/sbsign --key /root/.mok/MOK.key --cert /boot/EFI/BOOT/keys/MOK.crt --output {} {}; fi' ;
-Depends = findutils
 Depends = sbsigntools
+Depends = findutils
 Depends = grep 
