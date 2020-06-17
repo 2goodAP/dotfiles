@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Add to PATH
-export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$(ruby -v | cut -f 2 -d ' ' | cut -f 1 -d 'p')/bin:$PATH:/opt/android-sdk/platform-tools"
+export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))/bin:$PATH"
 
 # If not running interactively, don't do anything
 case $- in
