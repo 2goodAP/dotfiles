@@ -250,6 +250,13 @@ exec_always $scripts_dir/import-gsettings.sh \
     cursor-theme:gtk-cursor-theme-name
 
 ####################################################################################
+# systemd Integration                                                                           #
+####################################################################################
+#
+# This is required for sway-session.target to work
+exec "systemctl --user import-environment; systemctl --user start sway-session.target
+
+####################################################################################
 # Colors                                                                           #
 ####################################################################################
 #
