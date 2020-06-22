@@ -388,9 +388,9 @@ smart_borders no_gaps
 ####################################################################################
 input 1267:12433:ELAN0504:01_04F3:3091_Touchpad {
     tap enabled
-    natural_scroll enabled
+    click_method "clickfinger"
     middle_emulation enabled
+    natural_scroll enabled
+    # DisableWhileTyping
     dwt enabled
-    events disabled_on_external_mouse
 }
-
