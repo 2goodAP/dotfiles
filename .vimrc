@@ -139,16 +139,16 @@ nnoremap    <C-l>           <C-w>l
 nnoremap    <A-l>           gt
 nnoremap    <A-h>           gT
 " Tab jumping
-nnoremap    <A-1>           1gt   
-nnoremap    <A-2>           2gt   
-nnoremap    <A-3>           3gt   
-nnoremap    <A-4>           4gt   
-nnoremap    <A-5>           5gt   
-nnoremap    <A-6>           6gt   
-nnoremap    <A-7>           7gt   
-nnoremap    <A-8>           8gt   
-nnoremap    <A-9>           9gt   
-nnoremap    <A-0>           0gt   
+nnoremap    <A-1>           1gt
+nnoremap    <A-2>           2gt
+nnoremap    <A-3>           3gt
+nnoremap    <A-4>           4gt
+nnoremap    <A-5>           5gt
+nnoremap    <A-6>           6gt
+nnoremap    <A-7>           7gt
+nnoremap    <A-8>           8gt
+nnoremap    <A-9>           9gt
+nnoremap    <A-0>           0gt
 " Tab moving
 nnoremap    <silent><C-A-h> :execute 'silent! tabmove'.(tabpagenr()-2)<CR>
 nnoremap    <silent><C-A-l> :execute 'silent! tabmove'.(tabpagenr()+1)<CR>
@@ -243,51 +243,23 @@ let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
 
-" Linter Plugin
 " vim-ale
+"
 let g:ale_sign_error = 'ﱣ'
 let g:ale_sign_warning = ''
 " Less distracting when opening a new file
 let g:ale_lint_on_enter = 0
-" Select linters for C
-let g:ale_linters = {
-\   'c': ['ccls', 'clang', 'clangd', 'clangtidy', 'cppcheck'],
-\   'cpp': ['ccls', 'clang', 'clangcheck', 'clangd', 'clangtidy', 'cppcheck', 'cpplint']
-\}
-
-" Executable for cpplint
-let g:ale_cpp_cpplint_executable = 'cpplint-py3'
 
 " Select fixers for C
-let g:ale_fixers = {
-\   'c': [
-\       'trim_whitespace',
-\       'remove_trailing_lines',
-\       'clang-format',
-\       'clangtidy'
-\   ],
-\   'cpp': [
-\       'trim_whitespace',
-\       'remove_trailing_lines',
-\       'clang-format',
-\       'clangtidy'
-\   ],
-\   'javascript': [
-\       'trim_whitespace',
-\       'remove_trailing_lines',
-\       'prettier',
-\       'eslint'
-\   ],
-\   'cmake': [
-\       'trim_whitespace',
-\       'remove_trailing_lines',
-\       'cmakeformat'
-\   ]
-\}
+let g:ale_fixers = {'*': ['trim_whitespace', 'remove_trailing_lines']}
 " Fix files on save using fixers
 let g:ale_fix_on_save = 1
-" Options for clang-format
+
+" Language specific linter variables
+" C: Options for clang-format
 let g:ale_c_clangformat_options = '-style=file'
+" CPP: Options for clang-format
+let g:ale_cpp_clangformat_options = '-i -style=file'
 
 " vim-markdown
 "
@@ -308,7 +280,7 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 " Enable highlighting template functions (faster implementation)
 let g:cpp_experimental_template_highlight = 1
-" Enable highlighting the keywords 'concept' and 'requires' as well as 
+" Enable highlighting the keywords 'concept' and 'requires' as well as
 let g:cpp_concepts_highlight = 1
 " Highlighting of user defined functions
 let g:cpp_no_function_highlight = 0
@@ -352,7 +324,7 @@ if (has("autocmd") && !has("gui_running"))
         autocmd ColorScheme * call onedark#set_highlight("htmlEndTag", {
                     \   "fg": onedark#GetColors().cyan
                     \ })
- 
+
         " Custom CSS highlights
         autocmd ColorScheme * call onedark#set_highlight("cssProp", {
                     \   "fg": onedark#GetColors().purple
@@ -486,7 +458,7 @@ if (has("autocmd") && !has("gui_running"))
         autocmd ColorScheme * call onedark#set_highlight("jsDestructuringAssignment", {
                     \   "fg": onedark#GetColors().red
                     \ })
-        autocmd ColorScheme * call onedark#set_highlight("jsFlowObjectKey", { 
+        autocmd ColorScheme * call onedark#set_highlight("jsFlowObjectKey", {
                     \   "fg": onedark#GetColors().red
                     \ })
         autocmd ColorScheme * call onedark#set_highlight("jsModuleKeyword", {

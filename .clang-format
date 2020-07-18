@@ -2,7 +2,8 @@
 BasedOnStyle: LLVM
 IndentWidth: 4
 
-# C-family
+---
+
 Language: Cpp
 BreakBeforeBinaryOperators: NonAssignment 
 BreakBeforeTernaryOperators: true

@@ -1,34 +1,40 @@
-command! PackStatus packadd minpac | source ~/.vimrc | call minpac#status()
-command! PackClean packadd minpac | source ~/.vimrc | call minpac#clean()
-command! PackUpdate packadd minipac | source ~/.vimrc | redraw | call minpac#update('', { 'do': 'call minpac#status()' })
-
-if !exists('*minpac#init')
-    finish
+" Automatic installation for vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
 endif
 
-call minpac#init()
-" Add minpac first
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+let opt_dir = '~/.vim/pack/vim-plug/opt/'
 
-" Add onedark colorscheme
-call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
+" Begin adding plugins to Vim
+call plug#begin('~/.vim/pack/vim-plug/start')
 
-" Add other plugins
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-sensible')
-call minpac#add('machakann/vim-highlightedyank')
-call minpac#add('tomtom/tcomment_vim')
-call minpac#add('itchyny/lightline.vim')
-call minpac#add('Yggdroot/indentLine')
-call minpac#add('dense-analysis/ale')
-call minpac#add('ycm-core/YouCompleteMe')
-call minpac#add('editorconfig/editorconfig-vim')
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('moll/vim-node')
-call minpac#add('rust-lang/rust.vim')
-call minpac#add('octol/vim-cpp-enhanced-highlight')
-call minpac#add('plasticboy/vim-markdown')
-call minpac#add('freitass/todo.txt-vim')
-call minpac#add('hdima/python-syntax')
+" For plugins loaded optionally
+Plug 'joshdick/onedark.vim', {'dir': opt_dir . 'onedark.vim'}
+
+" For plugins loaded at the start
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tomtom/tcomment_vim'
+Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
+Plug 'ycm-core/YouCompleteMe', {
+\   'do': './install.py --clangd-completer --go-completer --rust-completer --ts-completer'
+\ }
+
+" Language-specific plugins
+Plug 'editorconfig/editorconfig-vim', {'for': 'dosini'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'moll/vim-node', {'for': 'javascript'}
+Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp']}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'freitass/todo.txt-vim', {'for': 'todo'}
+Plug 'hdima/python-syntax', {'for': 'python'}
+
+call plug#end()
