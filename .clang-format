@@ -1,0 +1,8 @@
+# Custom clang-format options for various languages
+BasedOnStyle: LLVM
+IndentWidth: 4
+
+# C-family
+Language: Cpp
+BreakBeforeBinaryOperators: NonAssignment 
+BreakBeforeTernaryOperators: true
