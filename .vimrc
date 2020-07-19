@@ -47,9 +47,6 @@ set termguicolors
 set hlsearch
 set incsearch
 
-" Enable spell checking
-set spell
-
 " Live substitution
 if exists('inccommand')
     set inccommand=split
