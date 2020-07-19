@@ -495,7 +495,7 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
 
         autocmd ColorScheme * call onedark#set_highlight("pythonBuiltinFunc", {
-                    \   "fg": onedark#GetColors().red
+                    \   "fg": onedark#GetColors().yellow
                     \ })
 
         " Custom C/C++ highlights
