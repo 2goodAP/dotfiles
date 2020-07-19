@@ -286,7 +286,7 @@ let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 0
 
 " Python highlights
-let python_highlight_all = 1
+let g:python_highlight_all = 1
 
 " Setting default sql type
 let g:sql_type_default = 'mysql'
@@ -494,6 +494,9 @@ if (has("autocmd") && !has("gui_running"))
                     \   "cterm": "italic"
                     \ })
 
+        autocmd ColorScheme * call onedark#set_highlight("pythonBuiltinObj", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
         autocmd ColorScheme * call onedark#set_highlight("pythonBuiltinFunc", {
                     \   "fg": onedark#GetColors().yellow
                     \ })

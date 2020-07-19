@@ -35,6 +35,6 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp']}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'freitass/todo.txt-vim', {'for': 'todo'}
-Plug 'hdima/python-syntax', {'for': 'python'}
+Plug 'vim-python/python-syntax', {'for': 'python'}
 
 call plug#end()
