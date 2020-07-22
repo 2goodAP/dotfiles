@@ -178,6 +178,12 @@ endfunc
 " Hide netrw directory listing banner
 let g:netrw_banner = 0
 
+" Assigning a fixed virtualenv for nvim
+if has('nvim')
+    let g:python_host_prog = '/usr/bin/python2'
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          CUSTOM PLUGINS                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

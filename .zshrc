@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

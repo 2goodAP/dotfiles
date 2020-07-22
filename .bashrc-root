@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Add to PATH
-export PATH="$HOME/.bin:/usr/local/bin:$PATH:$HOME/.gem/$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))/bin"
+export PATH="$HOME/.bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))/bin"
 
 # If not running interactively, don't do anything
 case $- in
