@@ -498,7 +498,7 @@ if (has("autocmd") && !has("gui_running"))
                     \ })
 
         autocmd ColorScheme * call onedark#set_highlight("pythonStrInterpRegion", {
-                    \   "fg": onedark#GetColors().red
+                    \   "fg": onedark#GetColors().purple
                     \ })
 
         autocmd ColorScheme * call onedark#set_highlight("pythonBuiltinObj", {
