@@ -497,6 +497,10 @@ if (has("autocmd") && !has("gui_running"))
                     \   "cterm": "italic"
                     \ })
 
+        autocmd ColorScheme * call onedark#set_highlight("pythonStrInterpRegion", {
+                    \   "fg": onedark#GetColors().red
+                    \ })
+
         autocmd ColorScheme * call onedark#set_highlight("pythonBuiltinObj", {
                     \   "fg": onedark#GetColors().red
                     \ })
