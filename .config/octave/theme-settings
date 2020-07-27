@@ -4,7 +4,7 @@ connectOnStartup=true
 cursor_blinking=true
 customFileEditor=kitty -e nvim %f
 language=SYSTEM
-monospace_font=DejaVu Sans Mono
+monospace_font=Fira Code
 octave_startup_dir=
 prompt_to_exit=false
 proxyHostName=none
@@ -789,7 +789,7 @@ Text\style0\paper=2632756
 
 [editor]
 always_reload_changed_files=false
-auto_endif=1
+auto_endif=2
 auto_indent=true
 backspace_unindents_line=false
 break_lines=false
