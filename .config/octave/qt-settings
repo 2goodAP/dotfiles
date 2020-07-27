@@ -16,7 +16,7 @@ restore_octave_dir=false
 showMessageOfTheDay=true
 showTopic=true
 show_status_bar=true
-style=default
+style=qt5ct-style
 toolbar_icon_size=0
 useCustomFileEditor=false
 useProxyServer=false
@@ -916,7 +916,7 @@ allow_web_connection=false
 [settings]
 geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\n\0\0\0\x32\0\0\x3\xf1\0\0\x2\x89\0\0\0\n\0\0\0\x32\0\0\x3\xf1\0\0\x2\x89\0\0\0\0\0\0\0\0\a\x80\0\0\0\n\0\0\0\x32\0\0\x3\xf1\0\0\x2\x89)
 last_editor_styles_tab=6
-last_tab=2
+last_tab=0
 
 [shortcuts]
 doc_browser%3Ago_back=Alt+Left
