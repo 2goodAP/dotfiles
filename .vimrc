@@ -188,7 +188,8 @@ endif
 "                          CUSTOM PLUGINS                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" lightline config
+" LightLine Settings
+"
 let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ 'active': {
@@ -236,17 +237,24 @@ let g:lightline.subseparator = {
     \ 'left': '', 'right': ''
 \ }
 
-" Indentation stuff
+" IndentLint Settings
+"
 let g:indentLine_setColors = 1
 let g:indentLine_char = '▏'
 
-" YouCompleteMe settings
+" YouCompleteMe Settings
+"
+" Look at the Vim syntax files to retrieve language keywords.
+let g:ycm_seed_identifiers_with_syntax = 1
+" Collect words from tags file
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 " Let clangd fully control code completion
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
 
-" vim-ale
+" Ale Settings
 "
 let g:ale_sign_error = 'ﱣ'
 let g:ale_sign_warning = ''
@@ -259,12 +267,12 @@ let g:ale_fixers = {'*': ['trim_whitespace', 'remove_trailing_lines']}
 let g:ale_fix_on_save = 1
 
 " Language specific linter variables
-" C: Options for clang-format
+" C - Options for clang-format
 let g:ale_c_clangformat_options = '-style=file'
-" CPP: Options for clang-format
+" CPP - Options for clang-format
 let g:ale_cpp_clangformat_options = '-i -style=file'
 
-" vim-markdown
+" vim-markdown Settings
 "
 " Enable strikethroughs using ~~Strike~~
 let g:vim_markdown_strikethrough = 1
@@ -273,7 +281,7 @@ let g:vim_markdown_no_extensions_in_markdown = 1
 " Auto-write when following links with 'ge'
 let g:vim_markdown_autowrite = 1
 
-" vim-cpp-enhanced-highlight options
+" vim-cpp-enhanced-highlight Settings
 "
 " Enable highlighting class scope
 let g:cpp_class_scope_highlight = 1
@@ -288,18 +296,19 @@ let g:cpp_concepts_highlight = 1
 " Highlighting of user defined functions
 let g:cpp_no_function_highlight = 0
 
-" Python highlights
+" Python Highlight Settings
 let g:python_highlight_all = 1
 
-" Setting default sql type
+" Default Sql Type
 let g:sql_type_default = 'mysql'
 
-" javascript-libraries-syntax stuff
-let g:used_javascript_libs = 'underscore,backbone,react'
-
-" vim-javascript stuff
+" vim-javascript Settings
+"
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
+
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'underscore,backbone,react'
 
 " vim-jsx configs
 let g:jsx_ext_required = 1
@@ -314,6 +323,7 @@ if (has("autocmd") && !has("gui_running"))
     augroup colorset
         autocmd!
         " `bg` will not be styled since there is no `bg` setting
+
         " Custom HTML highlights
         autocmd ColorScheme * call onedark#set_highlight("htmlArg", {
                     \   "fg": onedark#GetColors().dark_yellow,

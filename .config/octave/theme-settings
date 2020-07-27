@@ -1,3 +1,28 @@
+[General]
+autoIdentification=false
+connectOnStartup=true
+cursor_blinking=true
+customFileEditor=kitty -e nvim %f
+language=SYSTEM
+monospace_font=DejaVu Sans Mono
+octave_startup_dir=
+prompt_to_exit=false
+proxyHostName=none
+proxyPassword=
+proxyPort=8080
+proxyType=
+proxyUserName=
+restore_octave_dir=false
+showMessageOfTheDay=true
+showTopic=true
+show_status_bar=true
+style=qt5ct-style
+toolbar_icon_size=0
+useCustomFileEditor=true
+useProxyServer=false
+use_native_file_dialogs=true
+use_system_icon_theme=true
+
 [Scintilla]
 Bash\autoindentstyle=-1
 Bash\defaultcolor=15658732
