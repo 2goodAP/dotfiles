@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux colored-man-pages common-aliases fasd gitfast git-extras systemd vi-mode)
+plugins=(colored-man-pages common-aliases systemd vi-mode)
 
 
 # User configuration
@@ -125,9 +125,6 @@ export DISPLAY=:0
 # Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1
 
-# Set XDG_CURRENT_DESKTOP for waybar
-export XDG_CURRENT_DESKTOP=Unity
-
 # Enable wayland display for mozilla firefox
 if echo $WAYLAND_DISPLAY | grep -q "wayland-."; then
     export MOZ_ENABLE_WAYLAND=1
@@ -167,13 +164,11 @@ alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 # Sed
 alias sed='sed -E'
 
-# todo.txt
-alias todo='todo.sh'
-
 # NVM installation
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Source the oh-my-zsh framework
 source $ZSH/oh-my-zsh.sh
 
 # Custom plugins installed via pacman

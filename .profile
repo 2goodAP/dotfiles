@@ -9,7 +9,7 @@ else
     export MOZ_ENABLE_WAYLAND=0
 fi
 
-# # Use qt5ct to configure qt5 theme settings
-# export QT_QPA_PLATFORMTHEME="qt5ct"
+# For consistent theme in root KDE applications
+export XDG_CURRENT_DESKTOP='KDE'
 
 PATH="/usr/sbin:/sbin:/bin:/usr/games:$PATH"

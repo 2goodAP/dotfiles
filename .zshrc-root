@@ -75,9 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux colored-man-pages common-aliases fasd gitfast git-extras systemd vi-mode)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(colored-man-pages common-aliases systemd vi-mode)
 
 # User configuration
 
@@ -158,15 +156,15 @@ alias less='less -i'
 alias vi='nvim'
 alias vimconf='nvim ~/.vimrc'
 
-# todo.txt
-alias todo='todo.sh'
-
 # Sed
 alias sed='sed -E'
 
 # Grep
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
+# Source the oh-my-zsh framework
+source $ZSH/oh-my-zsh.sh
 
 # Custom plugins installed via pacman
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
