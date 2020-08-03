@@ -79,59 +79,9 @@ plugins=(archlinux colored-man-pages common-aliases fasd gitfast git-extras syst
 
 
 # User configuration
-
-# ZSH syntax highlighting configuration
+#
+# # ZSH syntax highlighting configuration
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
-# Declare the variable
-typeset -A ZSH_HIGHLIGHT_STYLES
-
-# Keywords, commands and builtins are magenta
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
-
-# Comments are grey
-ZSH_HIGHLIGHT_STYLES[comment]='fg=#5c6370'
-
-# Command Separators are cyan
-ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
-# Functions are blue
-ZSH_HIGHLIGHT_STYLES[function]='fg=blue'
-
-# Options are red
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=red'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=red'
-
-# Command Substitutions are yellow
-ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=yellow'
-
-# Quoted text are green
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument-delimiter]='fg=green'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=green'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument-delimiter]='fg=green'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=green'
-
-# Assignments are red
-ZSH_HIGHLIGHT_STYLES[assign]='fg=red'
-
-# Line background color
-ZSH_HIGHLIGHT_STYLES[line]='bg=#2c323c'
-
-# To differentiate aliases from other command types
-ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
-
-# To have paths colored instead of underlined
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
-
-# To disable highlighting of globbing expressions
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 
 ###############################################################################
 # Scripts                                                                     #
@@ -152,9 +102,6 @@ zeal-docs-fix() {
 
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
 
 # Set TERM variable
 export TERM=xterm-256color
@@ -177,9 +124,6 @@ export DISPLAY=:0
 
 # Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1
-
-# Set default action of todo.sh to list outstanding items
-export TODOTXT_DEFAULT_ACTION=ls
 
 # Set XDG_CURRENT_DESKTOP for waybar
 export XDG_CURRENT_DESKTOP=Unity
@@ -207,13 +151,10 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # Meta aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias c='clear'
 alias ecode='echo $?'
-alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
 alias diff='diff --color'
 alias less='less -i'
-alias info='info --vi-keys'
 
 # Vim
 alias vi='nvim'
@@ -225,9 +166,6 @@ alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 # Sed
 alias sed='sed -E'
-
-# nnn
-alias n='nnn'
 
 # todo.txt
 alias todo='todo.sh'

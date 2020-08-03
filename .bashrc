@@ -90,9 +90,6 @@ export HISTSIZE=1000
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
 # Set TERM variable
 export TERM=xterm-256color
 
@@ -136,11 +133,9 @@ fi
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias c='clear'
 alias ecode='echo $?'
-alias cls='clear && ls'
 alias Syyu='sudo pacman -Syyu --color auto'
 alias diff='diff --color'
 alias less='less -i'
-alias info='info --vi-keys'
 
 # Vim
 alias vi='nvim'
@@ -148,9 +143,6 @@ alias vimconf='nvim ~/.vimrc'
 
 # Grep
 alias grep='grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-
-# nnn
-alias n='nnn'
 
 # NVM installation
 export NVM_DIR="$HOME/.nvm"
