@@ -95,6 +95,10 @@ set makeprg=make
 source ~/.vim/plugins.vim
 
 " Auto complete characters
+"
+" Parenthesis completion
+inoremap    (<CR>   (<CR>)<ESC>O
+
 " Brace Completion
 inoremap    {<CR>   {<CR>}<ESC>O
 
@@ -102,6 +106,7 @@ inoremap    {<CR>   {<CR>}<ESC>O
 inoremap    [<CR>   [<CR>]<ESC>O
 
 " Vim tab and split navigation keybindings
+"
 " Terminal mode
 if exists(':tnoremap')
     " <C-r>bufferNumber like keymapping for terminal mode
