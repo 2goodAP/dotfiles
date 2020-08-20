@@ -34,7 +34,6 @@ Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp']}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'freitass/todo.txt-vim', {'for': 'todo'}
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'jvirtanen/vim-octave', {'for': 'octave'}
 
