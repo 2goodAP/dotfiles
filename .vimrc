@@ -58,7 +58,7 @@ set relativenumber
 
 " Softwrap
 set wrap linebreak nolist
-let showbreak = '> '
+let &showbreak = '> '
 
 " Case
 set smartcase
