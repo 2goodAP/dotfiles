@@ -103,9 +103,6 @@ zeal-docs-fix() {
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 
-# Set TERM variable
-export TERM=xterm-256color
-
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
@@ -164,19 +161,20 @@ alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 # Sed
 alias sed='sed -E'
 
-# NVM installation
+###############################################################################
+# Shell Utilities                                                             #
+###############################################################################
+#
+# Set up base16-shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Initialize NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Source the oh-my-zsh framework
-source $ZSH/oh-my-zsh.sh
-
-# Custom plugins installed via pacman
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Enable Miniconda
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
@@ -195,3 +193,17 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+###############################################################################
+# Zsh Plugins                                                                 #
+###############################################################################
+#
+# Source the oh-my-zsh framework
+source $ZSH/oh-my-zsh.sh
+
+# Custom plugins installed via pacman
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

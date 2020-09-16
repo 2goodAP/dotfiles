@@ -87,9 +87,6 @@ export HISTSIZE=1000
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 
-# Set TERM variable
-export TERM=xterm-256color
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -138,7 +135,17 @@ alias sed='sed -E'
 # Grep
 alias grep='grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
-# NVM installation
+# Shell Utilities
+#-----------------------------------------------#
+
+# Set up base16-shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Initialize NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

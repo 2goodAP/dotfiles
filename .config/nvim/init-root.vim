@@ -1,28 +1,6 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages.
-runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
-
-" do not load defaults if ~/.vimrc is missing
-"let skip_defaults_vim=1
-
-" Disable Background Color Erase (BCE) so that color schemes
-" render properly when inside 256-color tmux and GNU screen.
-" see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-if !has('nvim')
-    set t_ut=
-endif
+"-----------------------------------------------------------------------------"
+"                          NeoVim config (init.vim)                           "
+"-----------------------------------------------------------------------------"
 
 " Enable basic vim features
 filetype plugin on
@@ -91,9 +69,6 @@ set includeexpr=substitute(v:fname,'\\.','/','g')
 " Build command
 set makeprg=make
 
-" Sourcing the plugin manager file
-source ~/.vim/plugins.vim
-
 " Auto complete characters
 "
 " Parenthesis completion
@@ -109,8 +84,6 @@ inoremap    [<CR>   [<CR>]<ESC>O
 "
 " Terminal mode
 if exists(':tnoremap')
-    " <C-r>bufferNumber like keymapping for terminal mode
-    tnoremap <expr> <A-r> '<C-\><C-N>"'.nr2char(getchar()).'pi'
     " 'Escaping' to normal mode in terminal mode
     tnoremap    <A-[>   <C-\><C-n>
     " Split navigation
@@ -171,31 +144,27 @@ endfunc
 let g:netrw_banner = 0
 
 " Assigning a fixed virtualenv for nvim
-if has('nvim')
-    let g:python_host_prog = '/usr/bin/python2'
-    let g:python3_host_prog = '/usr/bin/python3'
-endif
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"-------------------------------------------------------------------"
 "                          CUSTOM PLUGINS                           "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"-------------------------------------------------------------------"
+
+" Sourcing the plugin manager file
+source ~/.config/nvim/plugins.vim
 
 " LightLine Settings
 "
-let g:lightline = {'colorscheme': 'onedark'}
+let g:lightline = {'colorscheme': 'base16_gruvbox_light_hard'}
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 
-" Lightline separators and supseparators
-let g:lightline.separator = {'left': '', 'right': ''}
-
-let g:lightline.subseparator = {'left': '', 'right': ''}
-
 " IndentLint Settings
 "
 let g:indentLine_setColors = 1
-let g:indentLine_char = '▏'
+let g:indentLine_char = '|'
 
 " YouCompleteMe Settings
 "
@@ -257,22 +226,11 @@ let g:python_highlight_all = 1
 " Default Sql Type
 let g:sql_type_default = 'mysql'
 
-" vim-javascript Settings
 "
-let g:javascript_plugin_flow = 1
-let g:javascript_plugin_jsdoc = 1
-
-" javascript-libraries-syntax
-let g:used_javascript_libs = 'underscore,backbone,react'
-
-" vim-jsx configs
-let g:jsx_ext_required = 1
-
+" Colorscheme
 "
-" Custom colors
-"
-" Using vim's package feature to load onedark
-packadd! onedark.vim
-
-let g:onedark_terminal_italics = 1
-colorscheme onedark
+" Automatically update vim colorscheme based on base16-shell theme
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace = 256
+    source ~/.vimrc_background
+endif
