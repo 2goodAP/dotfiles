@@ -360,12 +360,12 @@ colors:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-shell:
- program: /bin/zsh
- args:
-   - --login
-   - -c
-   - "tmux attach || tmux"
+# shell:
+#  program: /bin/zsh
+#  args:
+#    - --login
+#    - -c
+#    - "tmux attach || tmux"
 
 # Startup directory
 #
