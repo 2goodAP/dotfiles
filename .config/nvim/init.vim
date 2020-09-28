@@ -161,11 +161,6 @@ let g:lightline = {'colorscheme': 'base16_gruvbox_light_hard'}
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 
-" IndentLint Settings
-"
-let g:indentLine_setColors = 1
-let g:indentLine_char = '|'
-
 " YouCompleteMe Settings
 "
 " Look at the Vim syntax files to retrieve language keywords.
@@ -180,7 +175,7 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 
 " Ale Settings
 "
-let g:ale_sign_error = 'ﱣ'
+let g:ale_sign_error = '✗'
 let g:ale_sign_warning = ''
 " Less distracting when opening a new file
 let g:ale_lint_on_enter = 0

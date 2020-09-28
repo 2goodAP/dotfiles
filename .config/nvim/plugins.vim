@@ -21,7 +21,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-highlightedyank'
 Plug 'tomtom/tcomment_vim'
 Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe', {
 \   'do': './install.py --clangd-completer --go-completer --rust-completer --ts-completer'
