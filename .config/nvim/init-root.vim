@@ -156,7 +156,7 @@ source ~/.config/nvim/plugins.vim
 
 " LightLine Settings
 "
-let g:lightline = {'colorscheme': 'base16_gruvbox_light_hard'}
+let g:lightline = {'colorscheme': 'gruvbox'}
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
@@ -224,8 +224,17 @@ let g:sql_type_default = 'mysql'
 "
 " Colorscheme
 "
-" Automatically update vim colorscheme based on base16-shell theme
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace = 256
-    source ~/.vimrc_background
+packadd! gruvbox
+
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_light = 'medium'
+let g:gruvbox_improved_warnings = '1'
+
+if $TERM == 'linux'
+    set background=dark
+else
+    set background=light
+    let g:gruvbox_italic = '1'
 endif
+
+colorscheme gruvbox

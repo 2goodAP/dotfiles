@@ -162,17 +162,17 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
+# Colors (Gruvbox light)
 colors:
   # Default colors
   primary:
-    # hard contrast:
-    background: '#f9f5d7'
+    # Hard contrast
+    # background: '#f9f5d7'
 
-    # medium contrast
-    # background: '#fbf1c7'
+    # Medium contrast
+    background: '#fbf1c7'
 
-    # soft contrast:
+    # Soft contrast
     # background: '#f2e5bc'
 
     foreground: '#3c3836'
@@ -210,7 +210,6 @@ colors:
     cyan:    '#427b58'
     white:   '#3c3836'
 
-
   # Indexed Colors
   #
   # The indexed colors include all colors from 16 to 256.
@@ -228,8 +227,8 @@ colors:
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-   text: CellBackground
-   cursor: CellForeground
+    text: CellBackground
+    cursor: CellForeground
 
   # Vi mode cursor colors
   #
@@ -238,8 +237,8 @@ colors:
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   vi_mode_cursor:
-   text: CellBackground
-   cursor: CellForeground
+    text: CellBackground
+    cursor: CellForeground
 
   # Selection colors
   #
@@ -248,8 +247,8 @@ colors:
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   selection:
-   text: CellBackground
-   background: CellForeground
+    text: CellBackground
+    background: CellForeground
 
   # Search colors
   #
