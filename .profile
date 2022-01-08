@@ -13,3 +13,9 @@ fi
 export XDG_CURRENT_DESKTOP='KDE'
 
 PATH="/usr/sbin:/sbin:/bin:/usr/games:$PATH"
+
+# Pyenv init
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init --path)"

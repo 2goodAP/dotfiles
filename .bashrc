@@ -75,6 +75,9 @@ zeal-docs-fix() {
     popd >/dev/null || exit
 }
 
+# Pyenv init
+eval "$(pyenv init -)"
+
 # Environment Variables
 #-----------------------------------------------#
 

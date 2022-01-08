@@ -11,3 +11,9 @@ fi
 
 # For consistent theme in root KDE applications
 export XDG_CURRENT_DESKTOP='KDE'
+
+# Pyenv init
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init --path)"
