@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+# Get the latest major version of Ruby
+rb_maj_ver="$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
+
 # Add to PATH
-export PATH="$HOME/.bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))/bin"
+export PATH="$HOME/.bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/$rb_maj_ver/bin"
 
 # If not running interactively, don't do anything
 case $- in
