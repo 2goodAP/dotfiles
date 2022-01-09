@@ -2,6 +2,8 @@
 # ~/.profile
 #
 
+PATH="/usr/sbin:/sbin:/bin:/usr/games:$PATH"
+
 # Enable or disable native wayland for Firefox depending on DE
 if echo $WAYLAND_DISPLAY | grep -Pq 'wayland-\d*'; then
     export MOZ_ENABLE_WAYLAND=1
@@ -9,10 +11,8 @@ else
     export MOZ_ENABLE_WAYLAND=0
 fi
 
-# For consistent theme in root KDE applications
-export XDG_CURRENT_DESKTOP='KDE'
-
-PATH="/usr/sbin:/sbin:/bin:/usr/games:$PATH"
+# Allow qt5ct to control QT application themes
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Pyenv init
 export PYENV_ROOT="$HOME/.pyenv"
