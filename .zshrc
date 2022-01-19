@@ -6,10 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Get the latest major verison of Ruby
-rb_maj_ver="$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
+ruby_maj_ver="$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
 
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$rb_maj_ver/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$ruby_maj_ver/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -123,7 +123,7 @@ fi
 export VISUAL='nvim'
 
 # Set the DISPLAY variable
-export DISPLAY=:0
+export DISPLAY=:1
 
 # Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1

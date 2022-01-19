@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get the latest major version of Ruby
-rb_maj_ver="$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
+ruby_maj_ver="$(ls $HOME/.gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
 
 # Add to PATH
-export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$rb_maj_ver/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.gem/ruby/$ruby_maj_ver/bin:$PATH"
 
 # If not running interactively, don't do anything
 case $- in
@@ -132,7 +132,7 @@ fi
 export VISUAL='nvim'
 
 # Set the DISPLAY variable
-export DISPLAY=:0
+export DISPLAY=:1
 
 # For gpg-agent
 GPG_TTY=$(tty)
