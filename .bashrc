@@ -132,7 +132,7 @@ fi
 export VISUAL='nvim'
 
 # Set the DISPLAY variable
-export DISPLAY=:1
+export DISPLAY=:0
 
 # For gpg-agent
 GPG_TTY=$(tty)
