@@ -123,7 +123,7 @@ fi
 export VISUAL='nvim'
 
 # Set the DISPLAY variable
-export DISPLAY=:1
+export DISPLAY=:0
 
 # Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1
