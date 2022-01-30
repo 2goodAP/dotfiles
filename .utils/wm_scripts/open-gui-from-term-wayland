@@ -1,3 +1,5 @@
+#!/bin/sh
+#
 # Error:
 # No protocol specified
 # Unable to init server: Could not connect: Connection refused

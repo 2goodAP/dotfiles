@@ -5,7 +5,7 @@
 PATH="/usr/sbin:/sbin:/bin:/usr/games:$PATH"
 
 # Enable or disable native wayland for Firefox depending on DE
-if echo $WAYLAND_DISPLAY | grep -Pq 'wayland-\d*'; then
+if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     export MOZ_ENABLE_WAYLAND=1
 else
     export MOZ_ENABLE_WAYLAND=0
