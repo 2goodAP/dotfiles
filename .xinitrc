@@ -4,4 +4,4 @@
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-env XDG_SESSION_TYPE=x11 exec startplasma-x11
+XDG_SESSION_TYPE=x11 startplasma-x11
