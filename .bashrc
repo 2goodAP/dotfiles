@@ -131,22 +131,12 @@ fi
 # Using neovim as the default shell editor
 export VISUAL='nvim'
 
-# Set the DISPLAY variable
-export DISPLAY=:0
-
 # For gpg-agent
 GPG_TTY=$(tty)
 export GPG_TTY
 
 # Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1
-
-# Enable wayland display for mozilla firefox
-if echo $WAYLAND_DISPLAY | grep -q "wayland-."; then
-    export MOZ_ENABLE_WAYLAND=1
-else
-    export MOZ_ENABLE_WAYLAND=0
-fi
 
 # Aliases
 #-----------------------------------------------#
