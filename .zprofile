@@ -2,7 +2,7 @@
 # ~/.zprofile
 #
 
-# Enable or disable native wayland for Firefox depending on DE
+# Enable native wayland for Firefox
 if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     export MOZ_ENABLE_WAYLAND=1
 else
