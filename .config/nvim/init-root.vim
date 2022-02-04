@@ -71,13 +71,22 @@ set makeprg=make
 
 " Auto complete characters
 "
+" Quote completion
+inoremap    ''      ''<LEFT>
+
+" Double Quote completion
+inoremap    ""      ""<LEFT>
+
 " Parenthesis completion
+inoremap    ()      ()<LEFT>
 inoremap    (<CR>   (<CR>)<ESC>O
 
 " Brace Completion
+inoremap    {}      {}<LEFT>
 inoremap    {<CR>   {<CR>}<ESC>O
 
 " Brackets completion
+inoremap    []      []<LEFT>
 inoremap    [<CR>   [<CR>]<ESC>O
 
 " Vim tab and split navigation keybindings

@@ -5,8 +5,10 @@
 # Enable or disable native wayland for Firefox depending on DE
 if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     export MOZ_ENABLE_WAYLAND=1
+    export QT_QPA_PLATFORM=wayland
 else
     export MOZ_ENABLE_WAYLAND=0
+    export QT_QPA_PLATFORM=xcb
 fi
 
 # Allow qt5ct to control QT application themes
