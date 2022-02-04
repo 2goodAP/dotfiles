@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Wrapper script for starting a Wayland session
+#
+
+env MOZ_ENABLE_WAYLAND=1 /usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
