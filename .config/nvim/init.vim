@@ -6,11 +6,6 @@
 filetype plugin on
 syntax enable
 
-" Source .vimrc file if present in surrent directory
-set exrc
-" Restrict usage of some commands in non-default .vimrc files
-set secure
-
 " Using Omni Completion
 set omnifunc=syntaxcomplete#Complete
 
@@ -71,6 +66,9 @@ set makeprg=make
 
 " Auto complete characters
 "
+" Backtick completion
+inoremap    ``      ``<LEFT>
+
 " Quote completion
 inoremap    ''      ''<LEFT>
 
@@ -89,6 +87,10 @@ inoremap    {<CR>   {<CR>}<ESC>O
 inoremap    []      []<LEFT>
 inoremap    [<CR>   [<CR>]<ESC>O
 
+" Angle brackets completion
+inoremap    <>      <><LEFT>
+inoremap    <<CR>   <<CR>><ESC>O
+
 " Vim tab and split navigation keybindings
 "
 " Terminal mode
@@ -103,7 +105,19 @@ if exists(':tnoremap')
     " Tab navigation
     tnoremap    <A-l>   <C-\><C-n>gt
     tnoremap    <A-h>   <C-\><C-n>gT
+    " Tab jumping
+    tnoremap    <A-1>   <C-\><C-n>1gt
+    tnoremap    <A-2>   <C-\><C-n>2gt
+    tnoremap    <A-3>   <C-\><C-n>3gt
+    tnoremap    <A-4>   <C-\><C-n>4gt
+    tnoremap    <A-5>   <C-\><C-n>5gt
+    tnoremap    <A-6>   <C-\><C-n>6gt
+    tnoremap    <A-7>   <C-\><C-n>7gt
+    tnoremap    <A-8>   <C-\><C-n>8gt
+    tnoremap    <A-9>   <C-\><C-n>9gt
+    tnoremap    <A-0>   <C-\><C-n>0gt
 endif
+
 " Normal mode
 nnoremap    <C-k>           <C-w>k
 nnoremap    <C-j>           <C-w>j
@@ -123,6 +137,7 @@ nnoremap    <A-7>           7gt
 nnoremap    <A-8>           8gt
 nnoremap    <A-9>           9gt
 nnoremap    <A-0>           0gt
+
 " Insert mode
 inoremap    <C-k>           <ESC><C-w>k
 inoremap    <C-j>           <ESC><C-w>j
@@ -131,6 +146,18 @@ inoremap    <C-l>           <ESC><C-w>l
 " Tab navigation
 inoremap    <A-l>           <ESC>gt
 inoremap    <A-h>           <ESC>gT
+" Tab jumping
+inoremap    <A-1>           <ESC>1gt
+inoremap    <A-2>           <ESC>2gt
+inoremap    <A-3>           <ESC>3gt
+inoremap    <A-4>           <ESC>4gt
+inoremap    <A-5>           <ESC>5gt
+inoremap    <A-6>           <ESC>6gt
+inoremap    <A-7>           <ESC>7gt
+inoremap    <A-8>           <ESC>8gt
+inoremap    <A-9>           <ESC>9gt
+inoremap    <A-0>           <ESC>0gt
+
 " Visual mode
 vnoremap    <C-k>           <ESC><C-w>k
 vnoremap    <C-j>           <ESC><C-w>j
@@ -139,6 +166,17 @@ vnoremap    <C-l>           <ESC><C-w>l
 " Tab navigation
 vnoremap    <A-l>           <ESC>gt
 vnoremap    <A-h>           <ESC>gT
+" Tab jumping
+inoremap    <A-1>           <ESC>1gt
+inoremap    <A-2>           <ESC>2gt
+inoremap    <A-3>           <ESC>3gt
+inoremap    <A-4>           <ESC>4gt
+inoremap    <A-5>           <ESC>5gt
+inoremap    <A-6>           <ESC>6gt
+inoremap    <A-7>           <ESC>7gt
+inoremap    <A-8>           <ESC>8gt
+inoremap    <A-9>           <ESC>9gt
+inoremap    <A-0>           <ESC>0gt
 
 " Show syntax groups
 nmap <F10> :call <SID>SynStack()<CR>
@@ -186,13 +224,18 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 "
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚫'
-" Less distracting when opening a new file
-let g:ale_lint_on_enter = 0
+
+" Lint immediately after opening a new file
+let g:ale_lint_on_enter = 1
 
 " Select fixers for C
 let g:ale_fixers = {'*': ['trim_whitespace', 'remove_trailing_lines']}
 " Fix files on save using fixers
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
+" Fix files on Alt+Shift+f
+nnoremap <A-S-f> :ALEFix<CR>
+inoremap <A-S-f> <ESC>:ALEFix<CR>
+vnoremap <A-S-f> <ESC>:ALEFix<CR>
 
 " Language specific linter variables
 " C - Options for clang-format
