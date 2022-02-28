@@ -9,7 +9,7 @@ fi
 ruby_maj_ver="$(ls $HOME/.local/share/gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
 
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.cargo/bin:$HOME/.bin:/usr/local/bin:$HOME/.local/share/gem/ruby/$ruby_maj_ver/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.local/share/gem/ruby/$ruby_maj_ver/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
