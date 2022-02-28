@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages common-aliases systemd vi-mode)
+plugins=(colored-man-pages common-aliases systemd)
 
 
 # User configuration
@@ -148,7 +148,6 @@ alias less='less -i'
 
 # Vim
 alias vi='nvim'
-alias vimconf='nvim ~/.vimrc'
 
 # Grep
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'

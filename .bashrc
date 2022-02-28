@@ -112,9 +112,6 @@ eval "$(pyenv init -)"
 # Environment Variables
 #-----------------------------------------------#
 
-# Using vi as bash keybinds
-set -o vi
-
 # Increasing history size
 export HISTSIZE=1000
 
@@ -151,7 +148,6 @@ alias less='less -i'
 
 # Vim
 alias vi='nvim'
-alias vimconf='nvim ~/.vimrc'
 
 # Sed
 alias sed='sed -E'
