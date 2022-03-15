@@ -1,0 +1,2 @@
+/* Change default cell width for all jupyter notebooks */
+.container { width: 95% !important; }
