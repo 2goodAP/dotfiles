@@ -203,7 +203,7 @@ source ~/.config/nvim/plugins.vim
 
 " LightLine Settings
 "
-let g:lightline = {'colorscheme': 'gruvbox'}
+let g:lightline = {'colorscheme': 'one'}
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
@@ -271,7 +271,7 @@ let g:cpp_no_function_highlight = 0
 let g:python_highlight_all = 1
 
 " Default Sql Type
-let g:sql_type_default = 'mysql'
+let g:sql_type_default = 'postgresql'
 
 " vim-javascript Settings
 "
@@ -287,17 +287,14 @@ let g:jsx_ext_required = 1
 "
 " Colorscheme
 "
-packadd! gruvbox
-
-let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_contrast_light = 'medium'
-let g:gruvbox_improved_warnings = '1'
+packadd! vim-one
 
 if $TERM == 'linux'
     set background=dark
+    let g:one_allow_italics = 0
 else
     set background=light
-    let g:gruvbox_italic = '1'
+    let g:one_allow_italics = 1
 endif
 
-colorscheme gruvbox
+colorscheme one

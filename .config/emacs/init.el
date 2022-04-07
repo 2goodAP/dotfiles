@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -15,93 +17,52 @@
  '(italic ((t (:slant italic :weight medium :family "Victor Mono")))))
 
 
-;; Change font related attributes
-(set-face-attribute 'default t :family "Fira Code" :height 120)
+;; Configs to make Emacs "sensible"
+(setq default-directory "~/"
+      ;; always follow symlinks when opening files
+      vc-follow-symlinks t
+      ;; overwrite text when selected, like we expect.
+      delete-seleciton-mode t
+      ;; quiet startup
+      inhibit-startup-message t
+      initial-scratch-message nil
+      ;; simple lock/backup file management
+      backup-by-copying t
+      delete-old-versions t
+      ;; when quiting emacs, just kill processes
+      confirm-kill-processes nil)
+
+;; Use human-readable sizes in dired
+(setq-default dired-listing-switches "-alh")
+
+;; Refresh a buffer if changed on disk
+(global-auto-revert-mode 1)
+
+;; Always redraw immediately when scrolling (better responsiveness)
+(setq fast-but-imprecise-scrolling t
+      jit-lock-defer-time 0)
 
 
-;; Custom settings for straight.el package manager
-(setq straight-check-for-modifications '(check-on-save find-when-checking))
-
-;; Bootstrap straight.el package manager
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-
-;; Install use-package
-(straight-use-package 'use-package)
-
-
-;; Install lsp-mode and lsp-ui 
-(use-package lsp-mode
-  :straight t
-  :defer 1)
-
-(use-package lsp-ui
-  :straight t
-  :defer 1)
-
-
-;; Install necessary packages for ELisp
-(use-package paredit
-  :straight t
-  :defer 1)
-
-(use-package rainbow-delimiters
-  :straight t
-  :defer 1)
-
-(use-package company
-  :straight t
-  :defer 1)
-
-
-;; Install ligature.el
-(use-package ligature
-  :straight (:host github :repo "mickeynp/ligature.el")
-  :defer 1
-  :config
-  ;; Enable the www ligature in every possible major mode
-  (ligature-set-ligatures 't '("www"))
-  ;; Enable ligatures in programming modes
-  (ligature-set-ligatures
-   'prog-mode
-   '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-     ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-     "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-     "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-     "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-     "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-     "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
-     "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-     "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-     "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
-
-  (global-ligature-mode t))
+;; Load custom lisp modules
+(add-to-list 'load-path (expand-file-name "~/.config/emacs/lisp"))
+(require 'packages-init)
 
 
 ;; Enable paredit, rainbow-delimiters and show-paren-mode for Emacs lisp mode
 ;; and lisp-interaction-mode
-(add-hook 'after-init-hook 'global-company-mode)
-
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (paredit-mode t)
             (rainbow-delimiters-mode t)
-            (show-paren-mode 1)
-            ))
+            (show-paren-mode 1)))
 
 (add-hook 'lisp-interaction-mode
           (lambda ()
             (paredit-mode t)
             (rainbow-delimiters-mode t)
-            (show-paren-mode 1)
-            ))
+            (show-paren-mode 1)))
+
+
+(provide 'init)
+
+;; end init.el

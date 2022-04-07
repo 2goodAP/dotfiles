@@ -11,7 +11,7 @@ let opt_dir = '~/.local/share/nvim/site/pack/vim-plug/opt/'
 call plug#begin('~/.local/share/nvim/site/pack/vim-plug/start')
 
 " For colorscheme-specific plugins
-Plug 'morhetz/gruvbox', {'dir': opt_dir . 'gruvbox'}
+Plug 'rakr/vim-one', {'dir': opt_dir . 'vim-one'}
 
 " For general purpose plugins
 Plug 'tpope/vim-sensible'
