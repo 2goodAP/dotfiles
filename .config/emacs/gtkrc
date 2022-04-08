@@ -1,6 +1,0 @@
-# Set the buffer/menu fonts for GTK emacs
-style "menufont"
-{
-    font_name = "Fira Code Regular 12"
-}
-widget "*emacs-menuitem*" style "menufont"

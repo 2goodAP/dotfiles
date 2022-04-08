@@ -190,7 +190,7 @@ endfunc
 " Hide netrw directory listing banner
 let g:netrw_banner = 0
 
-" Assigning a fixed virtualenv for nvim
+" Assigning a fixed env for nvim
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -201,12 +201,14 @@ let g:python3_host_prog = '/usr/bin/python3'
 " Sourcing the plugin manager file
 source ~/.config/nvim/plugins.vim
 
+
 " LightLine Settings
 "
-let g:lightline = {'colorscheme': 'one'}
+let g:lightline = {'colorscheme': 'gruvbox'}
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
+
 
 " YouCompleteMe Settings
 "
@@ -220,15 +222,16 @@ let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
 
-" Ale Settings
+
+" ALE Settings
 "
 let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚫'
+let g:ale_sign_warning = '●'
 
 " Lint immediately after opening a new file
 let g:ale_lint_on_enter = 1
 
-" Select fixers for C
+" Select generic fixers
 let g:ale_fixers = {'*': ['trim_whitespace', 'remove_trailing_lines']}
 " Fix files on save using fixers
 let g:ale_fix_on_save = 0
@@ -237,11 +240,6 @@ nnoremap <A-S-f> :ALEFix<CR>
 inoremap <A-S-f> <ESC>:ALEFix<CR>
 vnoremap <A-S-f> <ESC>:ALEFix<CR>
 
-" Language specific linter variables
-" C - Options for clang-format
-let g:ale_c_clangformat_options = '-style=file'
-" CPP - Options for clang-format
-let g:ale_cpp_clangformat_options = '-i -style=file'
 
 " vim-markdown Settings
 "
@@ -251,6 +249,7 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
 " Auto-write when following links with 'ge'
 let g:vim_markdown_autowrite = 1
+
 
 " vim-cpp-enhanced-highlight Settings
 "
@@ -267,11 +266,18 @@ let g:cpp_concepts_highlight = 1
 " Highlighting of user defined functions
 let g:cpp_no_function_highlight = 0
 
+
+" vim-python Settings
+"
 " Python Highlight Settings
 let g:python_highlight_all = 1
 
+
+" Vim SQL Settings
+"
 " Default Sql Type
 let g:sql_type_default = 'postgresql'
+
 
 " vim-javascript Settings
 "
@@ -281,20 +287,22 @@ let g:javascript_plugin_jsdoc = 1
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'underscore,backbone,react'
 
-" vim-jsx configs
+
+" vim-jsx Settings
 let g:jsx_ext_required = 1
+
 
 "
 " Colorscheme
 "
-packadd! vim-one
+packadd! gruvbox
 
 if $TERM == 'linux'
     set background=dark
-    let g:one_allow_italics = 0
+    let g:gruvbox_italic = 0
 else
     set background=light
-    let g:one_allow_italics = 1
+    let g:gruvbox_italic = 1
 endif
 
-colorscheme one
+colorscheme gruvbox

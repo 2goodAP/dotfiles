@@ -11,7 +11,7 @@ let opt_dir = '~/.local/share/nvim/site/pack/vim-plug/opt/'
 call plug#begin('~/.local/share/nvim/site/pack/vim-plug/start')
 
 " For colorscheme-specific plugins
-Plug 'rakr/vim-one', {'dir': opt_dir . 'vim-one'}
+Plug 'morhetz/gruvbox', {'dir': opt_dir . 'gruvbox'}
 
 " For general purpose plugins
 Plug 'tpope/vim-sensible'
@@ -26,6 +26,7 @@ Plug 'ycm-core/YouCompleteMe', {
 \ }
 
 " For language-specific plugins
+Plug 'editorconfig/editorconfig-vim', {'for': 'dosini'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp']}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}

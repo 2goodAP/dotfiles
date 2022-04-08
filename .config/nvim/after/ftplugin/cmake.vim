@@ -1,3 +1,4 @@
 " ALE configurations
-" Fix files with 'cmakeformat'
+"
+" Fix files using the specified fixers
 let b:ale_fixers = ['cmakeformat']
