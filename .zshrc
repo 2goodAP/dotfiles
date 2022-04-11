@@ -78,13 +78,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages common-aliases systemd)
+plugins=(vi-mode common-aliases systemd)
 
 
-# User configuration
-#
-# # ZSH syntax highlighting configuration
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+###############################################################################
+# Custom Configurations                                                       #
+###############################################################################
+
 
 ###############################################################################
 # Scripts                                                                     #
@@ -101,10 +101,13 @@ zeal-docs-fix() {
 eval "$(pyenv init -)"
 
 ###############################################################################
-# Exports                                                                     #
+# Environment Variables                                                       #
 ###############################################################################
 #
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# ZSH syntax highlighting configurations
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Set the XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config

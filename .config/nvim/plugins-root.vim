@@ -14,7 +14,6 @@ call plug#begin('~/.local/share/nvim/site/pack/vim-plug/start')
 Plug 'morhetz/gruvbox', {'dir': opt_dir . 'gruvbox'}
 
 " For general purpose plugins
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-highlightedyank'
