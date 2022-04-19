@@ -1,0 +1,10 @@
+[Unit]
+Description=Automatically sync time using NTP on startup
+Documentation=man:timedatectl
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/toggle-ntp-on-startup
+
+[Install]
+WantedBy=multi-user.target

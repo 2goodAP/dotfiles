@@ -1,0 +1,4 @@
+#!/bin/sh
+
+timedatectl set-ntp false
+timedatectl set-ntp true
