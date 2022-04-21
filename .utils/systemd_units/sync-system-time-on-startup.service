@@ -1,10 +1,12 @@
 [Unit]
 Description=Automatically sync time using NTP on startup
 Documentation=man:timedatectl
+Wants=network-online.target
+After=network-online.target
 
 [Service]
-Type=oneshot
-ExecStart=/usr/local/sbin/toggle-ntp-on-startup
+Type=simple
+ExecStart=/bin/systemctl --no-block restart systemd-networkd.service
 
 [Install]
 WantedBy=multi-user.target
