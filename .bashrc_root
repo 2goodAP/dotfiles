@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# Get the latest major version of Ruby
-rb_maj_ver="$(ls $HOME/.local/share/gem/ruby | grep $(ruby -v | cut -d ' ' -f 2 | cut -d . -f 1,2))"
-
-# Add to PATH
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.local/share/gem/ruby/$ruby_maj_ver/bin:$PATH"
-
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -126,9 +120,8 @@ fi
 # Using neovim as the default shell editor
 export VISUAL='nvim'
 
-# For gpg-agent
-GPG_TTY=$(tty)
-export GPG_TTY
+# Configure GPG to read input from the tty
+export GPG_TTY=$(tty)
 
 # Enable using $EDITOR for nnn
 export NNN_USE_EDITOR=1
