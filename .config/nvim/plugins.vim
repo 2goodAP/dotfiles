@@ -1,17 +1,20 @@
-" Automatic installation for vim-plug
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
+let data_dir = stdpath('data') . '/site'
+
+" Automatic installation of vim-plug
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo ' . data_dir . '/autoload/plug.vim' .
+    \ ' --create-dirs' .
+    \ ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source stdpath('config') . '/init.vim'
 endif
 
-let opt_dir = '~/.local/share/nvim/site/pack/vim-plug/opt/'
+let opt_dir = data_dir . '/pack/vim-plug/opt'
 
 " Begin adding plugins to Vim
-call plug#begin('~/.local/share/nvim/site/pack/vim-plug/start')
+call plug#begin(data_dir . '/pack/vim-plug/start')
 
 " For colorscheme-specific plugins
-Plug 'morhetz/gruvbox', {'dir': opt_dir . 'gruvbox'}
+Plug 'morhetz/gruvbox', {'dir': opt_dir . '/gruvbox'}
 
 " For general purpose plugins
 Plug 'tpope/vim-surround'
