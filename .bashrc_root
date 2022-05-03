@@ -14,6 +14,21 @@ esac
 # Enable vi mode
 set -o vi
 
+# Clear screen on Ctrl-l
+bind -x '"\C-l": clear'
+
+
+#-----------------------------------------------------------------------------#
+# Bash Prompt                                                                 #
+#-----------------------------------------------------------------------------#
+#
+# Display the current git branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+export PS1="\u@\h \w \$(parse_git_branch)\n\$ "
+
 
 #-----------------------------------------------------------------------------#
 # Scrips                                                                      #
@@ -51,14 +66,16 @@ export GPG_TTY=$(tty)
 #
 # Meta aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# Program aliases
+alias ls='ls --color=auto'
+alias ll='ls -lFh --color=auto'
+alias la='ls -laFh --color=auto'
 alias diff='diff --color'
 alias less='less -i'
-
-# Sed
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias sed='sed -E'
-
-# Grep
-alias grep='grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
 
 #-----------------------------------------------------------------------------#
@@ -73,5 +90,3 @@ eval "$(pyenv init -)"
 # Bash Plugins                                                                #
 #-----------------------------------------------------------------------------#
 #
-# Starship
-eval "$(starship init bash)"
