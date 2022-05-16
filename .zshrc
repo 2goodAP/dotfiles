@@ -46,7 +46,7 @@ export GPG_TTY=$(tty)
 #-----------------------------------------------------------------------------#
 #
 # Meta aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Program aliases
 alias ls='ls --color=auto'
@@ -66,28 +66,14 @@ alias sed='sed -E'
 # Conda initialize
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
-# Pyenv init
-eval "$(pyenv init -)"
-
 
 #-----------------------------------------------------------------------------#
 # Zsh Plugins                                                                 #
 #-----------------------------------------------------------------------------#
 #
-# Package Manager installed convenience plugins
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
 # Plugin Settings
 # -----------------------------------------------------------------------------#
 #
-# zsh-syntax-highlighting configurations
-#
-# Environment Variables
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
 # zsh-history-substring-search configurations
 #
 # Keybinds

@@ -15,7 +15,7 @@ esac
 set -o vi
 
 # Clear screen on Ctrl-l
-bind -x '"\C-l": clear'
+bind '"\C-l": clear-screen'
 
 
 #-----------------------------------------------------------------------------#
@@ -65,7 +65,7 @@ export GPG_TTY=$(tty)
 #-----------------------------------------------------------------------------#
 #
 # Meta aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Program aliases
 alias ls='ls --color=auto'
@@ -82,8 +82,6 @@ alias sed='sed -E'
 # Init Shell Utilities                                                        #
 #-----------------------------------------------------------------------------#
 #
-# Pyenv init
-eval "$(pyenv init -)"
 
 
 #-----------------------------------------------------------------------------#

@@ -15,7 +15,7 @@ esac
 set -o vi
 
 # Clear screen on Ctrl-l
-bind -x '"\C-l": clear'
+bind '"\C-l": clear-screen'
 
 
 #-----------------------------------------------------------------------------#
@@ -65,7 +65,7 @@ export GPG_TTY=$(tty)
 #-----------------------------------------------------------------------------#
 #
 # Meta aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Program aliases
 alias ls='ls --color=auto'
@@ -84,9 +84,6 @@ alias sed='sed -E'
 #
 # Conda initialize
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
-# Pyenv init
-eval "$(pyenv init -)"
 
 
 #-----------------------------------------------------------------------------#

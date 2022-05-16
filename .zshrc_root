@@ -46,7 +46,7 @@ export GPG_TTY=$(tty)
 #-----------------------------------------------------------------------------#
 #
 # Meta aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Program aliases
 alias ls='ls --color=auto'
@@ -63,20 +63,12 @@ alias sed='sed -E'
 # Init Shell Utilities                                                        #
 #-----------------------------------------------------------------------------#
 #
-# Pyenv init
-eval "$(pyenv init -)"
 
 
 #-----------------------------------------------------------------------------#
 # Zsh Plugins                                                                 #
 #-----------------------------------------------------------------------------#
 #
-# Package Manager installed convenience plugins
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
 # Plugin Settings
 # -----------------------------------------------------------------------------#
 #
