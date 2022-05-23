@@ -78,8 +78,8 @@ alias sed='sed -E'
 #
 # Keybinds
 # Up/Down Keys
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Ctrl-P/Ctrl-N Keys for emacs mode
 bindkey -M emacs '^P' history-substring-search-up
