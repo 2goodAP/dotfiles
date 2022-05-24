@@ -24,7 +24,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe', {
-\   'do': './install.py --ninja --clangd-completer --go-completer --rust-completer --ts-completer'
+\   'do': './install.py --clangd-completer'
 \ }
 
 " For language-specific plugins
