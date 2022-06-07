@@ -29,13 +29,14 @@ Plug 'ycm-core/YouCompleteMe', {
 
 " For language-specific plugins
 Plug 'editorconfig/editorconfig-vim', {'for': 'dosini'}
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'moll/vim-node', {'for': 'javascript'}
-Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
+Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp']}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'vim-python/python-syntax', {'for': 'python'}
+Plug 'LnL7/vim-nix', {'for': 'nix'}
+Plug 'moll/vim-node', {'for': 'javascript'}
 Plug 'jvirtanen/vim-octave', {'for': 'octave'}
 
 call plug#end()

@@ -29,9 +29,10 @@ Plug 'ycm-core/YouCompleteMe', {
 
 " For language-specific plugins
 Plug 'editorconfig/editorconfig-vim', {'for': 'dosini'}
+Plug 'LnL7/vim-nix', {'for': 'nix'}
+Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp']}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'vim-python/python-syntax', {'for': 'python'}
 
 call plug#end()
