@@ -194,6 +194,7 @@ let g:netrw_banner = 0
 let g:python_host_prog = '/run/current-system/sw/bin/python'
 let g:python3_host_prog = '/run/current-system/sw/bin/python3'
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          CUSTOM PLUGINS                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -292,7 +293,6 @@ let g:used_javascript_libs = 'underscore,backbone,react'
 let g:jsx_ext_required = 1
 
 
-"
 " Colorscheme
 "
 packadd! gruvbox

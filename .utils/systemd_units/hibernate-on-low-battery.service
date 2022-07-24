@@ -4,7 +4,7 @@ Documentation=man:systemd-sleep
 
 [Service]
 Type=simple
-ExecStart=/usr/local/sbin/hibernate-on-low-battery
+ExecStart=/usr/local/sbin/hibernate-on-low-battery.sh
 
 [Install]
 WantedBy=multi-user.target

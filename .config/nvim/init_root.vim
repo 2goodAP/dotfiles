@@ -194,6 +194,7 @@ let g:netrw_banner = 0
 let g:python_host_prog = '/run/current-system/sw/bin/python'
 let g:python3_host_prog = '/run/current-system/sw/bin/python3'
 
+
 "-------------------------------------------------------------------"
 "                          CUSTOM PLUGINS                           "
 "-------------------------------------------------------------------"
@@ -279,7 +280,6 @@ let g:python_highlight_all = 1
 let g:sql_type_default = 'postgresql'
 
 
-"
 " Colorscheme
 "
 packadd! gruvbox
