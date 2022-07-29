@@ -14,7 +14,7 @@ let opt_dir = data_dir . '/pack/vim-plug/opt'
 call plug#begin(data_dir . '/pack/vim-plug/start')
 
 " For colorscheme-specific plugins
-Plug 'morhetz/gruvbox', {'dir': opt_dir . '/gruvbox'}
+Plug 'NLKNguyen/papercolor-theme', {'dir': opt_dir . '/PaperColor'}
 
 " For general purpose plugins
 Plug 'tpope/vim-surround'

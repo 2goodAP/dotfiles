@@ -205,7 +205,7 @@ source ~/.config/nvim/plugins.vim
 
 " LightLine Settings
 "
-let g:lightline = {'colorscheme': 'gruvbox'}
+let g:lightline = {'colorscheme': 'PaperColor'}
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
@@ -295,14 +295,12 @@ let g:jsx_ext_required = 1
 
 " Colorscheme
 "
-packadd! gruvbox
+packadd! PaperColor
 
 if $TERM == 'linux'
     set background=dark
-    let g:gruvbox_italic = 0
 else
     set background=light
-    let g:gruvbox_italic = 1
 endif
 
-colorscheme gruvbox
+colorscheme PaperColor

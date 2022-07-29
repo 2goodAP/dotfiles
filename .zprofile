@@ -12,5 +12,8 @@ else
     export MOZ_ENABLE_WAYLAND=0
 fi
 
+# Use qt5ct for applying themes to QT applications.
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 
 [[ -f ~/.zshrc ]] && . ~/.zshrc
