@@ -1,8 +1,4 @@
-# Should you change your keyboard layout some time, delete
-# This file and re-run i3-config-wizard(1).
-#
-
-# I3 config file (v4)
+# Sway config file
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -12,8 +8,17 @@
 ####################
 
 
-# i3lock-color
-set $swaylock bash ~/.config/sway/scripts/swaylock.sh
+# Navigation
+set $left h
+set $down j
+set $up k
+set $right l
+
+# swaylock-effects (daemonized)
+set $swaylock 'bash ~/.config/sway/scripts/swaylock.sh'
+
+# Waybar
+set $waybar 'bash ~/.config/sway/scripts/waybar.sh'
 
 
 ####################
@@ -38,6 +43,9 @@ input "2362:9523:PixArt_OpticalMouse" accel_profile flat
 # Outputs
 # -------
 
+# Set the default wallpaper.
+output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
 
 #######################
 # Workspace Behaviors #
@@ -60,11 +68,17 @@ default_orientation auto
 # Https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment sway
 
-# Xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
+# Start swayidle and swaylock for desktop idle and lock.
+exec --no-startup-id swayidle -w \
+         timeout 480 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 600 $swaylock \
+         before-sleep $swaylock
 
-# Autostart a single instance of gammastep.
+# Start a single instance of gammastep.
 exec --no-startup-id gammastep -l 0:0 -t 1900:1900 -g 1.2 -m wayland
+
+# Start a single instance of Waybar.
+exec_always --no-startup-id $waybar
 
 # Run nm-applet, a desktop environment-independent system tray GUI for NetworkManager.
 exec --no-startup-id nm-applet
@@ -116,10 +130,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id wofi --show drun,run
 
 # Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -128,10 +142,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -140,9 +154,9 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Split in horizontal orientation
-bindsym $mod+semicolon split h
+bindsym $mod+b splith
 # Split in vertical orientation
-bindsym $mod+apostrophe split v
+bindsym $mod+v splitv
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -201,9 +215,9 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Reload the configuration file
+# Reload the configuration file.
 bindsym $mod+Shift+r reload
-# Exit i3 (logs you out of your X session)
+# Exit sway.
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your ayland session.' -B 'Yes, exit sway.' 'swaymsg exit'"
 
 # Resize window (you can also use the mouse for that)
@@ -214,10 +228,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 2 px or 2 ppt
-        bindsym j resize grow height 2 px or 2 ppt
-        bindsym k resize shrink height 2 px or 2 ppt
-        bindsym l resize grow width 2 px or 2 ppt
+        bindsym $left resize shrink width 2 px or 2 ppt
+        bindsym $down resize grow height 2 px or 2 ppt
+        bindsym $up resize shrink height 2 px or 2 ppt
+        bindsym $right resize grow width 2 px or 2 ppt
 
         # Same bindings, but for the arrow keys
         bindsym Left resize shrink width 2 px or 2 ppt
@@ -232,6 +246,22 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Scratchpad
+# ----------
+
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# Custom
+# ------
 
 # Use Win+x to lock the screen.
 bindsym $mod+x exec --no-startup-id $swaylock
@@ -260,13 +290,3 @@ font pango:Fantasque Sans Mono 12
 # ------
 
 seat seat0 xcursor_theme capitaine-cursors-white 36
-
-
-#######
-# Bar #
-#######
-
-
-bar {
-    status_command i3status-rs 2> /tmp/swaybar.log
-}

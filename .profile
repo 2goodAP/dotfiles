@@ -14,3 +14,6 @@ fi
 
 # Use qt5ct for applying themes to QT applications.
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Enable appindicator tray for waybar.
+export XDG_CURRENT_DESKTOP=Unity
