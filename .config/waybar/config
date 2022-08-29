@@ -96,10 +96,9 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["", "", "", "", ""],
         "format-charging": " {capacity}%",
-        "format-plugged": "ﮣ {capacity}%",
-        "tooltip-format": "{time} remaining"
+        "format-full": " 100%"
     },
 
     "clock": {
