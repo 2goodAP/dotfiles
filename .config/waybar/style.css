@@ -55,14 +55,12 @@ Arc-Dark Color Scheme
     font-size: 18px;
 }
 
-/* The whole bar */
 #waybar {
     color: @theme_text_color;
     background: @theme_base_color;
     border-top: 0.2rem solid @borders;
 }
 
-/* Each module */
 #tray,
 #clock,
 #network,
@@ -86,6 +84,11 @@ Arc-Dark Color Scheme
 #window {
     margin: 0.25rem 0 0 0.3rem;
     padding: 0.5rem 0.5rem;
+}
+
+.disabled {
+    margin: 0;
+    padding: 0;
 }
 
 
