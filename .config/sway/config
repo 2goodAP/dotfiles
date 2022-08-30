@@ -20,9 +20,6 @@ set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 # Suspend Command
 set $suspend "systemctl -i suspend-then-hibernate"
 
-# Terminal Emulator
-set $term foot
-
 
 ####################
 # Inputs / Outputs #
@@ -70,10 +67,6 @@ default_orientation auto
 # Stop mouse movements from stealing the focus.
 focus_follows_mouse no
 
-# Adjust the border of width and eliminate title bar.
-default_border pixel 4px
-default_floating_border pixel 4px
-
 
 # Floating windows
 # ----------------
@@ -92,7 +85,7 @@ for_window [app_id="wev"] floating enable
 # ---------------
 
 # mpv
-for_window [app_id="mpv"] idle_inhibit
+for_window [app_id="mpv"] inhibit_idle focus
 
 
 ##############
@@ -138,10 +131,17 @@ set $up k
 set $right l
 
 # Nagbar keys
-set $exit_sway e
+set $exit e
 set $reboot r
 set $shutdown s
-set $dismiss_nag d
+set $dismiss d
+
+## Programs
+# Terminal Emulator
+set $term "foot"
+
+# Menu Program
+set $menu "rofi -modi run,ssh,drun,combi -show drun"
 
 
 # Brightness and Volume
@@ -181,6 +181,25 @@ bindsym Xf86Sleep exec --no-startup-id $suspend
 # Suspend on laptop lid switch.
 bindswitch --locked lid:on exec --no-startup-id $suspend
 
+# Session control using swaynag.
+mode "nagbar" {
+    # Exit out of swaywm.
+    bindsym $exit exit
+    # Reboot the machine
+    bindsym $reboot exec --no-startup-id "systemctl -i reboot"
+    # Shutdown the machine
+    bindsym $shutdown exec --no-startup-id "systemctl -i poweroff"
+    # Quit out of the nagbar.
+    bindsym $dismiss exec killall swaynag; mode "default"
+}
+
+bindsym $super+Shift+e exec swaynag -t "warning" -f "FantasqueSansMono NF" -s "" \
+    -m "You pressed the exit shortcut. Select the action you want to perform." \
+    -B "Shutdown ($shutdown)" "systemctl -i poweroff" \
+    -B "Reboot ($reboot)" "systemctl -i reboot" \
+    -B "Exit Sway ($exit)" "swaymsg exit" \
+    -Z "Dismiss Nagbar ($dismiss)" "swaymsg mode default"; mode "nagbar"
+
 
 # Defaults
 # --------
@@ -195,7 +214,7 @@ bindsym $super+Return exec $term
 bindsym $super+Shift+q kill
 
 # Start wofi menu.
-bindsym $super+d exec --no-startup-id rofi -show drun,run
+bindsym $super+d exec $menu
 
 # Change focus
 bindsym $super+$left focus left
@@ -286,25 +305,6 @@ bindsym $super+Shift+0 move container to workspace number $ws10
 # Reload the configuration file.
 bindsym $super+Shift+c reload
 
-# Session control using swaynag.
-mode "nagbar" {
-    # Exit out of swaywm.
-    bindsym $exit_sway exit
-    # Reboot the machine
-    bindsym $reboot exec --no-startup-id "systemctl -i reboot"
-    # Shutdown the machine
-    bindsym $shutdown exec --no-startup-id "systemctl -i poweroff"
-    # Quit out of the nagbar.
-    bindsym $dismiss_nag exec killall swaynag; mode "default"
-}
-
-bindsym $super+Shift+e exec swaynag -t "warning" -f "FantasqueSansMono NF" -s "" \
-    -m "You pressed the exit shortcut. Select the action you want to perform." \
-    -B "($shutdown)hutdown" "systemctl -i poweroff" \
-    -B "($reboot)eboot" "systemctl -i reboot" \
-    -B "($exit_sway)xit sway" "swaymsg exit" \
-    -Z "($dismiss_nag)ismiss nagbar" "swaymsg mode default"; mode "nagbar"
-
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -347,14 +347,36 @@ bindsym $super+Shift+minus move scratchpad
 bindsym $super+minus scratchpad show
 
 
-# Custom
-# ------
+# Utilities
+# ---------
 
 # Use Win+x to lock the screen.
-bindsym $super+x exec --no-startup-id $swaylock
+bindsym $super+x exec $swaylock
 
 # Use Alt+PageUp to start and Alt+PageDown to stop gammastep.
 bindsym $alt+End exec --no-startup-id pkill -USR1 gammastep
+
+## Screenshot commands
+# File to save the screenshot to.
+set $screenshot_file ~/Pictures/Screenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png
+
+# Capture and save manually selected window.
+bindsym Print exec grimshot save window $screenshot_file
+# Capture and save manually selected area.
+bindsym $super+Print exec grimshot save area $screenshot_file
+# Capture and save active window.
+bindsym $super+$alt+Print exec grimshot save active $screenshot_file
+# Capture and save active output.
+bindsym $super+Ctrl+Print exec grimshot save output $screenshot_file
+
+# Capture and copy manually selected window.
+bindsym Shift+Print exec grimshot copy window
+# Capture and copy manually selected area.
+bindsym $super+Shift+Print exec grimshot copy area
+# Capture and copy active window.
+bindsym $super+$alt+Shift+Print exec grimshot copy active
+# Capture and copy active output.
+bindsym $super+Ctrl+Shift+Print exec grimshot copy output
 
 
 #########
@@ -374,23 +396,31 @@ font pango:monospace 11
 font pango:FantasqueSansMono Nerd Font 13
 
 
-# Gaps
-# ----
-
-gaps inner 6
-
-# Only enable gaps on a workspace when there is at least one container.
-smart_gaps on
-
-
-# Titlebars
-# ---------
+# Colors
+# ------
 
 # class                 border   base     text     indicator  child_border
 client.focused          #bcbebf  #e3e5e7  #232629  #bcbebf    #e3e5e7
 client.focused_inactive #cdcccd  #eff0f1  #707d8a  #cdcccd    #eff0f1
 client.unfocused        #dcdcdc  #fafafa  #969696  #dcdcdc    #fafafa
 client.urgent           #da4453  #ff98a2  #f8f8f2  #da4453    #ff98a2
+
+
+# Borders
+# -------
+
+# Adjust the border of width and eliminate title bar.
+default_border pixel 5px
+default_floating_border pixel 5px
+
+
+# Gaps
+# ----
+
+gaps inner 5
+
+# Only enable gaps on a workspace when there is at least one container.
+smart_gaps on
 
 
 # Cursor

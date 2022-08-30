@@ -51,36 +51,41 @@ Arc-Dark Color Scheme
     min-height: 0;
     margin: 0;
     padding: 0;
+    font-family: FantasqueSansMono Nerd Font, monospace;
+    font-size: 18px;
 }
 
 /* The whole bar */
 #waybar {
     color: @theme_text_color;
     background: @theme_base_color;
-    border-top: 3px solid @borders;
-    font-family: FantasqueSansMono Nerd Font, monospace;
-    font-size: 18px;
+    border-top: 0.2rem solid @borders;
 }
 
 /* Each module */
-#battery,
-#clock,
-#backlight,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#custom-weather,
-#network,
-#pulseaudio,
-#temperature,
 #tray,
+#clock,
+#network,
+#bluetooth,
+#battery,
+#pulseaudio,
+#backlight,
+#language,
 #idle_inhibitor {
-    padding: 0.5rem 0.6rem;
-    margin-top: 3px;
+    margin: 0.25rem 0.3rem 0 0;
+    padding: 0.5rem 0.5rem;
 }
+
 #workspaces {
-    margin-top: 3px;
+    margin-top: 0.25rem;
+}
+#workspaces button {
+    padding: 0.2rem 0.3rem;
+}
+#mode,
+#window {
+    margin: 0.25rem 0 0 0.3rem;
+    padding: 0.5rem 0.5rem;
 }
 
 
@@ -91,9 +96,7 @@ Arc-Dark Color Scheme
 #mode {
     color: @theme_unfocused_selected_fg_color;
     background-color: @theme_unfocused_selected_bg_color;
-    border-bottom: 3px;
-    margin-left: 5px;
-    padding: 7px;
+    border-bottom: 0.3rem;
 }
 
 #window {
@@ -129,10 +132,6 @@ Arc-Dark Color Scheme
     background-color: @theme_unfocused_bg_color;
 }
 
-#workspaces button {
-    margin-right: 2px;
-    padding: 0 4px;
-}
 #workspaces button.urgent {
     border-color: @warning_color;
     color: @warning_color;
@@ -146,7 +145,6 @@ Arc-Dark Color Scheme
     color: @theme_selected_fg_color;
     background-color: @theme_selected_bg_color;
 }
-
 
 #tray > .passive {
     -gtk-icon-effect: dim;
