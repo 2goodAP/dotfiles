@@ -1,7 +1,11 @@
-# Terminate already running bar instances
+#
+# A very simple script to hard restart waybar.
+#
+
+# Terminate already running Waybar instances.
 killall -q waybar
 
-echo "---" | tee -a /tmp/waybar.log
+echo "---" >> "/tmp/waybar-$(whoami).log"
 
 # Launch Waybar using the default config.
-waybar 2>&1 | tee -a /tmp/waybar.log & disown
+waybar &>> "/tmp/waybar-$(whoami).log" & disown

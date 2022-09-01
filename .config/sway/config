@@ -8,17 +8,20 @@
 ####################
 
 
-# Wob Socket
-set $wobsock "$XDG_RUNTIME_DIR/wob.sock"
+# swaybg
+set $swaybg "bash ~/.config/sway/scripts/swaybg.sh"
 
 # swaylock-effects (daemonized)
 set $swaylock "bash ~/.config/sway/scripts/swaylock.sh"
 
-# Waybar
-set $waybar "bash ~/.config/sway/scripts/waybar.sh"
-
 # Suspend Command
 set $suspend "systemctl -i suspend-then-hibernate"
+
+# Wob Socket
+set $wobsock "$XDG_RUNTIME_DIR/wob.sock"
+
+# Waybar
+set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 
 
 ####################
@@ -44,7 +47,7 @@ input "2362:9523:PixArt_OpticalMouse" accel_profile flat
 # -------
 
 # Set the default wallpaper.
-output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+exec_always $swaybg
 
 
 #######################
