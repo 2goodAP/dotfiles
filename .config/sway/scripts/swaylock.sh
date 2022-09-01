@@ -8,7 +8,7 @@ LOG_FILE="/tmp/swaylock-$USER.log"
 # Background Image
 case $USER in
     aashishp)
-        BACKGROUND="$HOME/Pictures/Mountain_Pass_Horizon.jpg"
+        BACKGROUND="$HOME/Pictures/Orange_Mountain_Silouette.jpg"
         ;;
     workerap)
         BACKGROUND="$HOME/Pictures/Mountain_Pass_Horizon.jpg"
