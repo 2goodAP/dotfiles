@@ -9,9 +9,6 @@
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
- /*
-Arc-Dark Color Scheme
-*/
 
 @define-color accent-bg #e6e6e6;
 @define-color accent-fg #464646;
@@ -40,11 +37,11 @@ Arc-Dark Color Scheme
 }
 
 
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
+/* ----------- *
+ * Base styles *
+ * ----------- */
 
-/* Reset all styles */
+/* Reset all styles. */
 * {
     border: none;
     border-radius: 5px;
@@ -61,6 +58,7 @@ Arc-Dark Color Scheme
     border-top: 0.2rem solid @borders;
 }
 
+/* Adjust margins and padding for all modules. */
 #tray,
 #clock,
 #network,
@@ -86,15 +84,10 @@ Arc-Dark Color Scheme
     padding: 0.5rem 0.5rem;
 }
 
-.disabled {
-    margin: 0;
-    padding: 0;
-}
 
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
+/* ------------- *
+ * Module styles *
+ * ------------- */
 
 #mode {
     color: @theme_unfocused_selected_fg_color;
