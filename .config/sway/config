@@ -80,6 +80,9 @@ for_window [app_id="firefox" title="^$"] floating enable
 # Wev
 for_window [app_id="wev"] floating enable
 
+# pavucontrol
+for_window [app_id="pavucontrol"] floating enable
+
 
 # Idle Inhibition
 # ---------------
@@ -93,14 +96,6 @@ for_window [app_id="mpv"] inhibit_idle focus
 ##############
 
 
-# Update D-Bus activation environemnt and restart some important services
-# to enable screen-sharing.
-exec dbus-sway-environment
-
-# Start XDG autostart .desktop files using dex. See also
-# Https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment sway
-
 # Start swayidle and swaylock for desktop idle and lock.
 exec swayidle -w \
      timeout 480 "swaymsg 'output * dpms off'" resume "swaymsg 'output * dpms on'" \
@@ -113,6 +108,14 @@ exec gammastep -l 0:0 -t 1900:1900 -g 1.2 -m wayland
 
 # Start a single instance of Waybar.
 exec_always $waybar
+
+# Update D-Bus activation environemnt and restart
+# some important services to enable screen-sharing.
+exec dbus-sway-environment
+
+# Start XDG autostart .desktop files using dex. See also
+# Https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment sway
 
 # Run wob for nice overlay bars.
 exec rm -f $wobsock && mkfifo $wobsock && tail -f $wobsock | wob
