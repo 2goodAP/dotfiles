@@ -2,16 +2,24 @@
 # A very simple script to set desktop background per user on the fly.
 #
 
+USER="$(whoami)"
+LOG_FILE="/tmp/swaybg-$USER.log"
+
+# `swaybg` Parameters
 OUTPUT='*'
 MODE='fill'
 FALLBACK='#ffffff'
 
-case $(whoami) in
+case $USER in
     aashishp)
         BACKGROUND="$HOME/Pictures/Wheat_Field_Windmill.jpg"
         ;;
     workerap)
         BACKGROUND="$HOME/Pictures/Sunny_Mountain_Landscape.jpg"
+        ;;
+    *)
+        echo "swaybg.sh: error: Unrecogonized user '$USER'" >> $LOG_FILE
+        exit 1
         ;;
 esac
 
@@ -20,4 +28,4 @@ killall -q swaybg
 
 # Apply the background to the specified output.
 swaybg --output=$OUTPUT --image=$BACKGROUND --mode=$MODE --color=$FALLBACK \
-    &>> "/tmp/swaybg-$(whoami).log" & disown
+    &>> $LOG_FILE & disown

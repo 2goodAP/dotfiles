@@ -2,8 +2,22 @@
 # A very simple script to launch swaylock with custom settings.
 #
 
+USER="$(whoami)"
+LOG_FILE="/tmp/swaylock-$USER.log"
+
 # Background Image
-BACKGROUND="~/Pictures/Mountain_Pass_Horizon.jpg"
+case $USER in
+    aashishp)
+        BACKGROUND="$HOME/Pictures/Mountain_Pass_Horizon.jpg"
+        ;;
+    workerap)
+        BACKGROUND="$HOME/Pictures/Mountain_Pass_Horizon.jpg"
+        ;;
+    *)
+        echo "swaylock.sh: error: Unrecogonized user '$USER'" >> $LOG_FILE
+        exit 1
+        ;;
+esac
 
 # Colors
 BLUE=0087afff
@@ -32,4 +46,4 @@ swaylock --daemonize --ignore-empty-password --image=$BACKGROUND \
     --ring-wrong-color=$RED \
     --text-color=$PRIMARY --text-clear-color=$TRANSPARENT \
     --text-caps-lock-color=$PRIMARY --text-ver-color=$TRANSPARENT \
-    --text-wrong-color=$TRANSPARENT
+    --text-wrong-color=$TRANSPARENT &>> $LOG_FILE
