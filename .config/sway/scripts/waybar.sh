@@ -7,7 +7,7 @@ LOG_FILE="/tmp/waybar-$(whoami).log"
 # Terminate already running Waybar instances.
 killall -q waybar
 
-echo "---" >> $LOG_FILE
+echo "---" | tee -a $LOG_FILE
 
 # Launch Waybar using the default config.
-waybar &>> $LOG_FILE & disown
+waybar 2>&1 | tee -a $LOG_FILE & disown

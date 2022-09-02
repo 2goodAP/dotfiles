@@ -14,7 +14,7 @@ case $USER in
         BACKGROUND="$HOME/Pictures/Mountain_Pass_Horizon.jpg"
         ;;
     *)
-        echo "swaylock.sh: error: Unrecogonized user '$USER'" >> $LOG_FILE
+        echo "swaylock.sh: error: Unrecogonized user '$USER'" | tee -a $LOG_FILE
         exit 1
         ;;
 esac
@@ -46,4 +46,4 @@ swaylock --daemonize --ignore-empty-password --image=$BACKGROUND \
     --ring-wrong-color=$RED \
     --text-color=$PRIMARY --text-clear-color=$TRANSPARENT \
     --text-caps-lock-color=$PRIMARY --text-ver-color=$TRANSPARENT \
-    --text-wrong-color=$TRANSPARENT &>> $LOG_FILE
+    --text-wrong-color=$TRANSPARENT 2>&1 | tee -a $LOG_FILE
