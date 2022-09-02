@@ -1,23 +1,18 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
+/* ============================================================== *
+ * Waybar configuration                                           *
+ * See Also: https://github.com/Alexays/Waybar/wiki/Configuration *
+ * ============================================================== */
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
+/* --------- *
+ * Keyframes *
+ * --------- */
 
-@define-color accent-bg #e6e6e6;
 @define-color accent-fg #464646;
+@define-color accent-bg #e6e6e6;
 
 
 @keyframes blink-warning {
-    70% {
-        color: white;
-    }
+    70% { color: white; }
 
     to {
         color: white;
@@ -26,9 +21,7 @@
 }
 
 @keyframes blink-critical {
-    70% {
-      color: white;
-    }
+    70% { color: white; }
 
     to {
         color: white;
@@ -45,20 +38,24 @@
 * {
     border: none;
     border-radius: 5px;
+    font-family: FantasqueSansMono Nerd Font, monospace;
+    font-size: 18px;
     min-height: 0;
     margin: 0;
     padding: 0;
-    font-family: FantasqueSansMono Nerd Font, monospace;
-    font-size: 18px;
 }
 
 #waybar {
     color: @theme_text_color;
-    background: @theme_base_color;
+    background-color: @theme_base_color;
     border-top: 0.2rem solid @borders;
 }
 
 /* Adjust margins and padding for all modules. */
+.modules-left,
+.modules-center,
+.modules-right { margin-top: 0.25rem; }
+
 #tray,
 #clock,
 #network,
@@ -67,22 +64,11 @@
 #pulseaudio,
 #backlight,
 #language,
-#idle_inhibitor {
-    margin: 0.25rem 0.3rem 0 0;
-    padding: 0.5rem 0.5rem;
-}
+#idle_inhibitor { padding: 0.4rem; }
 
-#workspaces {
-    margin-top: 0.25rem;
-}
-#workspaces button {
-    padding: 0.2rem 0.3rem;
-}
+#workspaces button { padding: 0.4rem 0.2rem; }
 #mode,
-#window {
-    margin: 0.25rem 0 0 0.3rem;
-    padding: 0.5rem 0.5rem;
-}
+#window { padding: 0.4rem; }
 
 
 /* ------------- *
@@ -95,21 +81,15 @@
     border-bottom: 0.3rem;
 }
 
-#window {
-    font-size: 16px;
-}
+#window { font-size: 16px; }
 
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-#battery.warning {
-    color: @warning_color;
-}
-#battery.critical {
-    color: @error_color;
-}
+#battery.warning { color: @warning_color; }
+#battery.critical { color: @error_color; }
 #battery.warning.discharging {
     animation-name: blink-warning;
     animation-duration: 3s;
@@ -119,9 +99,7 @@
     animation-duration: 2s;
 }
 
-#network.disconnected {
-    color: @warning_color;
-}
+#network.disconnected { color: @warning_color; }
 
 #pulseaudio.muted {
     color: @theme_unfocused_fg_color;
@@ -129,12 +107,12 @@
 }
 
 #workspaces button.urgent {
-    border-color: @warning_color;
     color: @warning_color;
+    border-color: @warning_color;
 }
 #workspaces button.focused {
-    border: 2px solid @borders;
     background-color: @insensitive_base_color;
+    border: 2px solid @borders;
 }
 
 #idle_inhibitor.activated {
@@ -142,10 +120,8 @@
     background-color: @theme_selected_bg_color;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
+#tray > .passive { -gtk-icon-effect: dim; }
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
     background-color: @warning_color;
+    -gtk-icon-effect: highlight;
 }

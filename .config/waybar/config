@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "spacing": 4,
+    "spacing": 5,
 
     "modules-left": [
         "sway/workspaces",
@@ -100,14 +100,12 @@
     },
 
     "clock": {
-        // "timezone": "America/New_York",
         "format": " {:%a %F %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+        "spacing": 5
     }
 }
 
