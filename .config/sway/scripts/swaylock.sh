@@ -46,4 +46,4 @@ swaylock --daemonize --ignore-empty-password --image=$BACKGROUND \
     --ring-wrong-color=$RED \
     --text-color=$PRIMARY --text-clear-color=$TRANSPARENT \
     --text-caps-lock-color=$PRIMARY --text-ver-color=$TRANSPARENT \
-    --text-wrong-color=$TRANSPARENT 2>&1 | tee -a $LOG_FILE
+    --text-wrong-color=$TRANSPARENT 2>&1 | tee -a $LOG_FILE & disown
