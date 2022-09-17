@@ -20,13 +20,13 @@ case $USER in
 esac
 
 # Colors
-BLUE=0087afff
-GREEN=008700ff
-PRIMARY=eeeeeeff
-RED=af0000ff
-SECONDARY=bcbcbcff
-TRANSPARENT=44444400
-YELLOW=ffaf00ff
+BLUE=1c71d8ff
+GREEN=2ec27eff
+PRIMARY=fafafaff
+RED=e01b24ff
+SECONDARY=c0bfbcff
+TRANSPARENT=24242400
+YELLOW=e5a50aff
 
 # Swaylock Command
 swaylock --daemonize --ignore-empty-password --image=$BACKGROUND \
