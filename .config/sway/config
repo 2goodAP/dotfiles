@@ -412,18 +412,21 @@ font pango:NotoSans Nerd Font 11
 # ------
 
 # class                 border   base     text     indicator  child_border
-client.focused          #bcbebf  #e3e5e7  #232629  #bcbebf    #e3e5e7
-client.focused_inactive #cdcccd  #eff0f1  #707d8a  #cdcccd    #eff0f1
-client.unfocused        #dcdcdc  #fafafa  #969696  #dcdcdc    #fafafa
-client.urgent           #da4453  #ff98a2  #f8f8f2  #da4453    #ff98a2
+client.focused          #c0bfbc  #deddda  #241f31  #c0bfbc    #241f31
+client.focused_inactive #deddda  #f6f5f4  #5e5c64  #deddda    #5e5c64
+client.unfocused        #f6f5f4  #ffffff  #9a9996  #f6f5f4    #9a9996
+client.urgent           #ae7b03  #e5a50a  #ffffff  #ae7b03    #e5a50a
 
 
 # Borders
 # -------
 
 # Adjust the border of width and eliminate title bar.
-default_border pixel 5px
-default_floating_border pixel 5px
+default_border pixel 2px
+default_floating_border pixel 2px
+
+# Only enable borders if a workspace has more than one visible child.
+smart_borders on
 
 
 # Titlebars
@@ -436,7 +439,7 @@ titlebar_padding 5
 
 gaps inner 5
 
-# Only enable gaps on a workspace when there is at least one container.
+# Only enable gaps if a workspace has more than one child.
 smart_gaps on
 
 
