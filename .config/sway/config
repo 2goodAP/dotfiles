@@ -154,7 +154,7 @@ set $dismiss d
 set $term "foot"
 
 # Menu Program
-set $menu "rofi -modi run,ssh,drun,combi -show drun"
+set $menu "rofi -show drun"
 
 
 # Brightness and Volume
@@ -400,13 +400,12 @@ bindsym $super+Ctrl+Shift+Print exec grimshot copy output
 # Fonts
 # -----
 
-# Font for window titles. Will also be used by the bar unless a different font
-# Is used in the bar {} block below.
+# Fonts for window titles.
 font pango:monospace 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # Text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:FantasqueSansMono Nerd Font 13
+font pango:NotoSans Nerd Font 11
 
 
 # Colors
@@ -425,6 +424,11 @@ client.urgent           #da4453  #ff98a2  #f8f8f2  #da4453    #ff98a2
 # Adjust the border of width and eliminate title bar.
 default_border pixel 5px
 default_floating_border pixel 5px
+
+
+# Titlebars
+# ---------
+titlebar_padding 5
 
 
 # Gaps

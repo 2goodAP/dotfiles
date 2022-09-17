@@ -3,29 +3,26 @@
  * See Also: https://github.com/Alexays/Waybar/wiki/Configuration *
  * ============================================================== */
 
+
 /* --------- *
  * Keyframes *
  * --------- */
 
-@define-color accent-fg #464646;
-@define-color accent-bg #e6e6e6;
-
-
 @keyframes blink-warning {
-    70% { color: white; }
+    70% { color: @theme_bg_color; }
 
     to {
-        color: white;
-        background-color: orange;
+        color: @theme_bg_color;
+        background-color: @warning_color;
     }
 }
 
 @keyframes blink-critical {
-    70% { color: white; }
+    70% { color: @theme_bg_color; }
 
     to {
-        color: white;
-        background-color: red;
+        color: @theme_bg_color;
+        background-color: @error_color;
     }
 }
 
@@ -37,9 +34,9 @@
 /* Reset all styles. */
 * {
     border: none;
-    border-radius: 5px;
-    font-family: FantasqueSansMono Nerd Font, monospace;
-    font-size: 18px;
+    border-radius: 0.4rem;
+    font-family: NotoSans Nerd Font, sans-serif;
+    font-size: 1.1rem;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -54,7 +51,7 @@
 /* Adjust margins and padding for all modules. */
 .modules-left,
 .modules-center,
-.modules-right { margin-top: 0.25rem; }
+.modules-right { margin-top: 0.2rem; }
 
 #tray,
 #clock,
@@ -76,12 +73,12 @@
  * ------------- */
 
 #mode {
-    color: @theme_unfocused_selected_fg_color;
-    background-color: @theme_unfocused_selected_bg_color;
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
     border-bottom: 0.3rem;
 }
 
-#window { font-size: 16px; }
+#window { font-size: 1rem; }
 
 #battery {
     animation-timing-function: linear;
@@ -99,8 +96,6 @@
     animation-duration: 2s;
 }
 
-#network.disconnected { color: @warning_color; }
-
 #pulseaudio.muted {
     color: @theme_unfocused_fg_color;
     background-color: @theme_unfocused_bg_color;
@@ -111,7 +106,7 @@
     border-color: @warning_color;
 }
 #workspaces button.focused {
-    background-color: @insensitive_base_color;
+    background-color: @insensitive_bg_color;
     border: 2px solid @borders;
 }
 

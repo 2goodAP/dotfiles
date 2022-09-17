@@ -1,1 +1,182 @@
-@theme "paper-float.rasi"
+/*****----- Configuration -----*****/
+configuration {
+	modi:                 "drun,combi,ssh,filebrowser";
+    show-icons:           true;
+    display-drun:         "  Apps";
+    display-combi:        "  Combi";
+    display-ssh:          "  SSH";
+    display-filebrowser:  "  Files";
+	drun-display-format:  "{name}";
+	window-format:        "{w} · {c} · {t}";
+}
+
+/*****----- Global Properties -----*****/
+* {
+    /* Resets */
+    border:         0;
+    margin:         0;
+    padding:        0;
+
+    /* Fonts */
+    font:           "NotoSans Nerd Font 12";
+
+    /* Colors */
+    alt-bg-color: #ebebeb;
+    bg-color:     #fafafa;
+    border-color: rgba(24, 24, 24, 0.5);
+    alt-fg-color: #ffffff;
+    fg-color:     rgba(0, 0, 0, 0.8);
+    sh-fg-color:  rgba(0, 0, 0, 0.36);
+    sel-bg-color: #3584e4;
+    act-bg-color: #2ec27e;
+    urg-bg-color: #e5a50a;
+
+    /* Sizes */
+    border-rad:  5px;
+    padding-l:   20px;
+    padding-s:   10px;
+    win-border:  2px solid;
+}
+
+
+/*****----- Main Window -----*****/
+window {
+    background-color: @bg-color;
+    border:           @win-border;
+    border-radius:    @border-rad;
+    transparency:     "real";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    background-color: transparent;
+    spacing:          10px;
+    padding:          @padding-l;
+    children:         [ "inputbar", "bodybox" ];
+}
+
+/*****----- A Custom Box -----*****/
+bodybox {
+    background-color: inherit;
+    children:         [ "mode-switcher", "listview" ];
+    orientation:      horizontal;
+    spacing:          inherit;
+    text-color:       @fg-color;
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    background-color: @alt-bg-color;
+    border-radius:    @border-rad;
+    children:         [ "textbox-prompt-colon", "entry", "num-filtered-rows", "textbox-num-sep", "num-rows" ];
+    padding:          @padding-s;
+    spacing:          inherit;
+    text-color:       @fg-color;
+}
+textbox-prompt-colon {
+    str:        "";
+    text-color: inherit;
+}
+entry {
+    cursor:            text;
+    placeholder:       "Search...";
+    placeholder-color: @sh-fg-color;
+    text-color:        inherit;
+}
+num-filtered-rows { text-color: @sh-fg-color; }
+textbox-num-sep   { text-color: @sh-fg-color; }
+num-rows          { text-color: @sh-fg-color; }
+
+/*****----- Listview -----*****/
+listview {
+    background-color: transparent;
+    border:           inherit;
+    cycle:            true;
+    dynamic:          true;
+    fixed-height:     true;
+    fixed-columns:    true;
+    lines:            10;
+    orientation:      vertical;
+    reverse:          false;
+    scrollbar:        true;
+    spacing:          inherit;
+    text-color:       @fg-color;
+}
+scrollbar {
+    background-color: @alt-bg-color;
+    border-radius:    @border-rad;
+    handle-width:     5px ;
+    handle-color:     @sel-bg-color;
+}
+
+/*****----- Elements -----*****/
+element {
+    background-color: transparent;
+    border-radius:    @border-rad;
+    cursor:           pointer;
+    padding:          @padding-s;
+    spacing:          inherit;
+    text-color:       @fg-color;
+}
+element-icon {
+    background-color: transparent;
+    cursor:           inherit;
+    size:             24px;
+    text-color:       inherit;
+}
+element-text {
+    background-color: transparent;
+    cursor:           inherit;
+    text-color:       inherit;
+}
+
+element selected.normal  {
+    background-color: @sel-bg-color;
+    text-color:       @alt-fg-color;
+}
+element selected.active  { background-color: @act-bg-color; }
+element selected.urgent  { background-color: @urg-bg-color; }
+element alternate.normal { background-color: inherit;       }
+element alternate.active { background-color: @act-bg-color; }
+element alternate.urgent { background-color: @urg-bg-color; }
+element normal.normal    { background-color: inherit;       }
+element normal.active    { background-color: @act-bg-color; }
+element normal.urgent    { background-color: @urg-bg-color; }
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    background-color: transparent;
+    orientation:      vertical;
+    spacing:          inherit;
+    text-color:       @fg-color;
+}
+button {
+    border-radius:    @border-rad;
+    background-color: @alt-bg-color;
+    cursor:           pointer;
+    padding:          @padding-l;
+    text-color:       inherit;
+}
+button selected {
+    background-color: @sel-bg-color;
+    text-color:       @alt-fg-color;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:  transparent;
+    text-color:        @fg-color;
+}
+textbox {
+    border-radius:     @border-rad;
+    background-color:  @alt-bg-color;
+    padding:           @padding-s;
+    placeholder-color: @special-alt;
+    text-color:        inherit;
+}
+/*****----- Error Message -----*****/
+error-message {
+    background-color: @bg-color;
+    padding:          @padding-l;
+    text-color:       @fg-color;
+}

@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "spacing": 5,
+    "spacing": 3,
 
     "modules-left": [
         "sway/workspaces",
@@ -96,11 +96,10 @@
         "tooltip-format-ethernet": "{ipaddr}/{cidr}: {bandwidthDownBits}, {bandwidthUpBits}",
         "format-linked": "",
         "format-disconnected": "",
-        "on-click": "swaymsg exec '$term nmtui' floating enable"
     },
 
     "clock": {
-        "format": " {:%a %F %I:%M %p}",
+        "format": " {:%a, %b %d, %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
