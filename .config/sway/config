@@ -151,7 +151,7 @@ set $dismiss d
 
 ## Programs
 # Terminal Emulator
-set $term "kitty"
+set $term "foot"
 
 # Menu Program
 set $menu "rofi -show drun"
