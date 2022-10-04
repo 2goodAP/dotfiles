@@ -32,17 +32,10 @@ set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 # Inputs
 # ------
 
-# Laptop Keyboard
-input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_layout us
-    xkb_variant colemak
-}
-
-# Mechanical Keyboard
-input "6700:38647:SEMICO___Fantech_MAXFIT87_Mechanical_Keyboard" {
-    xkb_layout us
-    xkb_model pc104aw-zqu
-    xkb_variant cmk_ed_dh
+# Keyboards
+input * {
+    xkb_layout "us,np"
+    xkb_variant "colemak_dh,"
 }
 
 # Touchpad
