@@ -95,7 +95,7 @@
         "tooltip-format-wifi": "{essid}: {bandwidthDownBits}, {bandwidthUpBits}",
         "tooltip-format-ethernet": "{ipaddr}/{cidr}: {bandwidthDownBits}, {bandwidthUpBits}",
         "format-linked": "",
-        "format-disconnected": "",
+        "format-disconnected": "",
     },
 
     "clock": {
