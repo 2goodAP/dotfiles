@@ -33,7 +33,8 @@ set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 # ------
 
 # Keyboards
-input * {
+input "*" {
+    accel_profile flat
     xkb_layout "us,np"
     xkb_variant "colemak_dh,"
 }
@@ -47,8 +48,6 @@ input "1267:12433:ELAN0504:01_04F3:3091_Touchpad" {
     tap enabled
 }
 
-# Mouse
-input "2362:9523:PixArt_OpticalMouse" accel_profile flat
 
 # Outputs
 # -------
@@ -111,10 +110,10 @@ for_window [app_id="mpv"] inhibit_idle focus
 
 # Start swayidle and swaylock for desktop idle and lock.
 exec swayidle -w \
-     timeout 480 "swaymsg 'output * dpms off'" resume "swaymsg 'output * dpms on'" \
-     timeout 600 $swaylock \
-     timeout 720 $suspend \
-     before-sleep $swaylock
+    timeout 480 "swaymsg 'output * dpms off'" resume "swaymsg 'output * dpms on'" \
+    timeout 600 $swaylock \
+    timeout 720 $suspend \
+    before-sleep $swaylock
 
 # Start a single instance of gammastep.
 exec gammastep
