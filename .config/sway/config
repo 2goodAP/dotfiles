@@ -418,10 +418,10 @@ font pango:NotoSans Nerd Font 11
 # ------
 
 # class                 border   base     text     indicator  child_border
-client.focused          #c0bfbc  #deddda  #000000  #c0bfbc    #5e5c64
-client.focused_inactive #deddda  #ebebeb  #5e5c64  #deddda    #9a9996
-client.unfocused        #ebebeb  #fafafa  #c0bfbc  #f6f5f4    #c0bfbc
-client.urgent           #ae7b03  #e5a50a  #ffffff  #ae7b03    #e5a50a
+client.focused          #77767b  #deddda  #000000  #77767b    #77767b
+client.focused_inactive #c0bfbc  #ebebeb  #5e5c64  #c0bfbc    #c0bfbc
+client.unfocused        #deddda  #fafafa  #c0bfbc  #deddda    #deddda
+client.urgent           #ae7b03  #e5a50a  #ffffff  #ae7b03    #ae7b03
 
 
 # Borders
