@@ -6,18 +6,7 @@ USER="$(whoami)"
 LOG_FILE="/tmp/swaylock-$USER.log"
 
 # Background Image
-case $USER in
-    aashishp)
-        BACKGROUND="$HOME/Pictures/Orange_Mountain_Silouette.jpg"
-        ;;
-    workerap)
-        BACKGROUND="$HOME/Pictures/Mountain_Pass_Horizon.jpg"
-        ;;
-    *)
-        echo "swaylock.sh: error: Unrecogonized user '$USER'" | tee -a $LOG_FILE
-        exit 1
-        ;;
-esac
+BACKGROUND="$HOME/Pictures/Lockscreen_Wallpaper.jpg"
 
 # Colors
 BLUE=1c71d8ff

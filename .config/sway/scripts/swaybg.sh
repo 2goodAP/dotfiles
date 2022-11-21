@@ -9,7 +9,9 @@ LOG_FILE="/tmp/swaybg-$USER.log"
 OUTPUT='*'
 MODE='fill'
 FALLBACK='#ffffff'
-BACKGROUND="$HOME/Pictures/Wallpaper.jpg"
+
+# Background Image
+BACKGROUND="$HOME/Pictures/Desktop_Wallpaper.jpg"
 
 # Terminate already running swaybg instances.
 killall -q swaybg
