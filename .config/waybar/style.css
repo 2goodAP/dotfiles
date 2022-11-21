@@ -47,7 +47,7 @@
 
 #waybar { 
     background-color: @theme_base_color;
-    color:            @theme_text_color;
+    color:            @theme_fg_color;
     border-top:       0.2rem solid @borders;
 }
 
