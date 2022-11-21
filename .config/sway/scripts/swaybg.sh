@@ -9,19 +9,7 @@ LOG_FILE="/tmp/swaybg-$USER.log"
 OUTPUT='*'
 MODE='fill'
 FALLBACK='#ffffff'
-
-case $USER in
-    aashishp)
-        BACKGROUND="$HOME/Pictures/Wheat_Field_Windmill.jpg"
-        ;;
-    workerap)
-        BACKGROUND="$HOME/Pictures/Sunny_Mountain_Landscape.jpg"
-        ;;
-    *)
-        echo "swaybg.sh: error: Unrecogonized user '$USER'" | tee -a $LOG_FILE
-        exit 1
-        ;;
-esac
+BACKGROUND="$HOME/Pictures/Wallpaper.jpg"
 
 # Terminate already running swaybg instances.
 killall -q swaybg
