@@ -175,6 +175,15 @@ bindsym --to-code $super+Shift+p exec --no-startup-id \
     swaymsg 'input type:keyboard xkb_switch_layout prev'
 
 
+# Mouse Sensitivity
+# -----------------
+
+bindsym --to-code $super+g exec --no-startup-id \
+    swaymsg 'input type:pointer pointer_accel -0.5'
+bindsym --to-code $super+Shift+g exec --no-startup-id \
+    swaymsg 'input type:pointer pointer_accel 0'
+
+
 # Brightness and Volume
 # ---------------------
 
@@ -225,7 +234,8 @@ mode "nagbar" {
     bindsym --to-code $dismiss exec killall swaynag; mode "default"
 }
 
-bindsym --to-code $super+Shift+e exec swaynag -t "warning" -f "FantasqueSansMono Nerd Font" \
+bindsym --to-code $super+Shift+e \
+    exec swaynag -t "warning" -f "NotoSans Nerd Font" \
     -m "You pressed the exit shortcut. Select the action you want to perform." \
     -s "" -B "Shutdown ($shutdown)" "systemctl -i poweroff" \
     -B "Reboot ($reboot)" "systemctl -i reboot" \
