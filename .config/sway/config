@@ -179,7 +179,7 @@ bindsym --to-code $super+Shift+p exec --no-startup-id \
 # -----------------
 
 bindsym --to-code $super+g exec --no-startup-id \
-    swaymsg 'input type:pointer pointer_accel -0.75'
+    swaymsg 'input type:pointer pointer_accel -0.6'
 bindsym --to-code $super+Shift+g exec --no-startup-id \
     swaymsg 'input type:pointer pointer_accel 0'
 
