@@ -84,26 +84,26 @@ focus_follows_mouse no
 # ----------------
 
 # Nextcloud
-for_window [app_id='com.nextcloud.desktopclient.nextcloud'] floating enable
+for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 
 # Firefox Pop-Ups
-for_window [app_id='firefox' title='^$'] floating enable
+for_window [app_id="firefox" title="^$"] floating enable
 
 # Wev
-for_window [app_id='wev'] floating enable
+for_window [app_id="wev"] floating enable
 
 # pavucontrol
-for_window [app_id='pavucontrol'] floating enable
+for_window [app_id="pavucontrol"] floating enable
 
 # KeePassXC Access Request
-for_window [app_id='org.keepassxc.KeePassXC' title='Access\s*Request'] floating enable
+for_window [app_id="org.keepassxc.KeePassXC" title="Access\s*Request"] floating enable
 
 
 # Idle Inhibition
 # ---------------
 
 # mpv
-for_window [app_id='mpv'] inhibit_idle focus
+for_window [app_id="mpv"] inhibit_idle focus
 
 
 ##############
