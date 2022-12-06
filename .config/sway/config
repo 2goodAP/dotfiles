@@ -34,8 +34,8 @@ set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 
 # Keyboards
 input type:keyboard {
-    xkb_layout "us,np"
-    xkb_variant "colemak_dh,"
+    xkb_layout 'us,np'
+    xkb_variant 'colemak_dh,'
 }
 
 # Pointers
@@ -43,7 +43,7 @@ input type:pointer {
     accel_profile flat
 }
 
-input "1267:12433:ELAN0504:01_04F3:3091_Touchpad" {
+input '1267:12433:ELAN0504:01_04F3:3091_Touchpad' {
     accel_profile adaptive
     click_method clickfinger
     dwt enable
@@ -84,26 +84,26 @@ focus_follows_mouse no
 # ----------------
 
 # Nextcloud
-for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
+for_window [app_id='com.nextcloud.desktopclient.nextcloud'] floating enable
 
 # Firefox Pop-Ups
-for_window [app_id="firefox" title="^$"] floating enable
+for_window [app_id='firefox' title='^$'] floating enable
 
 # Wev
-for_window [app_id="wev"] floating enable
+for_window [app_id='wev'] floating enable
 
 # pavucontrol
-for_window [app_id="pavucontrol"] floating enable
+for_window [app_id='pavucontrol'] floating enable
 
 # KeePassXC Access Request
-for_window [app_id="org.keepassxc.KeePassXC" title="Access\s*Request"] floating enable
+for_window [app_id='org.keepassxc.KeePassXC' title='Access\s*Request'] floating enable
 
 
 # Idle Inhibition
 # ---------------
 
 # mpv
-for_window [app_id="mpv"] inhibit_idle focus
+for_window [app_id='mpv'] inhibit_idle focus
 
 
 ##############
@@ -216,14 +216,14 @@ bindsym --to-code $alt+BackSpace exec --no-startup-id \
 # Sleep and Power
 # ---------------
 
-# Suspend on pressing the "Sleep" button.
+# Suspend on pressing the 'Sleep' button.
 bindsym --to-code Xf86Sleep exec --no-startup-id $suspend
 
 # Suspend on laptop lid switch.
 bindswitch --locked lid:on exec --no-startup-id $suspend
 
 # Session control using swaynag.
-mode "nagbar" {
+mode 'nagbar' {
     # Exit out of swaywm.
     bindsym --to-code $exit exit
     # Reboot the machine
@@ -231,16 +231,18 @@ mode "nagbar" {
     # Shutdown the machine
     bindsym --to-code $shutdown exec "systemctl -i poweroff"
     # Quit out of the nagbar.
-    bindsym --to-code $dismiss exec killall swaynag; mode "default"
+    bindsym --to-code $dismiss exec killall swaynag; mode 'default'
 }
 
-bindsym --to-code $super+Shift+e \
-    exec swaynag -t "warning" -f "NotoSans Nerd Font" \
-    -m "You pressed the exit shortcut. Select the action you want to perform." \
-    -s "" -B "Shutdown ($shutdown)" "systemctl -i poweroff" \
-    -B "Reboot ($reboot)" "systemctl -i reboot" \
-    -B "Exit Sway ($exit)" "swaymsg exit" \
-    -Z "Dismiss Nagbar ($dismiss)" "swaymsg mode default"; mode "nagbar"
+bindsym --to-code $super+Shift+e exec swaynag -t 'warning' -f 'NotoSans Nerd Font' \
+    --background e5a40a --text 000000cc --button-gap 7 --button-dismiss-gap 0 \
+    --button-background e5a40a --button-text 000000cc \
+    --button-padding 7 --button-border-size 0 --button-margin-right 0 \
+    -m 'You pressed the exit shortcut. Select the action you want to perform.' \
+    -s '' -B 'Shutdown ($shutdown)' "systemctl -i poweroff" \
+    -B 'Reboot ($reboot)' "systemctl -i reboot" \
+    -B 'Exit Sway ($exit)' "swaymsg exit" \
+    -Z 'Dismiss Nagbar ($dismiss)' "swaymsg mode default"; mode 'nagbar'
 
 
 # Defaults
@@ -309,16 +311,16 @@ bindsym --to-code $super+z focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 '1'
+set $ws2 '2'
+set $ws3 '3'
+set $ws4 '4'
+set $ws5 '5'
+set $ws6 '6'
+set $ws7 '7'
+set $ws8 '8'
+set $ws9 '9'
+set $ws10 '10'
 
 # Switch to workspace
 bindsym --to-code $super+1 workspace number $ws1
@@ -348,7 +350,7 @@ bindsym --to-code $super+Shift+0 move container to workspace number $ws10
 bindsym --to-code $super+Shift+c reload
 
 # Resize window (you can also use the mouse for that)
-mode "resize" {
+mode 'resize' {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -367,18 +369,18 @@ mode "resize" {
         bindsym --to-code Right resize grow width 2 px or 2 ppt
 
         # Back to normal: Enter or Escape or $super+r
-        bindsym --to-code Return mode "default"
-        bindsym --to-code Escape mode "default"
-        bindsym --to-code $super+r mode "default"
+        bindsym --to-code Return mode 'default'
+        bindsym --to-code Escape mode 'default'
+        bindsym --to-code $super+r mode 'default'
 }
 
-bindsym --to-code $super+r mode "resize"
+bindsym --to-code $super+r mode 'resize'
 
 
 # Scratchpad
 # ----------
 
-# Sway has a "scratchpad", which is a bag of holding for windows.
+# Sway has a 'scratchpad', which is a bag of holding for windows.
 # You can send windows there and get them back later.
 
 # Move the currently focused window to the scratchpad
