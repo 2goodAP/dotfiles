@@ -14,8 +14,9 @@ set $swaybg "bash ~/.config/sway/scripts/swaybg.sh"
 # swaylock-effects (daemonized)
 set $swaylock "bash ~/.config/sway/scripts/swaylock.sh"
 
-# Suspend Command
-set $suspend "systemctl -i suspend-then-hibernate"
+# Suspend Commands
+set $suspend "systemctl -i suspend"
+set $suspend_then_hibernate "systemctl -i suspend-then-hibernate"
 
 # Wob Socket
 set $wobsock "$XDG_RUNTIME_DIR/wob.sock"
@@ -216,11 +217,11 @@ bindsym --to-code $alt+BackSpace exec --no-startup-id \
 # Sleep and Power
 # ---------------
 
-# Suspend on pressing the 'Sleep' button.
-bindsym --to-code Xf86Sleep exec --no-startup-id $suspend
+# Suspend then Hibernate on pressing the 'Sleep' button.
+bindsym --to-code Xf86Sleep exec --no-startup-id $suspend_then_hibernate
 
-# Suspend on laptop lid switch.
-bindswitch --locked lid:on exec --no-startup-id $suspend
+# Suspend then Hibernate on laptop lid switch.
+bindswitch --locked lid:on exec --no-startup-id $suspend_then_hibernate
 
 # Session control using swaynag.
 mode 'nagbar' {
