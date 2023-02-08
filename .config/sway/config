@@ -36,13 +36,12 @@ set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 # Keyboards
 input type:keyboard {
     xkb_layout 'us,np'
-    xkb_variant 'colemak_dh,'
+    xkb_variant 'altgr-intl,'
 }
+input '1:1:AT_Translated_Set_2_keyboard' xkb_variant 'colemak_dh,'
 
 # Pointers
-input type:pointer {
-    accel_profile flat
-}
+input type:pointer accel_profile flat
 
 input '1267:12433:ELAN0504:01_04F3:3091_Touchpad' {
     accel_profile adaptive
