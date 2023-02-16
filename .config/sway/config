@@ -33,14 +33,17 @@ set $waybar "bash ~/.config/sway/scripts/waybar.sh"
 # Inputs
 # ------
 
+# General
+input '*' {
+    xkb_layout 'us,np'
+    xkb_variant 'altgr-intl,'
+    accel_profile flat
+}
+
 # Keyboards
 input '1:1:AT_Translated_Set_2_keyboard' {
     xkb_layout 'us,np'
     xkb_variant 'colemak_dh,'
-}
-input type:keyboard {
-    xkb_layout 'us,np'
-    xkb_variant 'altgr-intl,'
 }
 
 # Pointers
@@ -51,7 +54,6 @@ input '1267:12433:ELAN0504:01_04F3:3091_Touchpad' {
     natural_scroll enabled
     tap enabled
 }
-input type:pointer accel_profile flat
 
 
 # Outputs
