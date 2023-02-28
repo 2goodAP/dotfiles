@@ -92,3 +92,20 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/nix/store/b1ax4vx71q1wdnrvmdyi08r6b7s09pyx-micromamba-1.2.0/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/workerap/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/workerap/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/workerap/micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/workerap/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
