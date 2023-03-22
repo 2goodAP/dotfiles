@@ -110,7 +110,7 @@ bodybox {
 
 /** Mode Switcher **/
 
-mode-switcher{
+mode-switcher {
     background-color: transparent;
     orientation:      vertical;
     spacing:          inherit;

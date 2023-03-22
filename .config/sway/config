@@ -50,7 +50,7 @@ input '1:1:AT_Translated_Set_2_keyboard' {
 input '1267:12433:ELAN0504:01_04F3:3091_Touchpad' {
     accel_profile adaptive
     click_method clickfinger
-    dwt enable
+    dwt enabled
     natural_scroll enabled
     tap enabled
 }
@@ -254,6 +254,7 @@ bindsym --to-code $super+Shift+e exec swaynag -t 'warning' -f 'NotoSans Nerd Fon
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
+focus_wrapping force
 
 # Start a terminal
 bindsym --to-code $super+Return exec $term
@@ -436,7 +437,7 @@ bindsym --to-code $super+Ctrl+Shift+Print exec grimshot copy output
 # -----
 
 # Fonts for window titles.
-font pango:monospace 11
+font pango:sans serif 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # Text rendering and scalability on retina/hidpi displays (thanks to pango).
